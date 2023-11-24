@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!--- Ultima Actualización 23/11/2023 -->
+<!-- Miguel Gutiérrez y Edgar Gallegos -->
+
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<title> Página Web de Proyecto </title>
+
+	<style>
+        * {
+            margin-left: 5px;
+            margin-right: 5px;
+            margin-top: 0;
+            margin-bottom: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header{
+            margin-top: 10px;
+            background-color: #0000FF;
+            color: #FFFFFF;
+            padding: 30px;
+        }
+
+        #menu {
+            background: #CCCCCC;
+            text-align: center;
+        }
+
+        #menu li{
+            display: inline-block;
+            padding: 5px 10px;
+        }
+
+        #menu a{
+            color: black;
+            text-decoration: none;
+            padding: 5px;
+        }
+
+        #menu a:hover{
+            color: yellow;
+        }
+
+        #menu li:hover{
+            background-color: #34495e;
+        }
+
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        main {
+            flex: 1;
+            padding: 20px;
+        }
+       
+        aside {
+            width: 300px;
+            padding: 20px;
+            background-color: red;
+            color: white;
+            text-align: center;
+        }
+
+        .boton{
+            background-color: yellow;
+            padding: 20px;
+        }
+
+        img{
+            width: 300px;
+            height: 300px;
+        }
+	</style>
+
+</head>
+
+<body>
+	<header>
+		<h1 align = "center">Tienda de Productos Generales</h1>
+	</header>
+
+	<nav id="menu">
+		<ul>
+            <li><a href= "#">Inicio</a></li>
+            <li><a href= "#">Productos</a></li>
+	        <li><a href= "#">Ofertas</a></li>
+		    <li><a href= "#">Contacto</a></li>
+		</ul>
+	</nav>
+
+	<div class = "container">
+		<main>
+			<article>
+				<h2> Ofertas Destacadas</h2><br>
+				<section>
+					<p> Explora nuestras increíbles ofertas en productos generales</p><br>
+                    <center><img src="Img/ofertas-destacadas.png" alt="Paisaje"></center>
+				</section>
+			</article>
+		</main>
+
+		<aside>
+			<h2>¡Oferta Especial!</h2><br><p>20% de descuento en todos los productos</p>
+            <br><br>
+            <div class="boton">
+                <a href="#">Comprar Ahora</a>
+            </div>
+		</aside>
+	</div>
+
+	<footer>
+	    <p align= "center"> &copy; Proyecto Web 2023. Todos los Derechos Reservados. </p>
+	</footer>
+
+</body>
+</html>
