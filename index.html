@@ -1,3 +1,5 @@
+<!--GRUPO 8-->
+
 <!DOCTYPE html>
 
 <html lang="es">
@@ -54,17 +56,19 @@
 
         .container {
             display: flex;
+            justify-content: space-between;
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 0 0 0 0;
         }
 
         main {
-            flex: 1;
+            flex: 1;    
             padding: 20px;
         }
        
         aside {
             width: 300px;
+            height: 400px;
             padding: 20px;
             background-color: red;
             color: white;
@@ -74,6 +78,12 @@
         .boton{
             background-color: yellow;
             padding: 20px;
+        }
+
+        footer{
+            background-color: #0000FF;
+            color: #FFFFFF;
+            padding: 30px;
         }
 
         img{
@@ -100,7 +110,7 @@
 	<nav id="menu">
 		<ul>
             <li><a href= "#">Inicio</a></li>
-            <li><a href= "#">Productos</a></li>
+            <li><a href= "#">Categorias</a></li>
 	        <li><a href= "#">Ofertas</a></li>
 		    <li><a href= "#">Contacto</a></li>
 		</ul>
@@ -115,8 +125,18 @@
                     <center><img src="Img/ofertas-destacadas.png" alt="Paisaje"></center>
 				</section>
 			</article>
+            <article>
+                <h2> Categorias Destacados</h2>
+                <section>
+                    <p> Explora nuestros increíbles productos generales</p><br>
+                    <p>Consolas y Juegos</p>
+                    <center><img src="Img/console.png" alt="juegos"></center>
+                    <p>Comidas</p>
+                    <center><img src="Img/food.png" alt="comidas"></center>
+                    <p>Celulares y Telfonia</p>
+                    <center><img src="Img/phone.png" alt="telefonos"></center>
+            </article>
 		</main>
-
 		<aside>
 			<h2>¡Oferta Especial!</h2><br><p>20% de descuento en todos los productos</p>
             <br><br>
