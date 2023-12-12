@@ -196,30 +196,32 @@
         #image-section {
             display: flex;
             justify-content: space-between;
-            /*espacio entre las imágenes*/
             margin-top: 4%;
-
         }
 
-        .image-container {
+        #image-container-1,
+        #image-container-2,
+        #image-container-3 {
             background-color: #f0f0f0;
             padding: 20px;
-            width: 30%; /* Ancho de cada contenedor de imagen */
+            width: 30%;
             height: auto;
         }
 
-        .image-container img {
+        #image-container-1 img,
+        #image-container-2 img,
+        #image-container-3 img {
             margin-left: 20px;
             width: 90%;
             height: auto;
-        }       
+        }    
         
         /* Nueva sección para "Ofertas Calientes" */
         #hot-deals-section {
-            margin-top: 4%; /* Espacio entre las secciones */
+            margin-top: 4%;
             background-color: #f0f0f0;
-            
         }
+
         #hot-deals-section h2 {
             font-size: 40px;
             text-align: center;
@@ -231,20 +233,21 @@
         }
 
         #hot-deals-table {
-            margin-top: 100px; /* Espacio entre la tabla y otras secciones */
+            margin-top: 100px;
             width: 100%;
             padding: 0px 0px 30px 0px;
         }
 
-        #hot-deals-table th, #hot-deals-table td {
-            border: 0px solid #ddd; /* Borde de las celdas */
+        #hot-deals-table th,
+        #hot-deals-table td {
+            border: 0px solid #ddd;
             text-align: center;
         }
 
         #hot-deals-table th {
             padding: 10px;
             font-size: 25px;
-            background-color: #f0f0f0; /* Color de fondo para las celdas de encabezado */
+            background-color: #f0f0f0;
         }
 
         /* Estilo para el botón de "Añadir al Carrito" */
@@ -364,7 +367,7 @@
             <a href="#"> &#128722;</a>
         </li>
         <li id="login-register">
-            <a href="/Proyecto-Programacion-Web/Recursos/formLogin.html">&#128102;</a>
+            <a href="Recursos/formLogin.html">&#128102;</a>
         </li>
         <li><button id="contact-button">Contacto</button></li>
     </ul>
@@ -427,13 +430,13 @@
 <hr>
 <!-- Nueva sección con imágenes -->
 <section id="image-section">
-    <div class="image-container">
+    <div id="image-container-1">
         <img src="Img/descuento.jpg" alt="Imagen 1">
     </div>
-    <div class="image-container">
+    <div id="image-container-2">
         <img src="Img/productos2.jpg" alt="Imagen 2">
     </div>
-    <div class="image-container">
+    <div id="image-container-3">
         <img src="Img/ahorro.webp" alt="Imagen 3">
     </div>
 </section>
@@ -451,29 +454,29 @@
                 <td><img src="Img/p3.png" alt="panaderia" width="200px"></td>
                 <td><img src="Img/p4.png" alt="perros" width="200px"></td>
             </tr>
-            <td class="product-info">
+            <td id="product-info-1">
                 <h3>Utensillos</h3>
                 <p>Precio Anterior: $50.00</p>
                 <p>Precio Actual: $40.00</p>
-                <button class="add-to-cart-button">Añadir al Carrito</button>
+                <button id="add-to-cart-button-1" class="add-to-cart-button">Añadir al Carrito</button>
             </td>
-            <td class="product-info">
+            <td id="product-info-2">
                 <h3>Pack Desinfectantes</h3>
                 <p>Precio Anterior: $20.00</p>
                 <p>Precio Actual: $10.00</p>
-                <button class="add-to-cart-button">Añadir al Carrito</button>
+                <button id="add-to-cart-button-2" class="add-to-cart-button">Añadir al Carrito</button>
             </td>
-            <td class="product-info">
+            <td id="product-info-3">
                 <h3>Canasta de Panes</h3>
                 <p>Precio Anterior: $10.00</p>
                 <p>Precio Actual: $6.00</p>
-                <button class="add-to-cart-button">Añadir al Carrito</button>
+                <button id="add-to-cart-button-3" class="add-to-cart-button">Añadir al Carrito</button>
             </td>
-            <td class="product-info">
+            <td id="product-info-4">
                 <h3>Carne Perros</h3>
                 <p>Precio Anterior: $20.00</p>
                 <p>Precio Actual: $15.00</p>
-                <button class="add-to-cart-button">Añadir al Carrito</button>
+                <button id="add-to-cart-button-4" class="add-to-cart-button">Añadir al Carrito</button>
             </td>
         </tr>
     </table>
