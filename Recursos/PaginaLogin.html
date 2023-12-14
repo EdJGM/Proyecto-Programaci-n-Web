@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Global Store</title>
-    <!-- Agrega tus estilos CSS aquí -->
+    <!-- Estilos CSS aquí -->
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #DAE4EB;
+            background-color: #64e8a1;
         }
 
         nav {
@@ -44,8 +44,9 @@
         }
 
         #special-offers {
-            padding: 14px 66px;
-            background-color: #84C539; /* Verde */
+            padding: 10px 66px;
+            font-size: 23px;
+            background-color: #f05252;
             text-align: center;
             float: left;
         }
@@ -69,7 +70,7 @@
         }
 
         #search-icon {
-            background-color: #ff0000; /* Rojo */
+            background-color: #f05252;
             color: white;
             padding: 14px;
             border: none;
@@ -81,7 +82,7 @@
         }
 
         #contact-button {
-            background-color: #ff0000; /* Rojo */
+            background-color: #f05252;
             padding: 14px 65px;
             border: none;
             color: white;
@@ -106,7 +107,7 @@
 
         /* Nueva sección */
         #secondary-nav {
-            background-color: #DAE4EB;
+            background-color: #64e8a1;
             color: black;
             text-align: center;
             box-sizing: border-box;
@@ -366,6 +367,7 @@
 </head>
 <body>
 
+<header>
 <nav>
     <ul>
         <li><a href="#hot-deals-section" id="special-offers">Ofertas Especiales del Día</a></li>
@@ -384,10 +386,11 @@
         <li><button id="contact-button">Contacto</button></li>
     </ul>
 </nav>
+</header>
 
 <!-- Nueva Sección -->
 <div id="secondary-nav">
-    <img id="logo" src="../Img/Logo.png" alt="Logo" width="130px" height="174px">
+    <img id="logo" src="../Img/Logo.png" alt="Logo" width="150px" height="174px">
     <ul>
         <li><a href="#product-categories">Categorías   /</a></li>
         <li><a href="#footer-container">Acerca de    /</a></li>
@@ -398,51 +401,50 @@
     <div id="email-icon">&#9993;<span>storeapp@gmail.com</span></div>
 </div>
 
-<!-- Nuevo Header o Section -->
-<section id="product-categories-container">
-    <!-- Categorías de productos -->
-    <div id="product-categories">
-        <div>
-            <a href="#"><h2>Cocina</h2></a>
-            <!-- Otros elementos relacionados con esta categoría si es necesario -->
+<!-- Aside y Section -->
+<article>
+    <section id="product-categories-container">
+        <!-- Categorías de productos -->
+        <div id="product-categories">
+            <aside>
+                <div>
+                    <a href="#"><h2>Cocina</h2></a>
+                </div>
+                <div>
+                    <a href="#"><h2>Hogares</h2></a>
+                </div>
+                <div>
+                    <a href="#"><h2>Verduras y frutas</h2></a>
+                </div>
+                <div>
+                    <a href="#"><h2>Alimentos de Marca</h2></a>
+                </div>
+                <div>
+                    <a href="#"><h2>Alimentos para mascotas</h2></a>
+                </div>
+                <div>
+                    <a href="#"><h2>Alimentos congelados</h2></a>
+                </div>
+                <div>
+                    <a href="#"><h2>Pan y panadería</h2></a>
+                </div>
+            </aside>
         </div>
-        <div>
-            <a href="#"><h2>Hogares</h2></a>
-            <!-- Otros elementos relacionados con esta categoría si es necesario -->
-        </div>
-        <div>
-            <a href="#"><h2>Verduras y frutas</h2></a>
-            <!-- Otros elementos relacionados con esta categoría si es necesario -->
-        </div>
-        <div>
-            <a href="#"><h2>Alimentos de Marca</h2></a>
-            <!-- Otros elementos relacionados con esta categoría si es necesario -->
-        </div>
-        <div>
-            <a href="#"><h2>Alimentos para mascotas</h2></a>
-            <!-- Otros elementos relacionados con esta categoría si es necesario -->
-        </div>
-        <div>
-            <a href="#"><h2>Alimentos congelados</h2></a>
-            <!-- Otros elementos relacionados con esta categoría si es necesario -->
-        </div>
-        <div>
-            <a href="#"><h2>Pan y panadería</h2></a>
-            <!-- Otros elementos relacionados con esta categoría si es necesario -->
-        </div>
-    </div>
 
-    <!-- Productos más vendidos -->
-    <div id="best-sellers">
-        <img src="../Img/Compra inteligente, vive diferente.png" alt="Tienda online">
-    </div>
-</section>
+        <!-- Productos más vendidos -->
+        <div id="best-sellers">
+            <section>
+                <img src="../Img/Compra inteligente, vive diferente.png" alt="Tienda online">
+            </section>
+        </div>
+    </section>
+</article>
 <br>
 <br>
 <hr>
 <!-- Nueva sección con imágenes -->
 <section id="image-section">
-    <center><h2>Las Mejores Prestaciones</h2></center>
+    <center><h2>¡Lo Mejor en Calidad!</h2></center>
     <div id="image-container-1">
         <img src="../Img/descuento.jpg" alt="Imagen 1">
     </div>
@@ -458,7 +460,7 @@
 <hr>
 <!-- Nueva sección para "Ofertas Calientes" con una tabla -->
 <section id="hot-deals-section">
-    <center><h2>Ofertas Calientes</h2></center>
+    <center><h2>Ofertas Exclusivas</h2></center>
     <table id="hot-deals-table">
         <tr>
             <tr>

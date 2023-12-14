@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Global Store</title>
-    <!-- Agrega tus estilos CSS aquí -->
+    <!-- Estilos CSS aquí -->
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #DAE4EB;
+            background-color: #64e8a1;
         }
 
         nav {
@@ -44,8 +44,9 @@
         }
 
         #special-offers {
-            padding: 14px 66px;
-            background-color: #84C539; /* Verde */
+            padding: 10px 66px;
+            font-size: 23px;
+            background-color: #f05252; /* Verde */
             text-align: center;
             float: left;
         }
@@ -69,7 +70,7 @@
         }
 
         #search-icon {
-            background-color: #ff0000; /* Rojo */
+            background-color: #f05252; /* Rojo */
             color: white;
             padding: 14px;
             border: none;
@@ -81,7 +82,7 @@
         }
 
         #contact-button {
-            background-color: #ff0000; /* Rojo */
+            background-color: #f05252; /* Rojo */
             padding: 14px 65px;
             border: none;
             color: white;
@@ -94,7 +95,7 @@
         }
 
         #cart {
-            border: 2px solid #4CAF50; /* Verde */
+            border: 2px solid #64e8a1; /* Verde */
             padding: 7px;
             margin-right: 25px;
         }
@@ -106,7 +107,7 @@
 
         /* Nueva sección */
         #secondary-nav {
-            background-color: #DAE4EB;
+            background-color: #64e8a1;
             color: black;
             text-align: center;
             box-sizing: border-box;
@@ -143,7 +144,7 @@
         }
 
         #secondary-nav a:hover {
-            color: #ff0000;
+            color: #f05252;
         }
 
 
@@ -205,7 +206,7 @@
             font-size: 40px;
             text-align: center;
             padding: 60px 0px 20px 0px;
-            border-bottom: 2px solid #FA1918;
+            border-bottom: 2px solid #f05252;
             width: 40%;
             margin: auto;
             box-sizing: border-box;
@@ -237,7 +238,7 @@
             font-size: 40px;
             text-align: center;
             padding: 60px 0px 20px 0px;
-            border-bottom: 2px solid #FA1918;
+            border-bottom: 2px solid #f05252;
             width: 40%;
             margin: auto;
             box-sizing: border-box;
@@ -263,7 +264,7 @@
 
         /* Estilo para el botón de "Añadir al Carrito" */
         .add-to-cart-button {
-            background-color: #FA1918;
+            background-color: #f05252;
             color: white;
             border: none;
             padding: 8px 12px;
@@ -292,7 +293,7 @@
         #subscription-section {
             margin-top: 4%;
             display: flex;
-            background-color: #ff0000; /* Rojo */
+            background-color: #f05252; /* Rojo */
             color: white;
             text-align: center;
             padding: 20px;
@@ -314,7 +315,7 @@
         #email-input {
             margin-top: 10px;
             padding: 10px;
-            background-color: #ff0000; /* Rojo */
+            background-color: #f05252; /* Rojo */
             color: white;
             border: 1px solid white;
             width: 200px;
@@ -365,6 +366,7 @@
 </head>
 <body>
 
+<header>
 <nav>
     <ul>
         <li><a href="#hot-deals-section" id="special-offers">Ofertas Especiales del Día</a></li>
@@ -383,10 +385,11 @@
         <li><button id="contact-button">Contacto</button></li>
     </ul>
 </nav>
+</header>
 
 <!-- Nueva Sección -->
 <div id="secondary-nav">
-    <img id="logo" src="Img/Logo.png" alt="Logo" width="130px" height="174px">
+    <img id="logo" src="Img/Logo.png" alt="Logo" width="150px" height="174px">
     <ul>
         <li><a href="#product-categories">Categorías   /</a></li>
         <li><a href="#footer-container">Acerca de    /</a></li>
@@ -397,51 +400,49 @@
     <div id="email-icon">&#9993;<span>storeapp@gmail.com</span></div>
 </div>
 
-<!-- Nuevo Header o Section -->
-<section id="product-categories-container">
-    <!-- Categorías de productos -->
-    <div id="product-categories">
-        <div>
-            <a href="#"><h2>Cocina</h2></a>
-            <!-- Otros elementos relacionados con esta categoría si es necesario -->
-        </div>
-        <div>
-            <a href="#"><h2>Hogares</h2></a>
-            <!-- Otros elementos relacionados con esta categoría si es necesario -->
-        </div>
-        <div>
-            <a href="#"><h2>Verduras y frutas</h2></a>
-            <!-- Otros elementos relacionados con esta categoría si es necesario -->
-        </div>
-        <div>
-            <a href="#"><h2>Alimentos de Marca</h2></a>
-            <!-- Otros elementos relacionados con esta categoría si es necesario -->
-        </div>
-        <div>
-            <a href="#"><h2>Alimentos para mascotas</h2></a>
-            <!-- Otros elementos relacionados con esta categoría si es necesario -->
-        </div>
-        <div>
-            <a href="#"><h2>Alimentos congelados</h2></a>
-            <!-- Otros elementos relacionados con esta categoría si es necesario -->
-        </div>
-        <div>
-            <a href="#"><h2>Pan y panadería</h2></a>
-            <!-- Otros elementos relacionados con esta categoría si es necesario -->
-        </div>
-    </div>
+<!-- Aside y Section -->
+<article>
+    <section id="product-categories-container">
+        <!-- Categorías de productos -->
+            <div id="product-categories">
+                <aside>
+                    <div>
+                        <a href="#"><h2>Cocina</h2></a>
+                    </div>
+                    <div>
+                        <a href="#"><h2>Hogares</h2></a>
+                    </div>
+                    <div>
+                        <a href="#"><h2>Verduras y frutas</h2></a>
+                    </div>
+                    <div>
+                        <a href="#"><h2>Alimentos de Marca</h2></a>
+                    </div>
+                    <div>
+                        <a href="#"><h2>Alimentos para mascotas</h2></a>
+                    </div>
+                    <div>
+                        <a href="#"><h2>Alimentos congelados</h2></a>
+                    </div>
+                    <div>
+                        <a href="#"><h2>Pan y panadería</h2></a>
+                    </div>
+                </aside>
+            </div>
 
-    <!-- Productos más vendidos -->
-    <div id="best-sellers">
-        <img src="Img/Compra inteligente, vive diferente.png" alt="Tienda online">
-    </div>
-</section>
-<br>
+        <!-- Productos más vendidos -->
+        <div id="best-sellers">
+            <section>
+                <img src="./Img/tienda.png" alt="Tienda online">
+            </section>
+        </div>
+    </section>
+</article>
 <br>
 <hr>
 <!-- Nueva sección con imágenes -->
 <section id="image-section">
-    <center><h2>Las Mejores Prestaciones</h2></center>
+    <center><h2>¡Lo Mejor en Calidad!</h2></center>
     <div id="image-container-1">
         <img src="Img/descuento.jpg" alt="Imagen 1">
     </div>
@@ -457,7 +458,7 @@
 <hr>
 <!-- Nueva sección para "Ofertas Calientes" con una tabla -->
 <section id="hot-deals-section">
-    <center><h2>Ofertas Calientes</h2></center>
+    <center><h2>Ofertas Exclusivas</h2></center>
     <table id="hot-deals-table">
         <tr>
             <tr>
@@ -467,7 +468,7 @@
                 <td><img src="Img/p4.png" alt="perros" width="200px"></td>
             </tr>
             <td id="product-info-1">
-                <h3>Utensillos</h3>
+                <h3>Utensilios</h3>
                 <p>Precio Anterior: $50.00</p>
                 <p>Precio Actual: $40.00</p>
                 <button id="add-to-cart-button-1" class="add-to-cart-button">Añadir al Carrito</button>
