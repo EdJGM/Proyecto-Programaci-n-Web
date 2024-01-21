@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: white;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
 }
 
 nav {
@@ -41,6 +43,8 @@ a:hover {
     background-color: #19829A;/*#f05252; /* Verde */
     text-align: center;
     float: left;
+    font-size: 19px;
+    line-height: 27px;
 }
 
 #search-bar {
@@ -82,7 +86,8 @@ a:hover {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 17px;
+    font-size: 22px;
+    line-height: 19.5px;
     cursor: pointer;
     float: right;
 }
@@ -109,6 +114,8 @@ a:hover {
     height: 150px;
     justify-content: space-between;
     align-items: center;
+    font-size: 14px;
+    line-height: 20px;
 }
 
 #logo {
@@ -150,7 +157,7 @@ a:hover {
     overflow-y: auto;
     transition: all 0.3s ease; /* Agregado para suavizar la aparición y desaparición del submenú */
     color: #333; /* Agregado para mejorar el contraste de color */
-    margin-top: 2px;
+    z-index: 1000; /* Agregado para que el submenú aparezca por encima de los demás elementos */
 }
 
 .menu-vertical a {
@@ -171,23 +178,27 @@ a:hover {
 #product-categories-container {
     display: flex;
     justify-content: space-between;
+    font-size: 10px;
+    line-height: 24px;
 }
 
 #product-categories {
     width: 25%;
     background-color: white;/*#f0f0f0; /* Color de fondo para las categorías */
-    padding: 40px 0px 0px 15px;
-    height: 500px;
+    height: 450px;
     box-sizing: border-box; /* Evitar que el padding afecte el ancho */
 }
 
+#product-categories h2,a span {
+    margin-left:  35px;
+}
+
 #product-categories a {
-    font-size: 13px;
     text-decoration: none; /* Eliminar subrayado predeterminado de los enlaces */
     color: black; /* Color de texto predeterminado */
     display: block; /* Hace que el enlace ocupe el ancho completo del contenedor */
-    border-bottom: 1px dashed #E9ECF0; /* Línea de puntos verde */
-    transition: background-color 0.3s, color 0.3s; /* Transición suave */
+    border-bottom: 2px dashed #E9ECF0; /* Línea de puntos verde */
+    transition: background-color 1s, color 0.5s; /* Transición suave */
 }
 
 #product-categories a:hover {
@@ -198,15 +209,40 @@ a:hover {
 }
 
 #best-sellers {
-    width: 75%; /* El resto del espacio, ya que las categorías ocupan 25% */
-    text-align: right;
-    box-sizing: border-box; /* Evitar que el padding afecte el ancho */
+    width: 100%;
+    height: 380px;
+    overflow: hidden;
+    position: relative;
 }
 
 #best-sellers img {
     width: 100%;
     height: 500px;
     object-fit: cover;
+}
+
+#best-sellers ul {
+    display: flex;
+    padding: 0;
+    width: 400%;
+    animation: slide 10s infinite alternate linear;
+}
+
+#best-selles li {
+    width: 100%;
+    list-style: none;
+    position: relative;
+}
+
+@keyframes slide {
+    0% { margin-left: 0; }
+    33.33% { margin-left: 0; }
+    
+    40% { margin-left: -106%; }
+    66.66% { margin-left: -106%; }
+
+    70% { margin-left: -213%; }
+    100% { margin-left: -213%; }
 }
 
 /* Nueva sección para las imágenes */
@@ -216,6 +252,7 @@ a:hover {
     margin-top: 4%;
     background-color: #f0f0f0;
 }
+
 
 #image-section h2 {
     font-size: 40px;
@@ -288,7 +325,7 @@ a:hover {
 }
 
 .add-to-cart-button:hover {
-    background-color: #5A8F29;
+    background-color: red;
 }
 
 /* Estilos para la información de los productos */

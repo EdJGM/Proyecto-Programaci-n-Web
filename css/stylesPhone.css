@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+}
+
+nav {
+    background-color: #0B0B0B;
+    color: white;
+    text-align: center;
+    position: relative;
+    box-sizing: border-box;
+    height: 47px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    display: inline;
+    /*margin-right: 70px;  Ajusta este valor según sea necesario */
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    border-bottom: 2px solid white;
+}
+
+#special-offers {
+    padding: 10px 60px; 
+    font-size: 23px;
+    background-color: #19829A;/*#f05252; /* Verde */
+    text-align: center;
+    float: left;
+    font-size: 19px;
+    line-height: 27px;
+}
+
+#search-bar {
+    width: 35%;
+    padding: 5px 0px;
+    text-align: center;
+    background-color: #fff; /* Blanco */
+    display: inline-block;
+    position: relative;
+    margin-right: 50px;
+    margin-top: 1px;
+}
+
+#search-bar input[type=text] {
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid white;
+    background-color: #f8f8f8;
+}
+
+#search-icon {
+    background-color: #19829A;/*#f05252; /* Rojo */
+    color: white;
+    padding: 14px;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 49%;
+    transform: translateY(-50%);
+}
+
+#contact-button {
+    background-color: #19829A;/*#f05252; /* Rojo */
+    padding: 13.8px 50px;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 22px;
+    line-height: 19.5px;
+    cursor: pointer;
+    float: right;
+}
+
+#cart {
+    border: 2px solid #19829A; /* Verde */
+    padding: 7px;
+    margin-right: 20px;
+}
+
+#login-register {
+    position: relative;
+    display: inline-block;
+}
+
+/* Nueva sección */
+#secondary-nav {
+    background-color: white;
+    color: black;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 20px;
+    display: flex;
+    height: 150px;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+#logo {
+    max-width: 100%;
+    height: auto;
+    margin-right: 30px;
+}
+
+#secondary-nav ul {
+    list-style-type: none;
+    margin-left: 100px;
+    padding: 0;
+    overflow: hidden;
+    flex-grow: 1;
+    text-align: left;
+}
+
+#secondary-nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+#secondary-nav a {
+    color: black;
+    text-decoration: none;
+}
+
+#secondary-nav a:hover {
+    color: #19829A;/*#f05252; /* Rojo */
+}
+
+.menu-vertical {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 20px;
+    left: 360px;
+    overflow-y: auto;
+    transition: all 0.3s ease; /* Agregado para suavizar la aparición y desaparición del submenú */
+    color: #333; /* Agregado para mejorar el contraste de color */
+    z-index: 1000; /* Agregado para que el submenú aparezca por encima de los demás elementos */
+}
+
+.menu-vertical a {
+    margin-bottom: 10px; /* Agregado para agregar espacio entre los elementos del submenú */
+    display: block; /* Agregado para asegurar que el espacio se aplique correctamente */
+    border-bottom: 1px so;
+}
+
+#secondary-nav li:hover .menu-vertical {
+    display: block;
+}
+
+#phone-icon {
+    margin-right: 20px;
+}        
+
+/*muestra donde esta el usuario*/
+#mapa{
+    width: 100%;
+    height: 54px;
+    background-color: #19829A;
+    display: flex;
+}
+
+.categoria-celulares1 a{
+    width: 100%;
+    height: 50px;
+    background-color: #19829A;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    line-height: 50px;
+    margin-left: 125px;
+}
+
+.categoria-celulares2 p{
+    width: 100%;
+    height: 100px;
+    background-color: #19829A;
+    color: black;
+    text-align: center;
+    font-size: 16px;
+    line-height: 20px;
+    margin-left: 30px;
+}
+
+.categoria-celulares3 p{
+    width: 100%;
+    height: 50px;
+    background-color: #19829A;
+    color: black;
+    text-align: center;
+    font-size: 16px;
+    line-height: 20px;
+    margin-left: 30px;
+}
+
+
+/* Nueva sección */
+#product-categories-container {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    line-height: 24px;
+}
+
+#product-categories {
+    width: 25%;
+    background-color: white;/*#f0f0f0; /* Color de fondo para las categorías */
+    height: 450px;
+    box-sizing: border-box; /* Evitar que el padding afecte el ancho */
+}
+
+#product-categories h2,a span {
+    margin-left:  35px;
+}
+
+#product-categories a {
+    text-decoration: none; /* Eliminar subrayado predeterminado de los enlaces */
+    color: black; /* Color de texto predeterminado */
+    display: block; /* Hace que el enlace ocupe el ancho completo del contenedor */
+    border-bottom: 2px dashed #E9ECF0; /* Línea de puntos verde */
+    transition: background-color 1s, color 0.5s; /* Transición suave */
+}
+
+#product-categories a:hover {
+    width: 100%;
+    padding: 1px 0px; /* Espacio entre el texto y la línea de puntos */
+    background-color: #19829A;/*#84C539; /* Fondo verde en hover */
+    color: white; /* Texto blanco en hover */
+}
+
+/* Seccion de foto de inicio celuales*/
+#best-sellers {
+    width: 100%;
+    height: 380px;
+    overflow: hidden;
+    position: relative;
+}
+
+#best-sellers img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.texto{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-80%, -50%);
+    color: white;
+    font-size: 50px;
+    width: 100%;
+    text-align: center;
+}
+
+
+/* Nueva sección para "Productos" */
+#hot-deals-section {
+    margin-top: 0%;
+}
+
+#hot-deals-section h2 {
+    font-size: 40px;
+    text-align: center;
+    padding: 60px 0px 20px 0px;
+    border-bottom: 2px solid #19829A;/*#f05252;*/
+    width: 40%;
+    margin: auto;
+    box-sizing: border-box;
+    margin-right: 250px;
+}
+
+#hot-deals-table {
+    margin-top: 100px;
+    margin-left: 240px; /* Ajusta este valor según sea necesario */
+    width: 79%;
+    border-collapse: collapse;
+    padding: 0px 0px 30px 0px;
+    table-layout: fixed; /* Añade esta línea */
+}
+
+#hot-deals-table th,
+#hot-deals-table td {
+    border: 4px double #BEBEBE;
+    text-align: center;
+    height: 50px;
+}
+
+#hot-deals-table th {
+    padding: 10px;
+    font-size: 25px;
+    background-color: #f0f0f0;
+}
+
+/* Estilo para el botón de "Añadir al Carrito" */
+.add-to-cart-button {
+    background-color: #19829A;/*#f05252;*/
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart-button:hover {
+    background-color: red;
+}
+
+/* Estilos para la información de los productos */
+.product-info {
+    margin-top: 10px;
+}
+
+.product-info h3 {
+    margin-bottom: 5px;
+}
+
+.product-info p {
+    margin: 5px 0;
+}             
+
+/* Estilos para el footer */
+footer {
+    background-color: #212121; /* Fondo oscuro */
+    color: white;
+    padding: 20px 20px 10px 20px;
+    text-align: center;
+}
+
+#footer-container {
+    justify-content: space-between;
+    align-items: center;
+}
+
+#social-icons a {
+    margin-right: 15px;
+}
+
+#social-icons img {
+    width: 30px; /* Ajusta el tamaño según sea necesario */
+    height: 30px;
+}
+
+#rights {
+    border-top: 1px solid #645e5e; /* Línea superior */
+    width: 30%;
+    margin: auto;
+    padding-top: 40px;
+}
