@@ -228,7 +228,7 @@ a:hover {
     animation: slide 10s infinite alternate linear;
 }
 
-#best-selles li {
+#best-sellers li {
     width: 100%;
     list-style: none;
     position: relative;
@@ -238,12 +238,13 @@ a:hover {
     0% { margin-left: 0; }
     33.33% { margin-left: 0; }
     
-    40% { margin-left: -106%; }
-    66.66% { margin-left: -106%; }
+    40% { margin-left: -150%; }
+    66.66% { margin-left: -150%; }
 
-    70% { margin-left: -213%; }
-    100% { margin-left: -213%; }
+    70% { margin-left: -270%; }
+    100% { margin-left: -270%; }
 }
+
 
 /* Nueva sección para las imágenes */
 #image-section {
