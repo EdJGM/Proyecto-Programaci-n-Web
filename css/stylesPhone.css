@@ -221,13 +221,13 @@ a:hover {
     display: flex;
     justify-content: space-between;
     font-size: 10px;
-    line-height: 24px;
+    line-height: 18.4px;
 }
 
 #product-categories {
     width: 25%;
     background-color: white;/*#f0f0f0; /* Color de fondo para las categorías */
-    height: 450px;
+    height: 380px;
     box-sizing: border-box; /* Evitar que el padding afecte el ancho */
 }
 
