@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Global Store</title>
     <!-- Estilos CSS aquí -->
-    <link rel="stylesheet" href="css/stylesPhone.css">
+    <link rel="stylesheet" href="../css/stylesPhone.css">
     <!-- Fuentes de Google Fonts -->
     <link rel="stylesheet" href="fonts/fuentes.css">
 </head>
@@ -25,7 +25,7 @@
             <a href="#"> &#128722;</a>
         </li>
         <li id="login-register">
-            <a href="Recursos/formLogin.html">Login</a>
+            <a href="../Recursos/formLogin.html">Login</a>
         </li>
         <li><button id="contact-button">Contacto</button></li>
     </ul>
@@ -34,7 +34,7 @@
 
 <!-- Nueva Sección -->
 <div id="secondary-nav">
-    <img id="logo" src="Img/l.png" alt="Logo" width="230px" height="174px">
+    <img id="logo" src="../Img/l.png" alt="Logo" width="230px" height="174px">
     <ul>
         <li><a href="#product-categories">Inicio</a></li>
         <li><a href="#footer-container">Categorías ▼</a>
@@ -48,7 +48,7 @@
                 <li><a href="#product-categories">Accesorios</a></li>
             </ul>
         </li>
-        <li><a href="#hot-deals-section">Accesorios</a></li>
+        <li><a href="#hot-deals-section">Soporte</a></li>
         <li><a href="#image-section">Blog</a></li>
     </ul>
     <div id="phone-icon">&#128222;<span>123-456-7890</span></div>
@@ -56,7 +56,7 @@
 </div>
 
 <section id="mapa">
-    <div class="categoria-celulares1"> <a href="./index.html">&#x1F3DA; Home</a></div>
+    <div class="categoria-celulares1"> <a href="../index.html">&#x1F3DA; Home</a></div>
     <div class="categoria-celulares2"><p>|</p></div>
     <div class="categoria-celulares3"><p>Celulares</p></div>
 </section>
@@ -68,22 +68,22 @@
             <div id="product-categories">
                 <aside>
                     <div>
-                        <a href="./PaginaCelulares.html"><span><h2>Celulares</h2></span></a>
+                        <a href="PaginaCelulares.html"><span><h2>Celulares</h2></span></a>
                     </div>
                     <div>
-                        <a href="./PaginaTablets.html"><span><h2>Tablets</h2></span></a>
+                        <a href="../PaginaTablets.html"><span><h2>Tablets</h2></span></a>
                     </div>
                     <div>
-                        <a href="./PaginaComputadores.html"><span><h2>Computadores</h2></span></a>
+                        <a href="../PaginaComputadores.html"><span><h2>Computadores</h2></span></a>
                     </div>
                     <div>
-                        <a href="./PaginaLaptops.html"><span><h2>Laptops</h2></a>
+                        <a href="../PaginaLaptops.html"><span><h2>Laptops</h2></a>
                     </div>
                     <div>
-                        <a href="./PaginaTelevisores.html"><span><h2>Televisores</h2></a>
+                        <a href="../PaginaTelevisores.html"><span><h2>Televisores</h2></a>
                     </div>
                     <div>
-                        <a href="./PaginaAccesorios.html"><span><h2>Accesorios</h2></a>
+                        <a href="../PaginaAccesorios.html"><span><h2>Accesorios</h2></a>
                     </div>
                 </aside>
             </div>
@@ -92,7 +92,7 @@
         <div id="best-sellers">
             <ul>
                 <li>
-                    <img src="./Img/celulares/1.jpg" alt="Tienda online">
+                    <img src="../Img/celulares/1.jpg" alt="Tienda online">
                     <div class="texto">
                         <h2>Los</h2>
                         <h2>Mejores</h2>
@@ -106,47 +106,74 @@
 
 <!-- Nueva sección para Los Productos con una tabla -->
 <section id="hot-deals-section">
-    <center><h2>Televisores</h2></center>
+    <center><h2>Celulares</h2></center>
     <table id="hot-deals-table">
         <tr>
-            <td id="product-info-1">
-                <img src="Img/televisores/televisor1.png" alt="iPhone 14" width="250px">
-                <h3>iPhone 14</h3>
-                <p>Precio: $600.00</p>
-                <button id="add-to-cart-button-1" class="add-to-cart-button">Añadir al Carrito</button>
+            <td>
+                <div class="card">
+                    <img src="../Img/celulares/c1.png" alt="iPhone 14" width="150px">
+                    <h3>iPhone 14</h3>
+                    <p>
+                        Precio: $600.00 <br><br>
+                        El mejor iphone del mundo, con una pantalla de 6.5 pulgadas, 8
+                        GB de RAM y 128GB de almacenamiento.
+                        <a href="../Producto/DetalleProducto.html">Leer mas...</a>
+                    </p>                    
+                    <button id="add-to-cart-button-1" class="add-to-cart-button">Añadir al Carrito</button>
+                </div>
             </td>
-            <td id="product-info-2">
-                <img src="Img/televisores/televisor2.png" alt="Honor X9" width="270px" >
-                <h3>Honor X9</h3>
-                <p>Precio: $450.00</p>
-                <button id="add-to-cart-button-2" class="add-to-cart-button">Añadir al Carrito</button>
+            <td>
+                <div class="card">
+                    <img src="../Img/celulares/c2.png" alt="Honor X9" width="150px" >
+                    <h3>Honor X9</h3>
+                    <p>
+                        Precio: $450.00 <br><br>
+                        Celular Gama Media Honor X9, con una pantalla de 6.5 pulgadas, 8
+                        GB de RAM y 128GB de almacenamiento.
+                        <a href="../Producto/DetalleProducto.html">Leer mas...</a>
+                    </p>                    
+                    <button id="add-to-cart-button-2" class="add-to-cart-button">Añadir al Carrito</button>
+                </div>
             </td>
-            <td id="product-info-3">
-                <img src="Img/televisores/televisor3.png" alt="Samsung A54" width="250px">
-                <h3>Samsung A54</h3>
-                <p>Precio: $400.00</p>
-                <button id="add-to-cart-button-3" class="add-to-cart-button">Añadir al Carrito</button>
+            <td>
+                <div class="card">
+                    <img src="../Img/celulares/c3.png" alt="Samsung A54" width="150px">
+                    <h3>Samsung A54</h3>
+                    <p>
+                        Precio: $400.00 <br><br>
+                        Excelente celular Samsung A54, con una pantalla de 6.5 pulgadas, 8
+                        GB de RAM y 128GB de almacenamiento.
+                        <a href="../Producto/DetalleProducto.html">Leer mas...</a>
+                    </p>                    
+                    <button id="add-to-cart-button-3" class="add-to-cart-button">Añadir al Carrito</button>
+                </div>
             </td>
-            <td id="product-info-4">
-                <img src="Img/televisores/televisor4.png" alt="Samsung ZFlip" width="250px">
-                <h3>Samsung ZFlip</h3>
-                <p>Precio: $1050.00</p>
-                <button id="add-to-cart-button-4" class="add-to-cart-button">Añadir al Carrito</button>
+            <td class="product-info">
+                <div class="card">
+                    <img src="../Img/celulares/c4.png" alt="Samsung ZFlip" width="150px">
+                    <h3>Samsung ZFlip</h3>
+                    <p>
+                        Precio: $1050.00 <br><br>
+                        El mejor celular plegable del mundo, con una pantalla de 6.5 pulgadas, 8
+                        GB de RAM y 128GB de almacenamiento.
+                        <a href="../Producto/DetalleProducto.html">Leer mas...</a>
+                    </p>                    
+                    <button id="add-to-cart-button-4" class="add-to-cart-button">Añadir al Carrito</button>
+                </div>
             </td>
         </tr>
     </table>
 </section>
 <br>
 <br>
-<hr>
 <!-- Footer -->
 <footer>
     <div id="footer-container">
         <div id="social-icons">
             <p>Contactanos por: </p>
-            <a href="#" target="_blank"><img src="Img/facebook.png" alt="Facebook"></a>
-            <a href="#" target="_blank"><img src="Img/twitter.png" alt="Twitter"></a>
-            <a href="#" target="_blank"><img src="Img/instagram.png" alt="Instagram"></a>
+            <a href="#" target="_blank"><img src="../Img/facebook.png" alt="Facebook"></a>
+            <a href="#" target="_blank"><img src="../Img/twitter.png" alt="Twitter"></a>
+            <a href="#" target="_blank"><img src="../Img/instagram.png" alt="Instagram"></a>
         </div>
         <br>
         <br>
