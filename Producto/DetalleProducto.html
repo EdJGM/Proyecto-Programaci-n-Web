@@ -62,23 +62,190 @@
     <div class="categoria-celulares2"><p>|</p></div>
     <div class="categoria-celulares3"><p>iPhone 14</p></div>
 </section>
-<main>
-    <table>
-        <tr>
-            <td>
-                <img src="../Img/celulares/c1.png" alt="iPhone 14" width="200px">
-            </td>
-            <td>
-                <button id="add-to-cart-button" class="add-to-cart-button">AGREGAR AL CARRITO</button><br>
-                <button id="add-to-cart-button-1" class="add-to-cart-button">COMPRAR POR WHATSAPP</button>
-                <div class="text1"><p>$1,000</p></div>
-                <div class="text2"><p>$700</p></div>
-                <hr>
-                <div class="text3"><p>iPhone 14 <br> 8 gb ram, 128gb almacenamiento</p></div>
-            </td>
-        </tr>
+<haz>
+    <div class="container">
+        <div class="imagen">
+            <img src="../Img/celulares/c1.png" alt="iPhone 14" width="200px">
+        </div>
+        <div class="principal">
+            <button class="agregar-carrito"><strong>AGREGAR AL CARRITO</strong></button>
+            <button class="comprar-whatsapp"><strong>COMPRAR POR WHATSAPP</strong></button>
+            <p class="precio"><strong>$1,000</strong></p>
+            <p class="iva">(incluido IVA)</p>
+            <hr>
+            <h2 class="titulo"><strong>iPhone 14</strong></h2>
+            <a href="#" class="comentario">Se el primero en comentar este producto</a>
+        </div>
+    </div>
+
+    <br><br><br><br><br>
+    <a href="#" id="toggleTable" class="caracteristicas"><strong>Caracteristicas</strong></a>
+
+    <!--haz una tabla con las caracteristicas del producto-->
+    <table id="myTable" class="table" style="display:none;">
+        <tbody>
+            <tr>
+                <th scope="row">Marca</th>
+                <td>Apple</td>
+            </tr>
+            <tr>
+                <th scope="row">Modelo</th>
+                <td>iPhone 14</td>
+            </tr>
+            <tr>
+                <th scope="row">Sistema Operativo</th>
+                <td>iOS 15</td>
+            </tr>
+            <tr>
+                <th scope="row">Memoria Interna</th>
+                <td>128 GB</td>
+            </tr>
+            <tr>
+                <th scope="row">Memoria RAM</th>
+                <td>6 GB</td>
+            </tr>
+            <tr>
+                <th scope="row">Tamaño de Pantalla</th>
+                <td>6.1"</td>
+            </tr>
+            <tr>
+                <th scope="row">Cámara Frontal</th>
+                <td>12 MP</td>
+            </tr>
+            <tr>
+                <th scope="row">Cámara Trasera</th>
+                <td>12 MP</td>
+            </tr>
+            <tr>
+                <th scope="row">Batería</th>
+                <td>3,687 mAh</td>
+            </tr>
+            <tr>
+                <th scope="row">Color</th>
+                <td>Negro</td>
+            </tr>
+        </tbody>
     </table>
 
+    <script>
+        document.getElementById('toggleTable').addEventListener('click', function(event) {
+            event.preventDefault();
+            var table = document.getElementById('myTable');
+            if (table.style.display === "none") {
+                table.style.display = "table";
+            } else {
+                table.style.display = "none";
+            }
+        });
+    </script>
+
+    <!--DETALLES DEL PRODCUTO-->
+    <br><br><br>
+    <a href="#" id="toggleDetails" class="caracteristicas"><strong>Detalles</strong></a>
+    <div id="Detalles" style="display: none;">
+        <p class="caracteristicas-prin"><strong>Caracteristicas principales:</strong> </p>
+        <p class="detalles">
+            Descubre un universo de innovación y rendimiento excepcional con el nuevo 
+            iPhone 14. Equipado con una pantalla Super Retina XDR de 6.7 pulgadas, 
+            cada detalle cobra vida con una calidad visual sorprendente. Experimenta 
+            la potencia del chip A16 Bionic, que ofrece un rendimiento incomparable en 
+            cada tarea. Sumérgete en un sonido envolvente y cristalino con los altavoces 
+            estéreo mejorados. Navega por tus aplicaciones y contenido favoritos con fluidez 
+            gracias a iOS 16. Este dispositivo va más allá de la comunicación; es una obra 
+            maestra de diseño y tecnología con su elegante acabado en Graphite. La experiencia 
+            móvil nunca ha sido tan emocionante. Haz clic ahora y lleva tu experiencia iPhone 
+            al siguiente nivel. Tu mundo digital te espera.
+        </p>
+    </div>
+
+    <script>
+        document.getElementById('toggleDetails').addEventListener('click', function(event) {
+            event.preventDefault();
+            var details = document.getElementById('Detalles');
+            if (details.style.display === "none") {
+                details.style.display = "block";
+            } else {
+                details.style.display = "none";
+            }
+        });
+    </script>
+
+    <!--RESEÑA DEL PRODCUTO-->
+    <br><br><br>
+    <a href="#" id="toggleReview" class="caracteristicas"><strong>Reseña</strong></a>
+    <div id="Resena" style="display: none;">
+        <form>
+            <h2 class="tituloResena">Escribe tu propia reseña</h2>
+            <div class="rating">
+                <input type="radio" id="star5" name="rating" value="5">
+                <label for="star5">★</label>
+                <input type="radio" id="star4" name="rating" value="4">
+                <label for="star4">★</label>
+                <input type="radio" id="star3" name="rating" value="3">
+                <label for="star3">★</label>
+                <input type="radio" id="star2" name="rating" value="2">
+                <label for="star2">★</label>
+                <input type="radio" id="star1" name="rating" value="1">
+                <label for="star1">★</label>
+            </div>
+            <div class="form-group">
+                <label for="name">Nombre *</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="summary">Resumen de su review *</label>
+                <input type="text" id="summary" name="summary" required>
+            </div>
+            <div class="form-group">
+                <label for="review">Reseña *</label>
+                <textarea id="review" name="review" required></textarea>
+            </div>
+            <button class="enviar-resena" type="submit">ENVIAR RESEÑA</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('toggleReview').addEventListener('click', function(event) {
+            event.preventDefault();
+            var details = document.getElementById('Resena');
+            if (details.style.display === "none") {
+                details.style.display = "block";
+            } else {
+                details.style.display = "none";
+            }
+        });
+    </script>
 </main>
+
+<!-- Nueva sección para el formulario de suscripción -->
+<section class="subscription-section">
+    <h2 class="titulo-subscription">Suscríbete a Nuestro Sitio</h2>
+    <form class="subscription-form" action="./Recursos/formRegister.html">
+        <input class="email-input" type="email" placeholder="Ingresa tu correo electrónico" required>
+        <button class="subscribe-button" type="submit">Suscribirse</button>
+    </form>
+</section>
+<!-- Footer -->
+<footer>
+    <div id="footer-container">
+        <div id="social-icons">
+            <p>Contactanos por: </p>
+            <a href="#" target="_blank"><img src="Img/facebook.png" alt="Facebook"></a>
+            <a href="#" target="_blank"><img src="Img/twitter.png" alt="Twitter"></a>
+            <a href="#" target="_blank"><img src="Img/instagram.png" alt="Instagram"></a>
+        </div>
+        <br>
+        <br>
+        <div>
+            <a href="#">Aviso legal</a> |
+            <a href="#">Política de privacidad</a> |
+            <a href="#">Términos de servicio</a>
+        </div>    
+        <br>
+        <br>
+        <p id="rights">© 2023 Todos los derechos reservados</p>
+    </div>
+</footer>
+
 </body>
 </html> 
