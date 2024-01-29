@@ -207,32 +207,30 @@ a:hover {
     color: white; /* Texto blanco en hover */
 }
 
-#best-sellers {
+.best-sellers {
+    width: 300%; /* Ajusta esto al número de imágenes */
+    height: 360px;
     overflow: hidden;
+    margin: 0 auto;
     position: relative;
 }
 
-#best-sellers img {
-    object-fit: fill;
-}
-
-#best-sellers ul {
+.carrusel{
     display: flex;
-    padding: 0;
-    list-style: none;
-    position: relative;
-    animation: slide 10s infinite alternate linear;
+    transition: transform 0.5s ease;
+    animation: slide 15s infinite; /* Ajusta la duración de la animación aquí */
 }
 
-#best-sellers li {
-    list-style: none;
-    position: relative;
-    animation: slide 10s infinite alternate linear;
+.carrusel-item{
+    width: 600px; /* Ancho deseado de las imágenes */
+    height: 400px; /* Alto deseado de las imágenes */
+    object-fit: cover; /* Ajustar imagen manteniendo la relación de aspecto */
 }
 
 @keyframes slide {
-    0%, 50% { transform: translateX(0); }
-    51%, 100% { transform: translateX(-100%); }
+    0%, 33% { transform: translateX(0); }
+    34%, 66% { transform: translateX(-100%); }
+    67%, 100% { transform: translateX(-200%); }
 }
 
 
