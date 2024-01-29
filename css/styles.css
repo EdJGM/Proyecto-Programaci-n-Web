@@ -178,14 +178,13 @@ a:hover {
 #product-categories-container {
     display: flex;
     justify-content: space-between;
-    font-size: 10px;
-    line-height: 24px;
 }
 
 #product-categories {
-    width: 25%;
+    width: 35%;
+    height: 360px;
+    font-size: 10px;
     background-color: white;/*#f0f0f0; /* Color de fondo para las categorías */
-    height: 450px;
     box-sizing: border-box; /* Evitar que el padding afecte el ancho */
 }
 
@@ -209,40 +208,31 @@ a:hover {
 }
 
 #best-sellers {
-    width: 100%;
-    height: 449px;
     overflow: hidden;
     position: relative;
 }
 
 #best-sellers img {
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
+    object-fit: fill;
 }
 
 #best-sellers ul {
     display: flex;
     padding: 0;
-    width: 400%;
+    list-style: none;
+    position: relative;
     animation: slide 10s infinite alternate linear;
 }
 
 #best-sellers li {
-    width: 100%;
     list-style: none;
     position: relative;
+    animation: slide 10s infinite alternate linear;
 }
 
 @keyframes slide {
-    0% { margin-left: 0; }
-    33.33% { margin-left: 0; }
-    
-    40% { margin-left: -150%; }
-    66.66% { margin-left: -150%; }
-
-    70% { margin-left: -270%; }
-    100% { margin-left: -270%; }
+    0%, 50% { transform: translateX(0); }
+    51%, 100% { transform: translateX(-100%); }
 }
 
 
@@ -250,8 +240,8 @@ a:hover {
 #image-section {
     display: flex;
     justify-content: space-between;
-    margin-top: 4%;
-    background-color: #f0f0f0;
+    margin-top: 3%;
+    width: 100%;
 }
 
 
@@ -260,30 +250,31 @@ a:hover {
     text-align: center;
     padding: 60px 0px 20px 0px;
     border-bottom: 2px solid #19829A;/*#f05252;*/
-    width: 40%;
+    width: 30%;
     margin: auto;
     box-sizing: border-box;
+    margin-right: 120px;
 }   
 
 #image-container-1,
 #image-container-2,
 #image-container-3 {
-    padding: 20px;
-    width: 30%;
-    height: auto;
+    width: 70%;
+    padding: 0px 10px;
 }
 
 #image-container-1 img,
 #image-container-2 img,
 #image-container-3 img {
-    margin-left: 20px;
-    width: 90%;
-    height: auto;
-}    
+    width: 100%;
+    height: 275px;
+    object-fit: cover;
+}
+
 
 /* Nueva sección para "Ofertas Calientes" */
 #hot-deals-section {
-    margin-top: 4%;
+    margin-top: 3%;
     background-color: #f0f0f0;
 }
 
