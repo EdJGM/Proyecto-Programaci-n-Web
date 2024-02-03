@@ -1,4 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+.sticky {/* Agregado para que el menú se mantenga fijo en la parte superior de la página */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -300,6 +307,12 @@ a:hover {
     margin-top: 20px;
     margin-left: 100px;
 }
+
+.caracteristicas i{
+    float: right;
+    margin-right: 100px;
+}
+
 
 /*caracteristicas del iphone 14 -- tabla*/
 table{
