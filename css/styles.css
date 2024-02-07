@@ -98,12 +98,76 @@ a:hover {
     cursor: pointer;
     float: right;
 }
-
-#cart {
+/*carrito y su contador*/
+.cart {
+    display: block;
     border: 2px solid #19829A; /* Verde */
     padding: 7px;
     margin-right: 20px;
+    position: relative;
 }
+
+.count-products{
+    background-color: #19829A;/*#f05252; /* Rojo */
+    color: white;
+    padding: 5px 7px;
+    border-radius: 50%;
+    position: absolute;
+    margin-top: 20px;
+    top: 0;
+    right: -6px;
+    font-size: 12px;
+    line-height: 10px;
+}
+
+#contador-productos{
+    position: relative;
+}
+
+.container-cart-products{
+    display: inline;
+    position: absolute;
+    background-color: white;
+    width: 300px;
+    height: 300px;
+    top: 50px;
+    right: 0;
+    z-index: 1000;
+    border: 1px solid #19829A;/*#f05252; /* Rojo */
+    padding: 10px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.cart-product{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.info-cart-product{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cantidad-producto-carrito{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.titulo-producto-carrito{
+    font-weight: bold;
+}
+
+.precio-producto-carrito{
+    font-weight: bold;
+}
+
+.hidden-cart{
+    display: none;
+}
+
 
 #login-register {
     position: relative;
