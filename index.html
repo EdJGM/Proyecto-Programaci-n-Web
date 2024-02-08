@@ -21,20 +21,40 @@
                 <button id="search-icon">&#128269;</button>
             </div>
         </li>
-        <li class="cart">
-            <a href="#"> &#128722;</a>
-            <div class="count-products">
-                <span id="contador-productos">0</span>
-            </div>
-            <div class="container-cart-products hidden-cart">
-                <div class="cart-product">
-                    <div class="info-cart-product">
-                        <span class="cantidad-producto-carrito">1</span>
-                        <p class="titulo-producto-carrito">iPhone 14</p>
-                        <span class="precio-producto-carrito">$1000</span>
+        <li>
+            <div class="cart">
+                <div class="cart-icon">
+                    <a  href="#"> &#128722;</a>
+                </div>
+                <div class="count-products">
+                    <span id="contador-productos">0</span>
+                </div>
+                <div class="container-cart-products hidden-cart">
+                    <div class="row-product hidden">
+                        <div class="cart-product">
+                            <div class="info-cart-product">
+                                <span class="cantidad-producto-carrito">1</span>
+                                <p class="titulo-producto-carrito">iPhone</p>
+                                <span class="precio-producto-carrito">$900</span>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" 
+                                fill="none" 
+                                viewBox="0 0 24 24" 
+                                stroke-width="1.5" 
+                                stroke="currentColor" 
+                                class="icon-close">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                              </svg>
+                        </div>
                     </div>
+                    <div class="cart-total hidden">
+                        <h3>Total:</h3>
+                        <span class="total-pagar">$200</span>
+                    </div>
+                    <p class="cart-empty">El carrito esta vacio</p>
                 </div>
             </div>
+
         </li>
         <li id="login-register">
             <a href="Recursos/formLogin.html">Login</a>
@@ -134,36 +154,36 @@
 <br>
 <hr>
 <!-- Nueva sección para "Ofertas Calientes" con una tabla -->
-<section id="hot-deals-section">
+<section class="hot-deals-section">
     <center><h2>Ofertas Exclusivas</h2></center>
-    <table id="hot-deals-table">
+    <table class="hot-deals-table">
         <tr>
             <td id="product-info-1">
                 <img src="Img/p1.png" alt="iPhone 14">
                 <h3>iPhone</h3>
                 <p>Precio Anterior: $750.00</p>
-                <p>Precio Actual: $550.00</p>
+                <p>Precio Actual: <span class="price">$550.00</span></p>
                 <button id="add-to-cart-button-1" class="add-to-cart-button">Añadir al Carrito</button>
             </td>
             <td id="product-info-2">
                 <img src="Img/p2.png" alt="Computadora gamer">
                 <h3>Computador Gamer</h3>
                 <p>Precio Anterior: $2000.00</p>
-                <p>Precio Actual: $1500.00</p>
+                <p>Precio Actual: <span class="price">$1500.00</span></p>
                 <button id="add-to-cart-button-2" class="add-to-cart-button">Añadir al Carrito</button>
             </td>
             <td id="product-info-3">
                 <img src="Img/p3.png" alt="TV Samsung">
                 <h3>Televisor Samsung Smart TV 4K</h3>
                 <p>Precio Anterior: $1000.00</p>
-                <p>Precio Actual: $600.00</p>
+                <p>Precio Actual: <span class="price">$600.00</span></p>
                 <button id="add-to-cart-button-3" class="add-to-cart-button">Añadir al Carrito</button>
             </td>
             <td id="product-info-4">
                 <img src="Img/p4.png" alt="Laptop LENOVO ideaPad">
                 <h3>Laptop LENOVO IdeaPad</h3>
                 <p>Precio Anterior: $1050.00</p>
-                <p>Precio Actual: $990.00</p>
+                <p>Precio Actual: <span class="price">$990.00</span></p>
                 <button id="add-to-cart-button-4" class="add-to-cart-button">Añadir al Carrito</button>
             </td>
         </tr>
@@ -201,7 +221,7 @@
         <p id="rights">© 2023 Todos los derechos reservados</p>
     </div>
 </footer>
-
-<script src="js/index.js"></script>
+<!-- Scripts JS aquí -->
+<script src="./js/index.js"></script>
 </body>
 </html>

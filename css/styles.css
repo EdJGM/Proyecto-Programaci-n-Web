@@ -16,7 +16,6 @@ body {
 
 nav {
     background-color: #0B0B0B;
-    color: white;
     text-align: center;
     position: relative;
     box-sizing: border-box;
@@ -27,7 +26,7 @@ ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    
 }
 
 li {
@@ -100,17 +99,21 @@ a:hover {
 }
 /*carrito y su contador*/
 .cart {
-    display: block;
+    display: inline-block;
+    position: relative;
     border: 2px solid #19829A; /* Verde */
     padding: 7px;
     margin-right: 20px;
-    position: relative;
+}
+
+.cart a:hover {
+    cursor: pointer;
 }
 
 .count-products{
     background-color: #19829A;/*#f05252; /* Rojo */
-    color: white;
     padding: 5px 7px;
+    color: white;
     border-radius: 50%;
     position: absolute;
     margin-top: 20px;
@@ -122,52 +125,105 @@ a:hover {
 
 #contador-productos{
     position: relative;
+    cursor: pointer;
 }
 
 .container-cart-products{
-    display: inline;
+    background-color: #FBFBFB;
     position: absolute;
-    background-color: white;
-    width: 300px;
-    height: 300px;
+    width: 500px;
+    height: auto;
     top: 50px;
     right: 0;
-    z-index: 1000;
-    border: 1px solid #19829A;/*#f05252; /* Rojo */
+    border: 1px solid #adaaaa;/*#f05252; /* Rojo */
+    border-radius: 5px;
     padding: 10px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1px;
+    margin-top: 10px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.497);
 }
 
 .cart-product{
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
+    align-items: center;
+    padding: 10px;
+    margin-top: 10px;
 }
 
 .info-cart-product{
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
-}
-
-.cantidad-producto-carrito{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex: 0.8;
 }
 
 .titulo-producto-carrito{
-    font-weight: bold;
+    position: relative;
+    font-size: 20px;
+    margin-top: 0px;
+    left: 17px;
 }
 
 .precio-producto-carrito{
-    font-weight: bold;
+    position: relative;
+    font-weight: 700;
+    font-size: 20px;
+    margin-left: 10px;
+    left: 30px;
+}
+
+.cantidad-producto-carrito{
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.cart-total{
+    display: flex;
+    justify-content: center;
+    padding: 20px 0px;
+    gap:20px;
+    align-items: center;
+    border-top: 1px solid #adaaaa;/*#f05252; /* Rojo */
+
+}
+
+.cart-total h3{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.total-pagar{
+    font-size: 20px;
+    font-weight: 900;
+    color: #19829A;/*#f05252; /* Rojo */
+}
+
+.icon-close{
+    position:relative;
+    top: -15px;
+    right: 20px;
+    cursor: pointer;
+    width: 20px;
+    height: auto;
+}
+
+.icon-close:hover{
+    background-color: #19829A;/*#f05252; /* Rojo */
+    color: white;
 }
 
 .hidden-cart{
     display: none;
 }
 
+.cart-empty{
+    padding: 20px;
+    text-align: center;
+}
+
+.hidden{
+    display: none;
+}
 
 #login-register {
     position: relative;
@@ -187,6 +243,7 @@ a:hover {
     align-items: center;
     font-size: 14px;
     line-height: 20px;
+    width: 100%;
 }
 
 #logo {
@@ -228,7 +285,7 @@ a:hover {
     overflow-y: auto;
     transition: all 0.3s ease; /* Agregado para suavizar la aparición y desaparición del submenú */
     color: #333; /* Agregado para mejorar el contraste de color */
-    z-index: 1000; /* Agregado para que el submenú aparezca por encima de los demás elementos */
+    z-index: 1000;  /*Agregado para que el submenú aparezca por encima de los demás elementos */
 }
 
 .menu-vertical a {
@@ -356,13 +413,13 @@ a:hover {
 
 
 /* Nueva sección para "Ofertas Calientes" */
-#hot-deals-section {
+.hot-deals-section {
     margin-top: 3%;
     background-color: #f0f0f0;
     height: 600px;
 }
 
-#hot-deals-section h2 {
+.hot-deals-section h2 {
     font-size: 40px;
     text-align: center;
     padding: 40px 0px 20px 0px;
@@ -372,26 +429,26 @@ a:hover {
     box-sizing: border-box;
 }
 
-#hot-deals-table {
+.hot-deals-table {
     margin-top: 50px;
     width: 100%;
     border-collapse: separate;
     border-spacing: 10px;
 }
 
-#hot-deals-table img {
+.hot-deals-table img {
     width: auto;
     height: 200px;
     object-fit: cover;
 }
 
-#hot-deals-table th,
-#hot-deals-table td {
+.hot-deals-table th,
+.hot-deals-table td {
     border: 0px solid #ddd;
     text-align: center;
 }
 
-#hot-deals-table td{
+.hot-deals-table td{
     width: 250px;
     height: 50px;
     background-color: #FFFFFF;
@@ -399,7 +456,7 @@ a:hover {
     position: relative;
 }
 
-#hot-deals-table td::before{
+.hot-deals-table td::before{
     content: "";
     position: absolute;
     top: 0;
@@ -412,17 +469,17 @@ a:hover {
     transition: transform 0.5s linear;
 }
 
-#hot-deals-table td:hover::before {
+.hot-deals-table td:hover::before {
     transform: translateX(250px);
     opacity: 1;
     right: 0;
 }
 
-#hot-deals-table td:hover .add-to-cart-button {
+.hot-deals-table td:hover .add-to-cart-button {
     background-color: red;
 }
 
-#hot-deals-table th {
+.hot-deals-table th {
     padding: 10px;
     font-size: 25px;
     background-color: #f0f0f0;
