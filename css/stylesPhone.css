@@ -4,7 +4,7 @@
     top: 0;
     width: 100%;
     z-index: 1000;
-}
+  }
 
 body {
     margin: 0;
@@ -16,7 +16,6 @@ body {
 
 nav {
     background-color: #0B0B0B;
-    color: white;
     text-align: center;
     position: relative;
     box-sizing: border-box;
@@ -27,7 +26,7 @@ ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    
 }
 
 li {
@@ -98,11 +97,132 @@ a:hover {
     cursor: pointer;
     float: right;
 }
-
-#cart {
+/*carrito y su contador*/
+.cart {
+    display: inline-block;
+    position: relative;
     border: 2px solid #19829A; /* Verde */
     padding: 7px;
     margin-right: 20px;
+}
+
+.cart a:hover {
+    cursor: pointer;
+}
+
+.count-products{
+    background-color: #19829A;/*#f05252; /* Rojo */
+    padding: 5px 7px;
+    color: white;
+    border-radius: 50%;
+    position: absolute;
+    margin-top: 20px;
+    top: 0;
+    right: -6px;
+    font-size: 12px;
+    line-height: 10px;
+}
+
+#contador-productos{
+    position: relative;
+    cursor: pointer;
+}
+
+.container-cart-products{
+    background-color: #FBFBFB;
+    position: absolute;
+    width: 500px;
+    height: auto;
+    top: 50px;
+    right: 0;
+    border: 1px solid #adaaaa;/*#f05252; /* Rojo */
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 1000;
+    margin-top: 10px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.497);
+}
+
+.cart-product{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.info-cart-product{
+    display: flex;
+    justify-content: space-between;
+    flex: 0.8;
+}
+
+.titulo-producto-carrito{
+    position: relative;
+    font-size: 20px;
+    margin-top: 0px;
+    left: 17px;
+}
+
+.precio-producto-carrito{
+    position: relative;
+    font-weight: 700;
+    font-size: 20px;
+    margin-left: 10px;
+    left: 30px;
+}
+
+.cantidad-producto-carrito{
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.cart-total{
+    display: flex;
+    justify-content: center;
+    padding: 20px 0px;
+    gap:20px;
+    align-items: center;
+    border-top: 1px solid #adaaaa;/*#f05252; /* Rojo */
+
+}
+
+.cart-total h3{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.total-pagar{
+    font-size: 20px;
+    font-weight: 900;
+    color: #19829A;/*#f05252; /* Rojo */
+}
+
+.icon-close{
+    position:relative;
+    top: -15px;
+    right: 20px;
+    cursor: pointer;
+    width: 20px;
+    height: auto;
+}
+
+.icon-close:hover{
+    background-color: #19829A;/*#f05252; /* Rojo */
+    color: white;
+}
+
+.hidden-cart{
+    display: none;
+}
+
+.cart-empty{
+    padding: 20px;
+    text-align: center;
+}
+
+.hidden{
+    display: none;
 }
 
 #login-register {
@@ -286,11 +406,11 @@ a:hover {
 
 
 /* Nueva sección para "Productos" */
-#hot-deals-section {
+.hot-deals-section {
     margin-top: 0%;
 }
 
-#hot-deals-section h2 {
+.hot-deals-section h2 {
     font-size: 40px;
     text-align: center;
     padding: 80px 0px 10px 0px;
@@ -300,7 +420,7 @@ a:hover {
     margin-right: 250px;
 }
 
-#hot-deals-table {
+.hot-deals-table {
     margin-top: 50px;
     margin-left: 274px; /* Ajusta este valor según sea necesario */
     width: 75%;
@@ -308,24 +428,24 @@ a:hover {
     table-layout: fixed;
 }
 
-#hot-deals-table img {
+.hot-deals-table img {
     width: auto;
     height: 150px;
     object-fit: cover;
 }
 
-#hot-deals-table th,
-#hot-deals-table td {
+.hot-deals-table th,
+.hot-deals-table td {
     border: 4px double #BEBEBE;
     text-align: center;
     height: 50px;
 }
 
-#hot-deals-table td {
+.hot-deals-table td {
     position: relative;
 }
 
-#hot-deals-table td::before{
+.hot-deals-table td::before{
     content: "";
     position: absolute;
     top: 0;
@@ -338,13 +458,13 @@ a:hover {
     transition: transform 0.5s linear;
 }
 
-#hot-deals-table td:hover::before {
+.hot-deals-table td:hover::before {
     transform: translateX(200px);
     opacity: 1;
     right: 0;
 }
 
-#hot-deals-table td:hover .add-to-cart-button {
+.hot-deals-table td:hover .add-to-cart-button {
     background-color: red;
 }
 
