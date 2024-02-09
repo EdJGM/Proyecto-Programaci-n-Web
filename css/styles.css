@@ -138,7 +138,7 @@ a:hover {
     border: 1px solid #adaaaa;/*#f05252; /* Rojo */
     border-radius: 5px;
     padding: 10px;
-    z-index: 1px;
+    z-index: 1000;
     margin-top: 10px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.497);
 }
@@ -354,12 +354,78 @@ a:hover {
 .best-sellers li{
     width: 100%;
     list-style: none;
+    position: relative;
 }
 
 .best-sellers img{
     width: 100%;
     height: 360px;
+    
 }
+
+.texto1{
+    display: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    text-align: center;
+    padding: 0 150px;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    color: white;
+    font-size: 40px;
+}
+
+.text1 h3{
+    font-size: 100px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.texto2{
+    position: absolute;
+    text-align: center;
+    padding: 0 150px;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    color: white;
+    font-size: 40px;
+
+}
+
+.text2 h3{
+    font-size: 100px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.texto3{
+    position: absolute;
+    text-align: center;
+    padding: 0 150px;
+    top: -40px;
+    left: 570px;
+    right: 0px;
+    bottom: 0px;
+    color: white;
+    font-size: 40px;
+
+}
+
+.text3 h3{
+    font-size: 100px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+
+.best-sellers li:hover .texto1{
+    display: block;
+}
+
 
 @keyframes slide {
 	0% {margin-left: 0;}
