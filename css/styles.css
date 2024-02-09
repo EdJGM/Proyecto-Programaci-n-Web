@@ -265,7 +265,7 @@ a:hover {
     100% {
       transform: translateZ(0px) scale(1);
     }
-}
+  }
 
 #secondary-nav ul {
     list-style-type: none;
