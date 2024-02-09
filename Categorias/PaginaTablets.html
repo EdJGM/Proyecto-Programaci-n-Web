@@ -21,8 +21,39 @@
                 <button id="search-icon">&#128269;</button>
             </div>
         </li>
-        <li id="cart">
-            <a href="#"> &#128722;</a>
+        <li>
+            <div class="cart">
+                <div class="cart-icon">
+                    <a  href="#"> &#128722;</a>
+                </div>
+                <div class="count-products">
+                    <span id="contador-productos">0</span>
+                </div>
+                <div class="container-cart-products hidden-cart">
+                    <div class="row-product hidden">
+                        <div class="cart-product">
+                            <div class="info-cart-product">
+                                <span class="cantidad-producto-carrito">1</span>
+                                <p class="titulo-producto-carrito">iPhone</p>
+                                <span class="precio-producto-carrito">$900</span>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" 
+                                fill="none" 
+                                viewBox="0 0 24 24" 
+                                stroke-width="1.5" 
+                                stroke="currentColor" 
+                                class="icon-close">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                              </svg>
+                        </div>
+                    </div>
+                    <div class="cart-total hidden">
+                        <h3>Total:</h3>
+                        <span class="total-pagar">$200</span>
+                    </div>
+                    <p class="cart-empty">El carrito esta vacio</p>
+                </div>
+            </div>
         </li>
         <li id="login-register">
             <a href="../Recursos/formLogin.html">Login</a>
@@ -114,16 +145,16 @@
 </article>
 
 <!-- Nueva sección para Los Productos con una tabla -->
-<section id="hot-deals-section">
+<section class="hot-deals-section">
     <center><h2>Tablets</h2></center>
-    <table id="hot-deals-table">
+    <table class="hot-deals-table">
         <tr>
             <td>
                 <div class="card">
-                    <img src="../Img/celulares/c1.png" alt="iPhone 14" width="150px">
+                    <img src="../Img/celulares/c1.png" alt="iPhone 14">
                     <h3>iPhone 14</h3>
                     <p>
-                        Precio: $600.00 <br><br>
+                        Precio: <span class="price">$600.00</span> <br><br>
                         El mejor iphone del mundo, con una pantalla de 6.5 pulgadas, 8
                         GB de RAM y 128GB de almacenamiento.
                         <a href="../Producto/DetalleProducto.html">Leer mas...</a>
@@ -133,10 +164,10 @@
             </td>
             <td>
                 <div class="card">
-                    <img src="../Img/celulares/c2.png" alt="Honor X9" width="150px" >
+                    <img src="../Img/celulares/c2.png" alt="Honor X9">
                     <h3>Honor X9</h3>
                     <p>
-                        Precio: $450.00 <br><br>
+                        Precio: <span class="price">$500.00</span> <br><br>
                         Celular Gama Media Honor X9, con una pantalla de 6.5 pulgadas, 8
                         GB de RAM y 128GB de almacenamiento.
                         <a href="../Producto/DetalleProducto.html">Leer mas...</a>
@@ -146,10 +177,10 @@
             </td>
             <td>
                 <div class="card">
-                    <img src="../Img/celulares/c3.png" alt="Samsung A54" width="150px">
+                    <img src="../Img/celulares/c3.png" alt="Samsung A54">
                     <h3>Samsung A54</h3>
                     <p>
-                        Precio: $400.00 <br><br>
+                        Precio: <span class="price">$400.00</span> <br><br>
                         Excelente celular Samsung A54, con una pantalla de 6.5 pulgadas, 8
                         GB de RAM y 128GB de almacenamiento.
                         <a href="../Producto/DetalleProducto.html">Leer mas...</a>
@@ -159,10 +190,10 @@
             </td>
             <td class="product-info">
                 <div class="card">
-                    <img src="../Img/celulares/c4.png" alt="Samsung ZFlip" width="150px">
+                    <img src="../Img/celulares/c4.png" alt="Samsung ZFlip">
                     <h3>Samsung ZFlip</h3>
                     <p>
-                        Precio: $1050.00 <br><br>
+                        Precio: <span class="price">$1050.00</span><br><br>
                         El mejor celular plegable del mundo, con una pantalla de 6.5 pulgadas, 8
                         GB de RAM y 128GB de almacenamiento.
                         <a href="../Producto/DetalleProducto.html">Leer mas...</a>
@@ -196,6 +227,6 @@
         <p id="rights">© 2023 Todos los derechos reservados</p>
     </div>
 </footer>
+<script src="../js/index.js"></script>
 </body>
-<script src="../js/app.js"></script>
 </html>
