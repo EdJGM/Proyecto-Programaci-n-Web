@@ -175,7 +175,7 @@
     <br><br><br>
     <a href="#" id="toggleReview" class="caracteristicas"><strong>Reseña</strong><i class="fas fa-angle-down"></i></a>
     <div id="Resena" style="display: none;">
-        <form>
+        <form id="form">
             <h2 class="tituloResena">Escribe tu propia reseña</h2>
             <div class="rating">
                 <input type="radio" id="star5" name="rating" value="5">
@@ -202,6 +202,7 @@
                 <textarea id="review" name="review" required></textarea>
             </div>
             <button class="enviar-resena" type="submit">ENVIAR RESEÑA</button>
+            <p class="error" id="error"></p>
         </form>
     </div>
 
@@ -248,5 +249,6 @@
     </div>
 </footer>
 <script src="../js/app.js"></script>
+<script src="../js/validarForm.js"></script>
 </body>
 </html> 

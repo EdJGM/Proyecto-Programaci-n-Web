@@ -438,6 +438,15 @@ textarea {
     cursor: pointer;
 }
 
+.error{
+    display: block;
+    justify-content: center;
+    text-align: center;
+    color:red;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
 /* Nueva sección para el formulario de suscripción */
 .subscription-section {
     margin-top: 4%;
