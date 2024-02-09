@@ -232,11 +232,16 @@ a:hover {
 
 .imagen{
     grid-column: 1 / 2;
-    border-right: 1px solid #ccc;
+    transition: transform 0.5s ease-in-out;
+}
+
+.imagen:hover {
+  transform: scale(1.2);
 }
 
 .principal{
     grid-column: 2 / 3;
+    border-left: 1px solid #ccc;
     padding-left: 10px;
 }
 

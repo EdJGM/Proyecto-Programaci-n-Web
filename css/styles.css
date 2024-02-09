@@ -250,6 +250,21 @@ a:hover {
     max-width: 100%;
     height: auto;
     margin-right: 30px;
+    transform: translateZ(0px);
+    transform-style: preserve-3d;
+    animation: zoom 5s infinite;
+}
+
+@keyframes zoom {
+    0% {
+      transform: translateZ(0px) scale(1);
+    }
+    50% {
+      transform: translateZ(100px) scale(1.2);
+    }
+    100% {
+      transform: translateZ(0px) scale(1);
+    }
 }
 
 #secondary-nav ul {
