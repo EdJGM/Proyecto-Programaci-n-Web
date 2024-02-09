@@ -661,3 +661,14 @@ footer {
     margin: auto;
     padding-top: 40px;
 }
+
+
+#calendar h2 {
+    font-size: 35px;
+    text-align: center;
+    padding: 40px 0px 20px 0px;
+    border-bottom: 2px solid #19829A;/*#f05252;*/
+    width: 40%;
+    margin: auto;
+    box-sizing: border-box;
+}
