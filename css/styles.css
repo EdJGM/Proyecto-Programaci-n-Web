@@ -294,23 +294,36 @@ a:hover {
     display: none;
     position: absolute;
     background-color: white;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 20px;
+    box-shadow: 0px 8px 16px 10px rgba(0,0,0,0.2);
+    border-radius: 10px;
     left: 360px;
-    overflow-y: auto;
-    transition: all 0.3s ease; /* Agregado para suavizar la aparición y desaparición del submenú */
-    color: #333; /* Agregado para mejorar el contraste de color */
-    z-index: 1000;  /*Agregado para que el submenú aparezca por encima de los demás elementos */
+    margin-top: 10px;
+    transition: all 0.3s ease;
+    color: #000000;
+    z-index: 1000;
+    width: 270px;
+    height: 190px;
+    cursor: pointer;
 }
 
+.menu-vertical.show {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+  
+.menu-vertical li {
+    margin-left: 20px;
+    margin-top: 15px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #E9ECF0;
+}
+  
 .menu-vertical a {
-    margin-bottom: 10px; /* Agregado para agregar espacio entre los elementos del submenú */
-    display: block; /* Agregado para asegurar que el espacio se aplique correctamente */
-    border-bottom: 1px so;
-}
-
-#secondary-nav li:hover .menu-vertical {
-    display: block;
+    line-height: 18px;
+    font-size: 15px;
+    text-align: center;
 }
 
 #phone-icon {
