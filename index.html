@@ -166,22 +166,49 @@
     </section>
 </article>
 <br>
-<br>
 <hr>
 <!-- Nueva sección con imágenes -->
-<section id="image-section">
-    <center><h2>¡Lo Mejor en Calidad!</h2></center>
-    <div id="image-container-1">
-        <img src="./Img/img-index1.jpg" alt="Imagen 1" width="140px">
+<section class="image-section-container">
+    <!--<center><h2>¡Lo Mejor en Calidad!</h2></center> -->
+    <div class="image-container">
+        <img src="./Img/retrato-joven-alegre-ordenador-portatil.jpg" alt="Imagen 1">
+        <div class="texto-container">
+            <p class="texto1-descuento">40% <br> VENTA</p>
+            <p class="texto2-nombre">Laptop</p>
+            <p class="texto3-categoria">Laptops</p>
+            <button id="irLaptops" class="add-to-cart-button">Ir Ya!</button>
+        </div>
     </div>
-    <div id="image-container-2">
-        <img src="./Img/img-index2.jpg" alt="Imagen 2" width="140px">
+    <div class="image-container">
+        <img src="./Img/exhibicion-auriculares-musica-levitando.jpg" alt="Imagen 1" >
+        <div class="texto-container">
+            <p class="texto1-descuento">60% <br> VENTA</p>
+            <p class="texto2-nombre">Audifonos</p>
+            <p class="texto3-categoria">Accesorios</p>
+            <button id="irAccesorios" class="add-to-cart-button">Ir Ya!</button>
+        </div>
     </div>
-    <div id="image-container-3">
-        <img src="./Img/img-index3.jpg" alt="Imagen 3" width="140px">
+    <div class="image-container">
+        <img src="./Img/retrato-atractiva-mujer-moda-complacida-gafas-blusa-mostrando-pantalla-telefono-apuntando-al-dispositivo-dedo-indice-sonriendo-ampliamente.jpg" alt="Imagen 1" >
+        <div class="texto-container">
+            <p class="texto1-descuento">10% <br> VENTA</p>
+            <p class="texto2-nombre">Celulares</p>
+            <p class="texto3-categoria">Telefonía</p>
+            <button id="irCelulalres" class="add-to-cart-button">Ir Ya!</button>
+        </div>
     </div>
 </section>
-<br>
+<script>
+    document.getElementById('irLaptops').addEventListener('click', function() {
+    window.location.href = './Categorias/PaginaLaptops.html'; // Cambia esto a la ruta de tu otra página
+    });
+    document.getElementById('irAccesorios').addEventListener('click', function() {
+    window.location.href = './Categorias/PaginaAccesorios.html'; // Cambia esto a la ruta de tu otra página
+    });
+    document.getElementById('irCelulalres').addEventListener('click', function() {
+    window.location.href = './Categorias/PaginaCelulares.html'; // Cambia esto a la ruta de tu otra página
+    });
+</script>
 <br>
 <hr>
 <!-- Nueva sección para "Ofertas Calientes" con una tabla -->
