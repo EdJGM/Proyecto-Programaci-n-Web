@@ -2,19 +2,19 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Global Store</title>
     <!-- Estilos CSS aquí -->
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <!-- Fuentes de Google Fonts -->
     <link rel="stylesheet" href="fonts/fuentes.css">
 </head>
 <body>
-
 <header id="myHeader">
 <nav>
     <ul>
-        <li><a href="#hot-deals-section" id="special-offers">Ofertas Especiales del Día</a></li>
+        <li><a href="#hot-deals-section" id="special-offers" style="color: white;">Ofertas Especiales del Día</a></li>
         <li>
             <div id="search-bar">
                 <input type="text" placeholder="Buscar productos">
@@ -51,13 +51,13 @@
                         <h3>Total:</h3>
                         <span class="total-pagar">$200</span>
                     </div>
-                    <p class="cart-empty">El carrito esta vacio</p>
+                    <p class="cart-empty">El carrito esta vacío</p>
                 </div>
             </div>
 
         </li>
         <li id="login-register">
-            <a href="../index.html">&#128102;</a>
+            <a href="../index.html" style="color: white;">&#128102;</a>
         </li>
         <li><button id="contact-button">Contacto</button></li>
     </ul>
@@ -68,7 +68,7 @@
 <div id="secondary-nav">
     <img id="logo" src="../Img/l.png" alt="Logo" width="230px" height="174px">
     <ul>
-        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="#product-categories">Inicio</a></li>
         <li></li>
         <li><i>|</i></li>
         <li></li>
@@ -166,371 +166,598 @@
         </div>
     </section>
 </article>
+
 <br>
-<br>
-<hr>
+
 <!-- Nueva sección con imágenes -->
-<section id="image-section">
-    <center><h2>¡Lo Mejor en Calidad!</h2></center>
-    <div id="image-container-1">
-        <img src="../Img/img-index1.jpg" alt="Imagen 1" width="140px">
+<section class="image-section-container">
+    <!--<center><h2>¡Lo Mejor en Calidad!</h2></center> -->
+    <div class="image-container">
+        <img src="../Img/retrato-joven-alegre-ordenador-portatil.jpg" alt="Imagen 1">
+        <div class="texto-container">
+            <p class="texto1-descuento">40% <br> VENTA</p>
+            <p class="texto2-nombre">Laptop</p>
+            <p class="texto3-categoria">Laptops</p>
+            <button id="irLaptops" class="add-to-cart-button">Ir Ya!</button>
+        </div>
     </div>
-    <div id="image-container-2">
-        <img src="../Img/img-index2.jpg" alt="Imagen 2" width="140px">
+    <div class="image-container">
+        <img src="../Img/exhibicion-auriculares-musica-levitando.jpg" alt="Imagen 1" >
+        <div class="texto-container">
+            <p class="texto1-descuento">60% <br> VENTA</p>
+            <p class="texto2-nombre">Audifonos</p>
+            <p class="texto3-categoria">Accesorios</p>
+            <button id="irAccesorios" class="add-to-cart-button">Ir Ya!</button>
+        </div>
     </div>
-    <div id="image-container-3">
-        <img src="../Img/img-index3.jpg" alt="Imagen 3" width="140px">
+    <div class="image-container">
+        <img src="../Img/retrato-atractiva-mujer-moda-complacida-gafas-blusa-mostrando-pantalla-telefono-apuntando-al-dispositivo-dedo-indice-sonriendo-ampliamente.jpg" alt="Imagen 1" >
+        <div class="texto-container">
+            <p class="texto1-descuento">10% <br> VENTA</p>
+            <p class="texto2-nombre">Celulares</p>
+            <p class="texto3-categoria">Telefonía</p>
+            <button id="irCelulalres" class="add-to-cart-button">Ir Ya!</button>
+        </div>
     </div>
 </section>
+<script>
+    document.getElementById('irLaptops').addEventListener('click', function() {
+    window.location.href = './Categorias/PaginaLaptops.html'; // Cambia esto a la ruta de tu otra página
+    });
+    document.getElementById('irAccesorios').addEventListener('click', function() {
+    window.location.href = './Categorias/PaginaAccesorios.html'; // Cambia esto a la ruta de tu otra página
+    });
+    document.getElementById('irCelulalres').addEventListener('click', function() {
+    window.location.href = './Categorias/PaginaCelulares.html'; // Cambia esto a la ruta de tu otra página
+    });
+</script>
+
 <br>
-<br>
-<hr>
+
 <!-- Nueva sección para "Ofertas Calientes" con una tabla -->
 <section class="hot-deals-section">
     <center><h2>Ofertas Exclusivas</h2></center>
-    <table class="hot-deals-table">
-        <tr>
-            <td id="product-info-1">
+    <div class="hot-deals">
+        <div class="hot-deals-list">
+            <a href="#hot-deala-section" class="category_item" category="all">Todo</a>
+            <a href="#hot-deala-section" class="category_item" category="celulares">Celulares</a>
+            <a href="#hot-deala-section" class="category_item" category="computadores">Computadores</a>
+            <a href="#hot-deala-section" class="category_item" category="laptops">Laptops</a>
+            <a href="#hot-deala-section" class="category_item" category="tvs">TVs</a>
+        </div>
+        <div class="hot-deals-products">
+            <div class="product-info" category="tvs">
                 <img src="../Img/p1.png" alt="iPhone 14">
-                <h3>Samsung QLED Q90T</h3>
-                <p>Precio Anterior: $1500.00</p>
-                <p>Precio Actual: <span class="price">$550.00</span></p>
-                <button id="add-to-cart-button-1" class="add-to-cart-button">Añadir al Carrito</button>
-            </td>
-            <td id="product-info-2">
+                <div class="hot-deals-text">
+                    <h3>Samsung TV QLED Q90T</h3>
+                    <p>Precio Anterior: $1500.00</p>
+                    <p>Precio Actual: <span class="price">$550.00</span></p>
+                    <button id="add-to-cart-button-1" class="add-to-cart-button">Añadir al Carrito</button>
+                </div>
+            </div>
+            <div class="product-info" category="celulares">
                 <img src="../Img/p2.png" alt="Computadora gamer">
-                <h3>Samsung Galaxy Note 20 Ultra</h3>
-                <p>Precio Anterior: $870.00</p>
-                <p>Precio Actual: <span class="price">$650.00</span></p>
-                <button id="add-to-cart-button-2" class="add-to-cart-button">Añadir al Carrito</button>
-            </td>
-            <td id="product-info-3">
+                <div class="hot-deals-text">
+                    <h3>Samsung Galaxy Note 20 Ultra</h3>
+                    <p>Precio Anterior: $870.00</p>
+                    <p>Precio Actual: <span class="price">$650.00</span></p>
+                    <button id="add-to-cart-button-2" class="add-to-cart-button">Añadir al Carrito</button>
+                </div>
+            </div>
+            <div class="product-info" category="computadores">
                 <img src="../Img/p3.png" alt="TV Samsung">
-                <h3>Gaming ASUS ROG Strix G15</h3>
-                <p>Precio Anterior: $2000.00</p>
-                <p>Precio Actual: <span class="price">$1800.00</span></p>
-                <button id="add-to-cart-button-3" class="add-to-cart-button">Añadir al Carrito</button>
-            </td>
-            <td id="product-info-4">
+                <div class="hot-deals-text">
+                    <h3>Gaming ASUS ROG Strix G15</h3>
+                    <p>Precio Anterior: $2000.00</p>
+                    <p>Precio Actual: <span class="price">$1800.00</span></p>
+                    <button id="add-to-cart-button-3" class="add-to-cart-button">Añadir al Carrito</button>        
+                </div>
+            </div>
+            <div class="product-info" category="laptops">
                 <img src="../Img/p4.png" alt="Laptop LENOVO ideaPad">
-                <h3>Laptop LENOVO IdeaPad</h3>
-                <p>Precio Anterior: $1050.00</p>
-                <p>Precio Actual: <span class="price">$990.00</span></p>
-                <button id="add-to-cart-button-4" class="add-to-cart-button">Añadir al Carrito</button>
-            </td>
-        </tr>
-    </table>
+                <div class="hot-deals-text">
+                    <h3>Laptop LENOVO IdeaPad</h3>
+                    <p>Precio Anterior: $1050.00</p>
+                    <p>Precio Actual: <span class="price">$990.00</span></p>
+                    <button id="add-to-cart-button-4" class="add-to-cart-button">Añadir al Carrito</button>             
+                </div>
+            </div>
+            <div class="product-info" category="tvs">
+                <img src="../Img/p1.png" alt="iPhone 14">
+                <div class="hot-deals-text">
+                    <h3>Samsung TV QLED Q90T</h3>
+                    <p>Precio Anterior: $1500.00</p>
+                    <p>Precio Actual: <span class="price">$550.00</span></p>
+                    <button id="add-to-cart-button-1" class="add-to-cart-button">Añadir al Carrito</button>
+                </div>
+            </div>
+            <div class="product-info" category="celulares">
+                <img src="../Img/p2.png" alt="Computadora gamer">
+                <div class="hot-deals-text">
+                    <h3>Samsung Galaxy Note 20 Ultra</h3>
+                    <p>Precio Anterior: $870.00</p>
+                    <p>Precio Actual: <span class="price">$650.00</span></p>
+                    <button id="add-to-cart-button-2" class="add-to-cart-button">Añadir al Carrito</button>
+                </div>
+            </div>
+            <div class="product-info" category="computadores">
+                <img src="../Img/p3.png" alt="TV Samsung">
+                <div class="hot-deals-text">
+                    <h3>Gaming ASUS ROG Strix G15</h3>
+                    <p>Precio Anterior: $2000.00</p>
+                    <p>Precio Actual: <span class="price">$1800.00</span></p>
+                    <button id="add-to-cart-button-3" class="add-to-cart-button">Añadir al Carrito</button>        
+                </div>
+            </div>
+            <div class="product-info" category="laptops">
+                <img src="../Img/p4.png" alt="Laptop LENOVO ideaPad">
+                <div class="hot-deals-text">
+                    <h3>Laptop LENOVO IdeaPad</h3>
+                    <p>Precio Anterior: $1050.00</p>
+                    <p>Precio Actual: <span class="price">$990.00</span></p>
+                    <button id="add-to-cart-button-4" class="add-to-cart-button">Añadir al Carrito</button>             
+                </div>
+            </div>
+            <div class="product-info" category="tvs">
+                <img src="../Img/p1.png" alt="iPhone 14">
+                <div class="hot-deals-text">
+                    <h3>Samsung TV QLED Q90T</h3>
+                    <p>Precio Anterior: $1500.00</p>
+                    <p>Precio Actual: <span class="price">$550.00</span></p>
+                    <button id="add-to-cart-button-1" class="add-to-cart-button">Añadir al Carrito</button>
+                </div>
+            </div>
+            <div class="product-info" category="celulares">
+                <img src="../Img/p2.png" alt="Computadora gamer">
+                <div class="hot-deals-text">
+                    <h3>Samsung Galaxy Note 20 Ultra</h3>
+                    <p>Precio Anterior: $870.00</p>
+                    <p>Precio Actual: <span class="price">$650.00</span></p>
+                    <button id="add-to-cart-button-2" class="add-to-cart-button">Añadir al Carrito</button>
+                </div>
+            </div>
+            <div class="product-info" category="computadores">
+                <img src="../Img/p3.png" alt="TV Samsung">
+                <div class="hot-deals-text">
+                    <h3>Gaming ASUS ROG Strix G15</h3>
+                    <p>Precio Anterior: $2000.00</p>
+                    <p>Precio Actual: <span class="price">$1800.00</span></p>
+                    <button id="add-to-cart-button-3" class="add-to-cart-button">Añadir al Carrito</button>        
+                </div>
+            </div>
+            <div class="product-info" category="laptops">
+                <img src="../Img/p4.png" alt="Laptop LENOVO ideaPad">
+                <div class="hot-deals-text">
+                    <h3>Laptop LENOVO IdeaPad</h3>
+                    <p>Precio Anterior: $1050.00</p>
+                    <p>Precio Actual: <span class="price">$990.00</span></p>
+                    <button id="add-to-cart-button-4" class="add-to-cart-button">Añadir al Carrito</button>             
+                </div>
+            </div>
+            <div class="product-info" category="tvs">
+                <img src="../Img/p1.png" alt="iPhone 14">
+                <div class="hot-deals-text">
+                    <h3>Samsung TV QLED Q90T</h3>
+                    <p>Precio Anterior: $1500.00</p>
+                    <p>Precio Actual: <span class="price">$550.00</span></p>
+                    <button id="add-to-cart-button-1" class="add-to-cart-button">Añadir al Carrito</button>
+                </div>
+            </div>
+            <div class="product-info" category="celulares">
+                <img src="../Img/p2.png" alt="Computadora gamer">
+                <div class="hot-deals-text">
+                    <h3>Samsung Galaxy Note 20 Ultra</h3>
+                    <p>Precio Anterior: $870.00</p>
+                    <p>Precio Actual: <span class="price">$650.00</span></p>
+                    <button id="add-to-cart-button-2" class="add-to-cart-button">Añadir al Carrito</button>
+                </div>
+            </div>
+            <div class="product-info" category="computadores">
+                <img src="../Img/p3.png" alt="TV Samsung">
+                <div class="hot-deals-text">
+                    <h3>Gaming ASUS ROG Strix G15</h3>
+                    <p>Precio Anterior: $2000.00</p>
+                    <p>Precio Actual: <span class="price">$1800.00</span></p>
+                    <button id="add-to-cart-button-3" class="add-to-cart-button">Añadir al Carrito</button>        
+                </div>
+            </div>
+            <div class="product-info" category="laptops">
+                <img src="../Img/p4.png" alt="Laptop LENOVO ideaPad">
+                <div class="hot-deals-text">
+                    <h3>Laptop LENOVO IdeaPad</h3>
+                    <p>Precio Anterior: $1050.00</p>
+                    <p>Precio Actual: <span class="price">$990.00</span></p>
+                    <button id="add-to-cart-button-4" class="add-to-cart-button">Añadir al Carrito</button>             
+                </div>
+            </div>  
+        </div>                      
+    </div>
 </section>
+
 <br>
+
+<section id="calendar">
+    <h2>¡Mira el día que llegará tu pedido si ordenas hoy!</h2>
+    <center><h4>Las entregas suelen tardar entre 3 días y una semana</h4></center>
+</section>
+
+
+    <SCRIPT language="JavaScript1.2" > 
+ 
+       var objWindowPadre
+        objWindowPadre = window.parent;
+       var intActivo=0;
+       var anchoTD=15;
+       var anchoTD1=18;
+       var colorHead="red";
+       var colorTabla="white";
+       var colorBorde="#112233";
+    
+       var time = new Date();
+       var anno=time.getFullYear();
+       var mes=time.getMonth()+1;
+       var dia=time.getDate()
+       var aDias=new Array(0,31,28,31,30,31,30,31,31,30,31,30,31);
+    
+       function padl(n, w, c) {
+        n = String(n);
+        while (n.length < w)
+            n = c + n;
+        return n;
+    }
+    
+    
+       //funcion que se ejecuta al cargar el formulario
+       function iniciar(){
+       
+           if (anoBisiesto(anno))
+        {
+            aDias[2]=29;
+        }
+        else
+        {
+            aDias[2]=28;
+        }
+        escribeTablaMes(dia,mes,anno);
+       }
+       //cuando pinchamos sobre el calendario
+       function pinchar(evento){
+        //primer dia de la semana
+        var oTR = null;
+        if (window.event)
+            oTR = window.event.srcElement;
+        else
+            oTR = evento.currentTarget;
+        var sFechaSel=oTR.id.substring(2);
+        //Recupero las variables de la URL
+        var urlEnd = document.URL.indexOf('?');
+        var values = new Array();
+        var names;  
+        if (urlEnd != -1){
+            var params = document.URL.substring(urlEnd+1, document.URL.length).split('&');
+            for(i=0; i<params.length; i++) {
+            names = params[i].split('=');
+            values[names[0]] = names[1];
+            }
+        }
+        var name = unescape(values["textBox"]);
+        window.opener.setFecha(sFechaSel);
+        if (window.opener.document.forms[0] != null) {
+            
+        }
+        top.window.close();
+       }
+    
+       //Retorna el nombre del mes
+       function getNombreMes(iMes){
+        var sMes=""
+        switch(iMes){
+         case 1:
+          sMes="Enero";
+          break;
+         case 2:
+          sMes="Febrero";
+          break;
+         case 3:
+          sMes="Marzo";
+          break;
+         case 4:
+          sMes="Abril";
+          break;
+         case 5:
+          sMes="Mayo";
+          break;
+         case 6:
+          sMes="Junio";
+          break;
+         case 7:
+          sMes="Julio";
+          break;
+         case 8:
+          sMes="Agosto";
+          break;
+         case 9:
+          sMes="Septiembre";
+          break;
+         case 10:
+          sMes="Octubre";
+          break;
+         case 11:
+          sMes="Noviembre";
+          break;
+         case 12:
+          sMes="Diciembre";
+          break;
+         default:
+          sMes="";
+        }
+        return sMes;
+       }
+    
+    
+       //Retorna true si el año es bisiesto y false en caso contrario
+       function anoBisiesto(sAno){
+         var iAno=parseInt(sAno);
+        if(iAno%4 != 0)
+            return false;
+        else{
+            if (iAno%400==0)
+                return true;
+            else
+                if (iAno%100==0)
+                    return false;
+                else
+                    return true;
+        }
+       }
+    
+       //Retorna 1: lunes; 2 Martes ...
+       function getDayNumber(dia,mes,anno){
+        var day1=new Date(anno,mes-1,dia)
+        var nDay = day1.getDay();
+        if (nDay==0) nDay=7;
+        return nDay;
+       }
+        
+        function cambiarFondo (evento)
+        {
+            if (window.event) {
+                var objTR =window.event.srcElement;
+                if (objTR.style.backgroundColor != '#cbdced')
+                {
+                
+                    objTR.style.backgroundColor = '#cbdced'
+                }
+                else
+                {
+                    objTR.style.backgroundColor = '#ffffff'
+                }
+                if (objTR.style.cursor != 'hand')
+                {
+                
+                    objTR.style.cursor = 'hand'
+                }
+                else
+                {
+                    objTR.style.cursor= 'default'
+                }
+            }
+        }   
+    
+       //Escribe los numeros de los dias:
+       //  -  - 1  2  3  4  5
+       //  6  7 8  9 10 11 12 ...
+       function escribeTablaMes(dia,mes,anno){
+       
+        var clasedia=""
+        var icDia=1;
+        var iIniSemana=1;
+        
+        //obtengo el dia de la semana del 1 del mes a dibujar
+        var iDay=getDayNumber(1,mes,anno);
+        
+        //Borramos la los dias del calendario
+        var j = 0
+        while(j<=intActivo)
+        {
+            document.getElementById("tablacalendario").deleteRow(0);		
+            j++;
+        }
+        intActivo = -1
+        while((icDia-iDay+1)<=aDias[mes])
+        {
+            // A <TR> le daremos el nombre del primer dia de la semana
+            // si es el primer dia del mes sera 1; en cualquier otro caso sera Lunes
+            var sNameTD=""
+            intActivo++
+            objTR = document.getElementById("tablacalendario").insertRow(intActivo);
+            objTR.id =intActivo; 
+            objTR.align= 'center';
+            for(;icDia<iIniSemana+7 ;icDia++)
+            {
+            sNameTD="TD"+padl((icDia-iDay+1),2,"0")+"/"+padl(mes,2,"0")+"/"+anno;
+            if( (icDia>=iDay) && ((icDia-iDay+1)<=aDias[mes]))
+            {
+                if (icDia < iIniSemana+5)//Si es dia de la semana
+                {
+                    clasedia="textocalendario"
+                }
+                else
+                {
+                    clasedia="textofestivo"
+                }
+                objTD = objTR.insertCell(objTR.cells.length);
+                objTD.id = sNameTD;	
+                objTD.style.backgroundColor='#ffffff';
+                objTD.style.width=anchoTD;
+                objTD.className=clasedia;
+                objTD.onclick=pinchar;
+                objTD.onmouseover=cambiarFondo;
+                objTD.onmouseout=cambiarFondo;	
+                objTD.innerHTML = (icDia-iDay+1);		
+            }
+            else
+            {
+                objTD = objTR.insertCell(objTR.cells.length);
+                objTD.id = sNameTD;	
+                objTD.style.width=anchoTD;		
+                objTD.innerHTML = ' ';			
+            }
+        
+         }
+        
+         iIniSemana=icDia;
+        }//fin de  while((icDia-iDay+1)<=aDias[mes])
+        document.forms[0].cbMes.focus()
+       }
+    
+    
+       //funcion que redibuja el calendario con el mes y año seleccionado
+       function cambiaCalendario(){
+        if (anoBisiesto(document.forms[0].cbAnno[document.forms[0].cbAnno.selectedIndex].value))
+        { aDias[2]=29;}
+        else
+        { aDias[2]=28;}
+        escribeTablaMes(1,document.forms[0].cbMes[document.forms[0].cbMes.selectedIndex].value,document.forms[0].cbAnno[document.forms[0].cbAnno.selectedIndex].value); 
+       }
+    
+      </SCRIPT>
+
+     
+    
+    <BODY bgColor='#cbdced' topmargin="0" leftmargin="0" onload="iniciar()" >
+    
+
+    <center> <TABLE border="0" cellspacing=0 width="172px"></center>
+    <TR><TD align="center">
+     <CENTER>
+       <FORM name="frmCalendario_sup">
+        
+        <SELECT name="cbMes" class=textocalendario onchange="cambiaCalendario()">
+        <SCRIPT>
+         for(var i=1;i<=12;i++){
+          var strSelected="";
+          if(i==mes) strSelected="SELECTED"
+          document.write("<OPTION value="+i+" "+strSelected+">"+getNombreMes(i));
+         }
+        </SCRIPT>
+        </SELECT>
+        <SELECT name="cbAnno" class=textocalendario onchange="cambiaCalendario()">    
+        <SCRIPT>
+         for(var i=anno-100;i<=anno+10;i++){
+          var strSelected="";
+          if(i==anno) strSelected="SELECTED"
+          document.write("<OPTION value="+i+" "+strSelected+">"+i);
+         }
+        </SCRIPT>
+    
+        </SELECT>
+    </FORM>
+    <TABLE border="2" borderColor=skyblue cellpading=0 cellspacing=0>
+    <TR><TD>
+        <TABLE bgColor="skyblue" cellpading=1 cellspacing=8 border=0>
+        <TR align='center'>
+        <TD class=diascalendario style='width:20'>LUN</TD>
+        <TD class=diascalendario style='width:20'>MAR</TD>
+        <TD class=diascalendario style='width:20'>MIER</TD>
+    
+        <TD class=diascalendario style='width:20'>JUE</TD>
+        <TD class=diascalendario style='width:20'>VIE</TD>
+        <TD class=diasfestivo style='width:15'><b>SÁB</b></TD>
+        <TD class=diasfestivo style='width:20'><b>DOM</b></TD>
+        </TR>
+        </TABLE>   
+     </TD></TR>
+    
+     <TR><TD>
+        <TABLE bgColor='white' id="tablacalendario" cellpading=1 cellspacing=20 border=0>
+        <tr><td>
+        </td></tr>
+        </TABLE>  
+     </TD></TR>
+     </TABLE>
+      </TD></TR>
+     </TABLE>    
+     
+     </BODY>
+
 <br>
 
-<hr>
 
-<SCRIPT language="JavaScript1.2" > 
- 
-    var objWindowPadre
-     objWindowPadre = window.parent;
-    var intActivo=0;
-    var anchoTD=15;
-    var anchoTD1=18;
-    var colorHead="red";
-    var colorTabla="white";
-    var colorBorde="#112233";
- 
-    var time = new Date();
-    var anno=time.getFullYear();
-    var mes=time.getMonth()+1;
-    var dia=time.getDate()
-    var aDias=new Array(0,31,28,31,30,31,30,31,31,30,31,30,31);
- 
-    function padl(n, w, c) {
-     n = String(n);
-     while (n.length < w)
-         n = c + n;
-     return n;
- }
- 
- 
-    //funcion que se ejecuta al cargar el formulario
-    function iniciar(){
-    
-        if (anoBisiesto(anno))
-     {
-         aDias[2]=29;
-     }
-     else
-     {
-         aDias[2]=28;
-     }
-     escribeTablaMes(dia,mes,anno);
-    }
-    //cuando pinchamos sobre el calendario
-    function pinchar(evento){
-     //primer dia de la semana
-     var oTR = null;
-     if (window.event)
-         oTR = window.event.srcElement;
-     else
-         oTR = evento.currentTarget;
-     var sFechaSel=oTR.id.substring(2);
-     //Recupero las variables de la URL
-     var urlEnd = document.URL.indexOf('?');
-     var values = new Array();
-     var names;  
-     if (urlEnd != -1){
-         var params = document.URL.substring(urlEnd+1, document.URL.length).split('&');
-         for(i=0; i<params.length; i++) {
-         names = params[i].split('=');
-         values[names[0]] = names[1];
-         }
-     }
-     var name = unescape(values["textBox"]);
-     window.opener.setFecha(sFechaSel);
-     if (window.opener.document.forms[0] != null) {
-         
-     }
-     top.window.close();
-    }
- 
-    //Retorna el nombre del mes
-    function getNombreMes(iMes){
-     var sMes=""
-     switch(iMes){
-      case 1:
-       sMes="Enero";
-       break;
-      case 2:
-       sMes="Febrero";
-       break;
-      case 3:
-       sMes="Marzo";
-       break;
-      case 4:
-       sMes="Abril";
-       break;
-      case 5:
-       sMes="Mayo";
-       break;
-      case 6:
-       sMes="Junio";
-       break;
-      case 7:
-       sMes="Julio";
-       break;
-      case 8:
-       sMes="Agosto";
-       break;
-      case 9:
-       sMes="Septiembre";
-       break;
-      case 10:
-       sMes="Octubre";
-       break;
-      case 11:
-       sMes="Noviembre";
-       break;
-      case 12:
-       sMes="Diciembre";
-       break;
-      default:
-       sMes="";
-     }
-     return sMes;
-    }
- 
- 
-    //Retorna true si el año es bisiesto y false en caso contrario
-    function anoBisiesto(sAno){
-      var iAno=parseInt(sAno);
-     if(iAno%4 != 0)
-         return false;
-     else{
-         if (iAno%400==0)
-             return true;
-         else
-             if (iAno%100==0)
-                 return false;
-             else
-                 return true;
-     }
-    }
- 
-    //Retorna 1: lunes; 2 Martes ...
-    function getDayNumber(dia,mes,anno){
-     var day1=new Date(anno,mes-1,dia)
-     var nDay = day1.getDay();
-     if (nDay==0) nDay=7;
-     return nDay;
-    }
-     
-     function cambiarFondo (evento)
-     {
-         if (window.event) {
-             var objTR =window.event.srcElement;
-             if (objTR.style.backgroundColor != '#cbdced')
-             {
-             
-                 objTR.style.backgroundColor = '#cbdced'
-             }
-             else
-             {
-                 objTR.style.backgroundColor = '#ffffff'
-             }
-             if (objTR.style.cursor != 'hand')
-             {
-             
-                 objTR.style.cursor = 'hand'
-             }
-             else
-             {
-                 objTR.style.cursor= 'default'
-             }
-         }
-     }   
- 
-    //Escribe los numeros de los dias:
-    //  -  - 1  2  3  4  5
-    //  6  7 8  9 10 11 12 ...
-    function escribeTablaMes(dia,mes,anno){
-    
-     var clasedia=""
-     var icDia=1;
-     var iIniSemana=1;
-     
-     //obtengo el dia de la semana del 1 del mes a dibujar
-     var iDay=getDayNumber(1,mes,anno);
-     
-     //Borramos la los dias del calendario
-     var j = 0
-     while(j<=intActivo)
-     {
-         document.getElementById("tablacalendario").deleteRow(0);		
-         j++;
-     }
-     intActivo = -1
-     while((icDia-iDay+1)<=aDias[mes])
-     {
-         // A <TR> le daremos el nombre del primer dia de la semana
-         // si es el primer dia del mes sera 1; en cualquier otro caso sera Lunes
-         var sNameTD=""
-         intActivo++
-         objTR = document.getElementById("tablacalendario").insertRow(intActivo);
-         objTR.id =intActivo; 
-         objTR.align= 'center';
-         for(;icDia<iIniSemana+7 ;icDia++)
-         {
-         sNameTD="TD"+padl((icDia-iDay+1),2,"0")+"/"+padl(mes,2,"0")+"/"+anno;
-         if( (icDia>=iDay) && ((icDia-iDay+1)<=aDias[mes]))
-         {
-             if (icDia < iIniSemana+5)//Si es dia de la semana
-             {
-                 clasedia="textocalendario"
-             }
-             else
-             {
-                 clasedia="textofestivo"
-             }
-             objTD = objTR.insertCell(objTR.cells.length);
-             objTD.id = sNameTD;	
-             objTD.style.backgroundColor='#ffffff';
-             objTD.style.width=anchoTD;
-             objTD.className=clasedia;
-             objTD.onclick=pinchar;
-             objTD.onmouseover=cambiarFondo;
-             objTD.onmouseout=cambiarFondo;	
-             objTD.innerHTML = (icDia-iDay+1);		
-         }
-         else
-         {
-             objTD = objTR.insertCell(objTR.cells.length);
-             objTD.id = sNameTD;	
-             objTD.style.width=anchoTD;		
-             objTD.innerHTML = ' ';			
-         }
-     
-      }
-     
-      iIniSemana=icDia;
-     }//fin de  while((icDia-iDay+1)<=aDias[mes])
-     document.forms[0].cbMes.focus()
-    }
- 
- 
-    //funcion que redibuja el calendario con el mes y año seleccionado
-    function cambiaCalendario(){
-     if (anoBisiesto(document.forms[0].cbAnno[document.forms[0].cbAnno.selectedIndex].value))
-     { aDias[2]=29;}
-     else
-     { aDias[2]=28;}
-     escribeTablaMes(1,document.forms[0].cbMes[document.forms[0].cbMes.selectedIndex].value,document.forms[0].cbAnno[document.forms[0].cbAnno.selectedIndex].value); 
-    }
- 
-    
-    
- </SCRIPT>
 
-  
- 
- <BODY bgColor='#cbdced' topmargin="0" leftmargin="0" onload="iniciar()" >
- 
- 
-  
-     
- <center> <TABLE border="0" cellspacing=0 width="172px"></center>
- <TR><TD align="center">
-  <CENTER>
-    <FORM name="frmCalendario_sup">
-     
-     <SELECT name="cbMes" class=textocalendario onchange="cambiaCalendario()">
-     <SCRIPT>
-      for(var i=1;i<=12;i++){
-       var strSelected="";
-       if(i==mes) strSelected="SELECTED"
-       document.write("<OPTION value="+i+" "+strSelected+">"+getNombreMes(i));
-      }
-     </SCRIPT>
-     </SELECT>
-     <SELECT name="cbAnno" class=textocalendario onchange="cambiaCalendario()">    
-     <SCRIPT>
-      for(var i=anno-100;i<=anno+10;i++){
-       var strSelected="";
-       if(i==anno) strSelected="SELECTED"
-       document.write("<OPTION value="+i+" "+strSelected+">"+i);
-      }
-     </SCRIPT>
- 
-     </SELECT>
- </FORM>
- <br>
- <TABLE border="2" borderColor=skyblue cellpading=0 cellspacing=0>
- <TR><TD>
-     <TABLE bgColor="skyblue" cellpading=1 cellspacing=8 border=0>
-     <TR align='center'>
-     <TD class=diascalendario style='width:20'>LUN</TD>
-     <TD class=diascalendario style='width:20'>MAR</TD>
-     <TD class=diascalendario style='width:20'>MIER</TD>
- 
-     <TD class=diascalendario style='width:20'>JUE</TD>
-     <TD class=diascalendario style='width:20'>VIE</TD>
-     <TD class=diasfestivo style='width:15'><b>SÁB</b></TD>
-     <TD class=diasfestivo style='width:20'><b>DOM</b></TD>
-     </TR>
-     </TABLE>   
-  </TD></TR>
- 
-  <TR><TD>
-     <TABLE bgColor='white' id="tablacalendario" cellpading=1 cellspacing=20 border=0>
-     <tr><td>
-     </td></tr>
-     </TABLE>  
-  </TD></TR>
-  </TABLE>
-   </TD></TR>
-  </TABLE>    
-  
-  </BODY>
+<!--Nueva seccion para los comentarios del blog-->
+<section id="blog-section">
+    <h2>Comentarios del Blog</h2>
+    <div class="blog-container">
+        <div class="blog-post">
+            <figure><img src="../Img/collage-creativo-experiencia-cliente.jpg" alt="Imagen 1"></figure>
+            <h3>Atención al Cliente Inigualable</h3>
+            <div class="content-container">
+                <div class="icon-container">                    
+                    <div class="icon1"></div>
+                    <div class="icon2"></div>
+                    <div class="icon3"></div>
+                </div>
+                <p>No solo encontré el producto perfecto aquí, sino que también recibí un servicio al cliente 
+                    excepcional. El equipo fue muy amable y servicial, respondiendo todas mis preguntas y 
+                    asegurándose de que tuviera una experiencia de compra perfecta. ¡Altamente recomendado!</p>
+            </div>
+        </div>
+        <div class="blog-post">
+            <figure><img src="../Img/hombre-usando-tableta-trabajar-conectarse-otros.jpg" alt="Imagen 2"></figure>
+            <h3>Increíble Tecnología Futurista</h3>
+            <div class="content-container">
+                <div class="icon-container">
+                    <div class="icon1"></div>
+                    <div class="icon2"></div>
+                    <div class="icon3"></div>
+                </div>
+                <p>Me encanta cómo esta tienda siempre tiene los últimos gadgets. Compré un dispositivo inteligente 
+                    aquí y ha cambiado por completo la forma en que interactúo con la tecnología. ¡Definitivamente 
+                    volveré por más!</p>
+            </div>
+        </div>
+        <div class="blog-post">
+            <figure><img src="../Img/representacion-experiencia-usuario-diseno-interfaz.jpg" alt="Imagen 3"></figure>
+            <h3>Productos de Calidad Superior</h3>
+            <div class="content-container">
+                <div class="icon-container">
+                    <div class="icon1"></div>
+                    <div class="icon2"></div>
+                    <div class="icon3"></div>
+                </div>
+                <p>No solo encontré el producto perfecto aquí, sino que también recibí un servicio al cliente excepcional.
+                    El equipo fue muy amable y servicial, respondiendo todas mis preguntas y asegurándose de que tuviera 
+                    una experiencia de compra perfecta. ¡Altamente recomendado!</p>
+            </div>
+        </div>
+    </div>    
+</section>
 
-<hr>
+
+<br>
+
+<section class="info">
+    <div class="info-container">
+        <div class="info1">
+            <h2>ENVIÓ Y DEVOLUCIÓN GRATIS</h2>
+            <p>Envío gratuito en todos los pedidos superiores a $100.00</p>
+        </div>
+        <div class="info2">
+            <h2>SOPORTE EN LÍNEA 24/7</h2>
+            <p>Chatea con expertos o pídenos que te llamemos de inmediato</p>
+        </div>
+        <div class="info3">
+            <h2>PAGO EFECTIVO 100% SEGURO</h2>
+            <p>Sus transacciones están seguras con el cifrado SSL</p>
+        </div>
+        <div class="info4">
+            <h2>GARANTÍA DE DEVOLUCIÓN DEL DINERO</h2>
+            <p>Obtén el artículo que pediste o te devolvemos tu dinero</p>
+        </div>
+    </div> 
+</section>
+
 <!-- Nueva sección para el formulario de suscripción -->
 <section id="subscription-section">
     <h2>Suscríbete a Nuestro Sitio</h2>
@@ -551,16 +778,18 @@
         <br>
         <br>
         <div>
-            <a href="#">Aviso legal</a> |
-            <a href="#">Política de privacidad</a> |
-            <a href="#">Términos de servicio</a>
+            <a href="#" style="color: white;">Aviso legal</a> |
+            <a href="# "style="color: white;">Política de privacidad</a> |
+            <a href="# "style="color: white;">Términos de servicio</a>
         </div>    
         <br>
         <br>
-        <p id="rights">© 2023 Todos los derechos reservados</p>
+        <p id="rights">© 2024 Global Store 
+        <p> Todos los derechos reservados </p>
     </div>
 </footer>
 <!-- Scripts JS aquí -->
 <script src="../js/index.js"></script>
+<script src="../js/itemActive.js"></script>
 </body>
 </html>
