@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Global Store</title>
+    <!-- Estilos CSS aquí -->
+    <link rel="stylesheet" href="../css/styleContact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Fuentes de Google Fonts -->
+    <link rel="stylesheet" href="fonts/fuentes.css">
+</head>
+<body>
+<header id="myHeader">
+<nav>
+    <ul>
+        <li><a href="#hot-deals-section" id="special-offers" style="color: white;">Ofertas Especiales del Día</a></li>
+        <li>
+            <div id="search-bar">
+                <input type="text" placeholder="Buscar productos">
+                <button id="search-icon">&#128269;</button>
+            </div>
+        </li>
+        <li>
+            <div class="cart">
+                <div class="cart-icon">
+                    <a> &#128722;</a>
+                </div>
+                <div class="count-products">
+                    <span id="contador-productos">0</span>
+                </div>
+                <div class="container-cart-products hidden-cart">
+                    <div class="row-product hidden">
+                        <div class="cart-product">
+                            <div class="info-cart-product">
+                                <span class="cantidad-producto-carrito">1</span>
+                                <p class="titulo-producto-carrito">iPhone</p>
+                                <span class="precio-producto-carrito">$900</span>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" 
+                                fill="none" 
+                                viewBox="0 0 24 24" 
+                                stroke-width="1.5" 
+                                stroke="currentColor" 
+                                class="icon-close">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                              </svg>
+                        </div>
+                    </div>
+                    <div class="cart-total hidden">
+                        <h3>Total:</h3>
+                        <span class="total-pagar">$200</span>
+                    </div>
+                    <p class="cart-empty">El carrito esta vacío</p>
+                </div>
+            </div>
+
+        </li>
+        <li id="login-register">
+            <a href="../Recursos/formLogin.html" style="color: white;">Login</a>
+        </li>
+        <li><button id="contact-button">Contacto</button></li>
+    </ul>
+</nav>
+</header>
+
+<!-- Nueva Sección -->
+<div id="secondary-nav">
+    <img id="logo" src="../Img/l.png" alt="Logo" width="230px" height="174px">
+    <ul>
+        <li><a href="#product-categories">Inicio</a></li>
+        <li></li>
+        <li><i>|</i></li>
+        <li></li>
+        <li><a id="categories-link" style="cursor: pointer;">Categorías ▼</a>
+            <ul class="menu-vertical">
+                <li><a href="../Categorias/PaginaCelulares.html">Celulares</a></li>
+                <li><a href="../Categorias/PaginaAccesorios.html">Accesorios</a></li>
+                <li><a href="../Categorias/PaginaLaptops.html">Laptops</a></li>
+                <li><a href="../Categorias/PaginaTelevisores.html">Televisores</a></li>
+                <li><a href="../Categorias/PaginaTablets.html">Tablets</a></li>
+                <li><a href="../Categorias/PaginaComputadores.html">Computadores</a></li>
+            </ul>
+        </li>
+        <li></li>
+        <li><i>|</i></li>
+        <li></li>
+        <li><a href="../Recursos/Soporte.html">Soporte</a></li>
+        <li></li>
+        <li><i>|</i></li>
+        <li></li>
+        <li><a href="../Recursos/Blog.html">Blog</a></li>
+    </ul>
+    <div id="phone-icon">&#128222;<span>123-456-7890</span>
+        <p> &#9993;<span>globalstore@gmail.com</span><p>
+    </div>
+</div>
+<script>
+    let menuLink = document.querySelector('#categories-link');
+    // Agrega un evento de clic al elemento del menú "Categorías"
+    menuLink.addEventListener('click', function() {
+        // Obtén el submenú vertical
+        let submenu = document.querySelector('.menu-vertical');
+
+        // Cambia la clase CSS del submenú vertical para mostrarlo u ocultarlo
+        submenu.classList.toggle('show');
+    });
+</script>
+
+<section id="mapa">
+    <div class="categoria-celulares1"> <a href="../index.html">&#x1F3DA; Home</a></div>
+    <div class="categoria-celulares2"><p>|</p></div>
+    <div class="categoria-celulares3"><p>Contacto</p></div>
+</section>
+
+
+<!-- Aside y Section -->
+<article>
+    <section id="product-categories-container">
+        <!-- Categorías de productos -->
+        <div id="product-categories">
+            <aside>
+                <div>
+                    <a href="../Categorias/PaginaCelulares.html"><span><h2>Celulares</h2></span></a>
+                </div>
+                <div>
+                    <a href="../Categorias/PaginaAccesorios.html"><span><h2>Accesorios</h2></a>
+                </div>
+                <div>
+                    <a href="../Categorias/PaginaLaptops.html"><span><h2>Laptops</h2></a>
+                </div>
+                <div>
+                    <a href="../Categorias/PaginaTelevisores.html"><span><h2>Televisores</h2></a>
+                </div>                    
+                <div>
+                    <a href="../Categorias/PaginaTablets.html"><span><h2>Tablets</h2></span></a>
+                </div>
+                <div>
+                    <a href="../Categorias/PaginaComputadores.html"><span><h2>Computadores</h2></span></a>
+                </div>
+            </aside>
+        </div>
+        <!-- Productos más vendidos -->
+        <div class="form-contacto">
+            <center><h2>Contáctanos</h2></center>
+            <div class="contact-info">
+                <div class="adress-cont">
+                    <div class="icon1-cont"></div>
+                    <h3>DIRECCIÓN</h3>
+                    <p>QUITO, ECUADOR</p>
+                </div>
+                <div class="email-cont">
+                    <div class="icon2-cont"></div>
+                    <h3>EMAIL</h3>
+                    <p>GLOBALSTORE@GMAIL.COM</p>
+                </div>
+                <div class="phone-cont">
+                    <div class="icon3-cont"></div>
+                    <h3>TELÉFONO</h3>
+                    <p>(+593) 123 456 7890</p>
+                </div>
+            </div>
+            <form action="../Recursos/formContact.html" class="form">
+                <input type="text" id="name-input" placeholder="Nombre*" required>
+                <input type="email" id="email-input1" placeholder="Correo Electrónico*" required>
+                <input type="tel" id="phone-input" placeholder="Teléfono*" required>
+                <input type="text" id="subject-input" placeholder="Asunto*" required>
+                <textarea id="message-input" placeholder="Mensaje..." required></textarea>
+                <button type="clear" id="delete-button" onclick="limpiar()">Borrar Campos</button>
+                <button type="submit" id="send-button">Enviar</button>
+            </form>
+        </div>
+    </section>
+    <br>
+    <br>
+    <div style="overflow: auto; width: 100%; height: 500px;">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345096036!2d144.95373531531592!3d-37.817209979751795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0x5045675218ce6e0!2sMelbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2sus!4v1631233126323!5m2!1sen!2sus" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+        </iframe>
+    </div>
+</article>
+
+<!-- Nueva sección para el formulario de suscripción -->
+<section id="subscription-section">
+    <h2>Suscríbete a Nuestro Sitio</h2>
+    <form id="subscription-form" action="../Recursos/formRegister.html">
+        <input type="email" id="email-input" placeholder="Ingresa tu correo electrónico" required>
+        <button type="submit" id="subscribe-button">Suscribirse</button>
+    </form>
+</section>
+<!-- Footer -->
+<footer>
+    <div id="footer-container">
+        <div id="social-icons">
+            <p>Contactanos por: </p>
+            <a href="#" target="_blank"><img src="../Img/facebook.png" alt="Facebook"></a>
+            <a href="#" target="_blank"><img src="../Img/twitter.png" alt="Twitter"></a>
+            <a href="#" target="_blank"><img src="../Img/instagram.png" alt="Instagram"></a>
+        </div>
+        <br>
+        <br>
+        <div>
+            <a href="#" style="color: white;">Aviso legal</a> |
+            <a href="# "style="color: white;">Política de privacidad</a> |
+            <a href="# "style="color: white;">Términos de servicio</a>
+        </div>    
+        <br>
+        <br>
+        <p id="rights">© 2024 Global Store 
+        <p> Todos los derechos reservados </p>
+    </div>
+</footer>
+<!-- Scripts JS aquí -->
+<script src="../js/index.js"></script>
+</body>
+</html>
