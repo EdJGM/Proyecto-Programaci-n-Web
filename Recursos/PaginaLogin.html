@@ -2,508 +2,772 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Global Store</title>
     <!-- Estilos CSS aquí -->
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #64e8a1;
-        }
-
-        nav {
-            background-color: #0B0B0B;
-            color: white;
-            text-align: center;
-            position: relative;
-            box-sizing: border-box;
-            height: 46px;
-        }
-
-        ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
-
-        li {
-            display: inline;
-            /*margin-right: 70px;  Ajusta este valor según sea necesario */
-        }
-
-        a {
-            color: white;
-            text-decoration: none;
-        }
-
-        a:hover {
-            border-bottom: 2px solid white;
-        }
-
-        #special-offers {
-            padding: 10px 66px;
-            font-size: 23px;
-            background-color: #f05252;
-            text-align: center;
-            float: left;
-        }
-
-        #search-bar {
-            width: 35%;
-            padding: 5px 0px;
-            text-align: center;
-            background-color: #fff; /* Blanco */
-            display: inline-block;
-            position: relative;
-            margin-right: 50px;
-        }
-
-        #search-bar input[type=text] {
-            padding: 8px;
-            width: 100%;
-            box-sizing: border-box;
-            border: 2px solid white;
-            background-color: #f8f8f8;
-        }
-
-        #search-icon {
-            background-color: #f05252;
-            color: white;
-            padding: 14px;
-            border: none;
-            cursor: pointer;
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        #contact-button {
-            background-color: #f05252;
-            padding: 14px 65px;
-            border: none;
-            color: white;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            cursor: pointer;
-            float: right;
-        }
-
-        #cart {
-            border: 2px solid #4CAF50; /* Verde */
-            padding: 7px;
-            margin-right: 25px;
-        }
-
-        #login-register {
-            position: relative;
-            display: inline-block;
-        }
-
-        /* Nueva sección */
-        #secondary-nav {
-            background-color: #64e8a1;
-            color: black;
-            text-align: center;
-            box-sizing: border-box;
-            padding: 20px;
-            display: flex;
-            height: 150px;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        #logo {
-            max-width: 100%;
-            height: auto;
-            margin-right: 30px;
-        }
-
-        #secondary-nav ul {
-            list-style-type: none;
-            margin-left: 100px;
-            padding: 0;
-            overflow: hidden;
-            flex-grow: 1;
-            text-align: left;
-        }
-
-        #secondary-nav li {
-            display: inline;
-            margin-right: 20px;
-        }
-
-        #secondary-nav a {
-            color: black;
-            text-decoration: none;
-        }
-
-        #secondary-nav a:hover {
-            color: #ff0000;
-        }
-
-
-        #phone-icon {
-            margin-right: 20px;
-        }        
-
-        /* Nueva sección */
-        #product-categories-container {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        #product-categories {
-            width: 25%;
-            background-color: #f0f0f0; /* Color de fondo para las categorías */
-            padding: 40px 0px 0px 15px;
-            height: 500px;
-            box-sizing: border-box; /* Evitar que el padding afecte el ancho */
-        }
-
-        #product-categories a {
-            font-size: 13px;
-            text-decoration: none; /* Eliminar subrayado predeterminado de los enlaces */
-            color: black; /* Color de texto predeterminado */
-            display: block; /* Hace que el enlace ocupe el ancho completo del contenedor */
-            border-bottom: 1px dashed #84C539; /* Línea de puntos verde */
-            transition: background-color 0.3s, color 0.3s; /* Transición suave */
-        }
-
-        #product-categories a:hover {
-            width: 100%;
-            padding: 1px 0px; /* Espacio entre el texto y la línea de puntos */
-            background-color: #84C539; /* Fondo verde en hover */
-            color: white; /* Texto blanco en hover */
-        }
-
-        #best-sellers {
-            width: 75%; /* El resto del espacio, ya que las categorías ocupan 25% */
-            text-align: right;
-            box-sizing: border-box; /* Evitar que el padding afecte el ancho */
-        }
-
-        #best-sellers img {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
-        }
-
-        /* Nueva sección para las imágenes */
-        #image-section {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 4%;
-            background-color: #f0f0f0;
-        }
-
-        #image-section h2 {
-            font-size: 40px;
-            text-align: center;
-            padding: 60px 0px 20px 0px;
-            border-bottom: 2px solid #FA1918;
-            width: 40%;
-            margin: auto;
-            box-sizing: border-box;
-        }        
-
-        #image-container-1,
-        #image-container-2,
-        #image-container-3 {
-            background-color: #f0f0f0;
-            padding: 20px;
-            width: 30%;
-            height: auto;
-        }
-
-        #image-container-1 img,
-        #image-container-2 img,
-        #image-container-3 img {
-            margin-left: 20px;
-            width: 90%;
-            height: auto;
-        }    
-        
-        /* Nueva sección para "Ofertas Calientes" */
-        #hot-deals-section {
-            margin-top: 4%;
-            background-color: #f0f0f0;
-        }
-
-        #hot-deals-section h2 {
-            font-size: 40px;
-            text-align: center;
-            padding: 60px 0px 20px 0px;
-            border-bottom: 2px solid #FA1918;
-            width: 40%;
-            margin: auto;
-            box-sizing: border-box;
-        }
-
-        #hot-deals-table {
-            margin-top: 100px;
-            width: 100%;
-            padding: 0px 0px 30px 0px;
-        }
-
-        #hot-deals-table th,
-        #hot-deals-table td {
-            border: 0px solid #ddd;
-            text-align: center;
-        }
-
-        #hot-deals-table th {
-            padding: 10px;
-            font-size: 25px;
-            background-color: #f0f0f0;
-        }
-
-        /* Estilo para el botón de "Añadir al Carrito" */
-        .add-to-cart-button {
-            background-color: #FA1918;
-            color: white;
-            border: none;
-            padding: 8px 12px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .add-to-cart-button:hover {
-            background-color: #5A8F29;
-        }
-
-        /* Estilos para la información de los productos */
-        .product-info {
-            margin-top: 10px;
-        }
-
-        .product-info h3 {
-            margin-bottom: 5px;
-        }
-
-        .product-info p {
-            margin: 5px 0;
-        }             
-
-        /* Nueva sección para el formulario de suscripción */
-        #subscription-section {
-            margin-top: 4%;
-            display: flex;
-            background-color: #ff0000; /* Rojo */
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-
-        #subscription-section h2 {
-            margin-left: 200px;
-            margin-right: 30px;
-            margin-bottom: 20px;
-        }
-
-        #subscription-form {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        #email-input {
-            margin-top: 10px;
-            padding: 10px;
-            background-color: #ff0000; /* Rojo */
-            color: white;
-            border: 1px solid white;
-            width: 200px;
-        }
-
-        #subscribe-button {
-            margin-top: 10px;
-            padding: 10px;
-            background-color: white;
-            color: #ff0000; /* Rojo */
-            border: 1px solid white;
-            width: 100px;
-            text-align: center;
-            cursor: pointer;
-        }      
-
-        /* Estilos para el footer */
-        footer {
-            background-color: #212121; /* Fondo oscuro */
-            color: white;
-            padding: 20px 20px 10px 20px;
-            text-align: center;
-        }
-
-        #footer-container {
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        #social-icons a {
-            margin-right: 15px;
-        }
-
-        #social-icons img {
-            width: 30px; /* Ajusta el tamaño según sea necesario */
-            height: 30px;
-        }
-
-        #rights {
-            border-top: 1px solid #645e5e; /* Línea superior */
-            width: 30%;
-            margin: auto;
-            padding-top: 40px;
-        }
-        
-        
-    </style>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Fuentes de Google Fonts -->
+    <link rel="stylesheet" href="fonts/fuentes.css">
 </head>
 <body>
-
-<header>
+<header id="myHeader">
 <nav>
     <ul>
-        <li><a href="#hot-deals-section" id="special-offers">Ofertas Especiales del Día</a></li>
+        <li><a href="#hot-deals-section" id="special-offers" style="color: white;">Ofertas Especiales del Día</a></li>
         <li>
             <div id="search-bar">
                 <input type="text" placeholder="Buscar productos">
                 <button id="search-icon">&#128269;</button>
             </div>
         </li>
-        <li id="cart">
-            <a href="#"> &#128722;</a>
+        <li>
+            <div class="cart">
+                <div class="cart-icon">
+                    <a> &#128722;</a>
+                </div>
+                <div class="count-products">
+                    <span id="contador-productos">0</span>
+                </div>
+                <div class="container-cart-products hidden-cart">
+                    <div class="row-product hidden">
+                        <div class="cart-product">
+                            <div class="info-cart-product">
+                                <span class="cantidad-producto-carrito">1</span>
+                                <p class="titulo-producto-carrito">iPhone</p>
+                                <span class="precio-producto-carrito">$900</span>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" 
+                                fill="none" 
+                                viewBox="0 0 24 24" 
+                                stroke-width="1.5" 
+                                stroke="currentColor" 
+                                class="icon-close">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                              </svg>
+                        </div>
+                    </div>
+                    <div class="cart-total hidden">
+                        <h3>Total:</h3>
+                        <span class="total-pagar">$200</span>
+                    </div>
+                    <p class="cart-empty">El carrito esta vacío</p>
+                </div>
+            </div>
+
         </li>
         <li id="login-register">
-            <a href="../index.html">&#128102;</a>
+            <a href="../index.html" style="color: white;">&#128102;</a>
         </li>
         <li><button id="contact-button">Contacto</button></li>
     </ul>
 </nav>
 </header>
+<script>
+    document.getElementById("contact-button").onclick = function () {
+        location.href = "../Recursos/Contacto.html";
+    };
+</script>
 
 <!-- Nueva Sección -->
 <div id="secondary-nav">
-    <img id="logo" src="../Img/Logo.png" alt="Logo" width="150px" height="174px">
+    <img id="logo" src="../Img/l.png" alt="Logo" width="230px" height="174px">
     <ul>
-        <li><a href="#product-categories">Categorías   /</a></li>
-        <li><a href="#footer-container">Acerca de    /</a></li>
-        <li><a href="#hot-deals-section">Mejores Productos    /</a></li>
-        <li><a href="#image-section">Servicios</a></li>
+        <li><a href="#product-categories">Inicio</a></li>
+        <li></li>
+        <li><i>|</i></li>
+        <li></li>
+        <li><a id="categories-link" style="cursor: pointer;">Categorías ▼</a>
+            <ul class="menu-vertical">
+                <li><a href="../Categorias/PaginaCelulares.html">Celulares</a></li>
+                <li><a href="../Categorias/PaginaAccesorios.html">Accesorios</a></li>
+                <li><a href="../Categorias/PaginaLaptops.html">Laptops</a></li>
+                <li><a href="../Categorias/PaginaTelevisores.html">Televisores</a></li>
+                <li><a href="../Categorias/PaginaTablets.html">Tablets</a></li>
+                <li><a href="../Categorias/PaginaComputadores.html">Computadores</a></li>
+            </ul>
+        </li>
+        <li></li>
+        <li><i>|</i></li>
+        <li></li>
+        <li><a href="../Recursos/Soporte.html">Soporte</a></li>
+        <li></li>
+        <li><i>|</i></li>
+        <li></li>
+        <li><a href="../Recursos/Blog.html">Blog</a></li>
     </ul>
-    <div id="phone-icon">&#128222;<span>123-456-7890</span></div>
-    <div id="email-icon">&#9993;<span>storeapp@gmail.com</span></div>
+    <div id="phone-icon">&#128222;<span>123-456-7890</span>
+        <p> &#9993;<span>globalstore@gmail.com</span><p>
+    </div>
 </div>
+<script>
+    let menuLink = document.querySelector('#categories-link');
+    // Agrega un evento de clic al elemento del menú "Categorías"
+    menuLink.addEventListener('click', function() {
+        // Obtén el submenú vertical
+        let submenu = document.querySelector('.menu-vertical');
+
+        // Cambia la clase CSS del submenú vertical para mostrarlo u ocultarlo
+        submenu.classList.toggle('show');
+    });
+</script>
 
 <!-- Aside y Section -->
 <article>
     <section id="product-categories-container">
         <!-- Categorías de productos -->
-        <div id="product-categories">
-            <aside>
-                <div>
-                    <a href="#"><h2>Cocina</h2></a>
-                </div>
-                <div>
-                    <a href="#"><h2>Hogares</h2></a>
-                </div>
-                <div>
-                    <a href="#"><h2>Verduras y frutas</h2></a>
-                </div>
-                <div>
-                    <a href="#"><h2>Alimentos de Marca</h2></a>
-                </div>
-                <div>
-                    <a href="#"><h2>Alimentos para mascotas</h2></a>
-                </div>
-                <div>
-                    <a href="#"><h2>Alimentos congelados</h2></a>
-                </div>
-                <div>
-                    <a href="#"><h2>Pan y panadería</h2></a>
-                </div>
-            </aside>
-        </div>
+            <div id="product-categories">
+                <aside>
+                    <div>
+                        <a href="../Categorias/PaginaCelulares.html"><span><h2>Celulares</h2></span></a>
+                    </div>
+                    <div>
+                        <a href="../Categorias/PaginaAccesorios.html"><span><h2>Accesorios</h2></a>
+                    </div>
+                    <div>
+                        <a href="../Categorias/PaginaLaptops.html"><span><h2>Laptops</h2></a>
+                    </div>
+                    <div>
+                        <a href="../Categorias/PaginaTelevisores.html"><span><h2>Televisores</h2></a>
+                    </div>                    
+                    <div>
+                        <a href="../Categorias/PaginaTablets.html"><span><h2>Tablets</h2></span></a>
+                    </div>
+                    <div>
+                        <a href="../Categorias/PaginaComputadores.html"><span><h2>Computadores</h2></span></a>
+                    </div>
+                </aside>
+            </div>
 
         <!-- Productos más vendidos -->
-        <div id="best-sellers">
-            <section>
-                <img src="../Img/Compra inteligente, vive diferente.png" alt="Tienda online">
-            </section>
+        <div class="best-sellers">
+            <ul>
+                <li>
+                    <img src="../Img/1.png" alt="Tienda online">
+                    <div class="texto1">
+                        <h3>¡Lo Mejor en Tecnología!</h3>
+                        <p>¡No te quedes sin el tuyo!</p>
+                    </div>
+                </li>
+                <li><img src="../Img/2.png" alt="Tienda online">
+                    <div class="texto1">
+                        <h3>¡Descubre la revolución tecnológica!</h3>
+                        <p>Encuentra lo mejor en nuestra tienda</p>
+                    </div>
+                </li>
+                <li><img src="../Img/3.png" alt="Tienda online">
+                    <div class="texto2">
+                        <h3>¡Los Accesorios y Dispostivos!</h3>
+                        <p>Todo tu equipo de trabajo en un solo lugar.</p>
+                    </div>
+                </li>
+                <li><img src="../Img/4.png" alt="Tienda online">
+                    <div class="texto3">
+                        <h3>¡Tu mundo Apple a tus manos!</h3>
+                        <p>iPhone's, Mac's y mucho más.</p>
+                    </div>
+                </li>
+            </ul>
         </div>
     </section>
 </article>
+
 <br>
-<br>
-<hr>
+
 <!-- Nueva sección con imágenes -->
-<section id="image-section">
-    <center><h2>¡Lo Mejor en Calidad!</h2></center>
-    <div id="image-container-1">
-        <img src="../Img/descuento.jpg" alt="Imagen 1">
+<section class="image-section-container">
+    <!--<center><h2>¡Lo Mejor en Calidad!</h2></center> -->
+    <div class="image-container">
+        <img src="../Img/retrato-joven-alegre-ordenador-portatil.jpg" alt="Imagen 1">
+        <div class="texto-container">
+            <p class="texto1-descuento">40% <br> VENTA</p>
+            <p class="texto2-nombre">Laptop</p>
+            <p class="texto3-categoria">Laptops</p>
+            <button id="irLaptops" class="add-to-cart-button">Ir Ya!</button>
+        </div>
     </div>
-    <div id="image-container-2">
-        <img src="../Img/productos2.jpg" alt="Imagen 2">
+    <div class="image-container">
+        <img src="../Img/exhibicion-auriculares-musica-levitando.jpg" alt="Imagen 1" >
+        <div class="texto-container">
+            <p class="texto1-descuento">60% <br> VENTA</p>
+            <p class="texto2-nombre">Audifonos</p>
+            <p class="texto3-categoria">Accesorios</p>
+            <button id="irAccesorios" class="add-to-cart-button">Ir Ya!</button>
+        </div>
     </div>
-    <div id="image-container-3">
-        <img src="../Img/ahorro.webp" alt="Imagen 3">
+    <div class="image-container">
+        <img src="../Img/retrato-atractiva-mujer-moda-complacida-gafas-blusa-mostrando-pantalla-telefono-apuntando-al-dispositivo-dedo-indice-sonriendo-ampliamente.jpg" alt="Imagen 1" >
+        <div class="texto-container">
+            <p class="texto1-descuento">10% <br> VENTA</p>
+            <p class="texto2-nombre">Celulares</p>
+            <p class="texto3-categoria">Telefonía</p>
+            <button id="irCelulalres" class="add-to-cart-button">Ir Ya!</button>
+        </div>
     </div>
 </section>
+<script>
+    document.getElementById('irLaptops').addEventListener('click', function() {
+    window.location.href = './Categorias/PaginaLaptops.html'; // Cambia esto a la ruta de tu otra página
+    });
+    document.getElementById('irAccesorios').addEventListener('click', function() {
+    window.location.href = './Categorias/PaginaAccesorios.html'; // Cambia esto a la ruta de tu otra página
+    });
+    document.getElementById('irCelulalres').addEventListener('click', function() {
+    window.location.href = './Categorias/PaginaCelulares.html'; // Cambia esto a la ruta de tu otra página
+    });
+</script>
+
 <br>
-<br>
-<hr>
+
 <!-- Nueva sección para "Ofertas Calientes" con una tabla -->
-<section id="hot-deals-section">
+<section class="hot-deals-section">
     <center><h2>Ofertas Exclusivas</h2></center>
-    <table id="hot-deals-table">
-        <tr>
-            <tr>
-                <td><img src="../Img/p1.png" alt="Utensillos de cocina" width="200px"></td>
-                <td><img src="../Img/p2.png" alt="limpieza hogar" width="200px" ></td>
-                <td><img src="../Img/p3.png" alt="panaderia" width="200px"></td>
-                <td><img src="../Img/p4.png" alt="perros" width="200px"></td>
-            </tr>
-            <td id="product-info-1">
-                <h3>Utensillos</h3>
-                <p>Precio Anterior: $50.00</p>
-                <p>Precio Actual: $40.00</p>
-                <button id="add-to-cart-button-1" class="add-to-cart-button">Añadir al Carrito</button>
-            </td>
-            <td id="product-info-2">
-                <h3>Pack Desinfectantes</h3>
-                <p>Precio Anterior: $20.00</p>
-                <p>Precio Actual: $10.00</p>
-                <button id="add-to-cart-button-2" class="add-to-cart-button">Añadir al Carrito</button>
-            </td>
-            <td id="product-info-3">
-                <h3>Canasta de Panes</h3>
-                <p>Precio Anterior: $10.00</p>
-                <p>Precio Actual: $6.00</p>
-                <button id="add-to-cart-button-3" class="add-to-cart-button">Añadir al Carrito</button>
-            </td>
-            <td id="product-info-4">
-                <h3>Carne Perros</h3>
-                <p>Precio Anterior: $20.00</p>
-                <p>Precio Actual: $15.00</p>
-                <button id="add-to-cart-button-4" class="add-to-cart-button">Añadir al Carrito</button>
-            </td>
-        </tr>
-    </table>
+    <div class="hot-deals">
+        <div class="hot-deals-list">
+            <a href="#hot-deala-section" class="category_item" category="all">Todo</a>
+            <a href="#hot-deala-section" class="category_item" category="celulares">Celulares</a>
+            <a href="#hot-deala-section" class="category_item" category="computadores">Computadores</a>
+            <a href="#hot-deala-section" class="category_item" category="laptops">Laptops</a>
+            <a href="#hot-deala-section" class="category_item" category="tvs">TVs</a>
+        </div>
+        <div class="hot-deals-products">
+            <div class="product-info" category="tvs">
+                <img src="../Img/p1.png" alt="iPhone 14">
+                <div class="hot-deals-text">
+                    <h3>Samsung TV QLED Q90T</h3>
+                    <p>Precio Anterior: $1500.00</p>
+                    <p>Precio Actual: <span class="price">$550.00</span></p>
+                    <button id="add-to-cart-button-1" class="add-to-cart-button">Añadir al Carrito</button>
+                </div>
+            </div>
+            <div class="product-info" category="celulares">
+                <img src="../Img/p2.png" alt="Computadora gamer">
+                <div class="hot-deals-text">
+                    <h3>Samsung Galaxy Note 20 Ultra</h3>
+                    <p>Precio Anterior: $870.00</p>
+                    <p>Precio Actual: <span class="price">$650.00</span></p>
+                    <button id="add-to-cart-button-2" class="add-to-cart-button">Añadir al Carrito</button>
+                </div>
+            </div>
+            <div class="product-info" category="computadores">
+                <img src="../Img/p3.png" alt="TV Samsung">
+                <div class="hot-deals-text">
+                    <h3>Gaming ASUS ROG Strix G15</h3>
+                    <p>Precio Anterior: $2000.00</p>
+                    <p>Precio Actual: <span class="price">$1800.00</span></p>
+                    <button id="add-to-cart-button-3" class="add-to-cart-button">Añadir al Carrito</button>        
+                </div>
+            </div>
+            <div class="product-info" category="laptops">
+                <img src="../Img/p4.png" alt="Laptop LENOVO ideaPad">
+                <div class="hot-deals-text">
+                    <h3>Laptop LENOVO IdeaPad</h3>
+                    <p>Precio Anterior: $1050.00</p>
+                    <p>Precio Actual: <span class="price">$990.00</span></p>
+                    <button id="add-to-cart-button-4" class="add-to-cart-button">Añadir al Carrito</button>             
+                </div>
+            </div>
+            <div class="product-info" category="tvs">
+                <img src="../Img/p1.png" alt="iPhone 14">
+                <div class="hot-deals-text">
+                    <h3>Samsung TV QLED Q90T</h3>
+                    <p>Precio Anterior: $1500.00</p>
+                    <p>Precio Actual: <span class="price">$550.00</span></p>
+                    <button id="add-to-cart-button-1" class="add-to-cart-button">Añadir al Carrito</button>
+                </div>
+            </div>
+            <div class="product-info" category="celulares">
+                <img src="../Img/p2.png" alt="Computadora gamer">
+                <div class="hot-deals-text">
+                    <h3>Samsung Galaxy Note 20 Ultra</h3>
+                    <p>Precio Anterior: $870.00</p>
+                    <p>Precio Actual: <span class="price">$650.00</span></p>
+                    <button id="add-to-cart-button-2" class="add-to-cart-button">Añadir al Carrito</button>
+                </div>
+            </div>
+            <div class="product-info" category="computadores">
+                <img src="../Img/p3.png" alt="TV Samsung">
+                <div class="hot-deals-text">
+                    <h3>Gaming ASUS ROG Strix G15</h3>
+                    <p>Precio Anterior: $2000.00</p>
+                    <p>Precio Actual: <span class="price">$1800.00</span></p>
+                    <button id="add-to-cart-button-3" class="add-to-cart-button">Añadir al Carrito</button>        
+                </div>
+            </div>
+            <div class="product-info" category="laptops">
+                <img src="../Img/p4.png" alt="Laptop LENOVO ideaPad">
+                <div class="hot-deals-text">
+                    <h3>Laptop LENOVO IdeaPad</h3>
+                    <p>Precio Anterior: $1050.00</p>
+                    <p>Precio Actual: <span class="price">$990.00</span></p>
+                    <button id="add-to-cart-button-4" class="add-to-cart-button">Añadir al Carrito</button>             
+                </div>
+            </div>
+            <div class="product-info" category="tvs">
+                <img src="../Img/p1.png" alt="iPhone 14">
+                <div class="hot-deals-text">
+                    <h3>Samsung TV QLED Q90T</h3>
+                    <p>Precio Anterior: $1500.00</p>
+                    <p>Precio Actual: <span class="price">$550.00</span></p>
+                    <button id="add-to-cart-button-1" class="add-to-cart-button">Añadir al Carrito</button>
+                </div>
+            </div>
+            <div class="product-info" category="celulares">
+                <img src="../Img/p2.png" alt="Computadora gamer">
+                <div class="hot-deals-text">
+                    <h3>Samsung Galaxy Note 20 Ultra</h3>
+                    <p>Precio Anterior: $870.00</p>
+                    <p>Precio Actual: <span class="price">$650.00</span></p>
+                    <button id="add-to-cart-button-2" class="add-to-cart-button">Añadir al Carrito</button>
+                </div>
+            </div>
+            <div class="product-info" category="computadores">
+                <img src="../Img/p3.png" alt="TV Samsung">
+                <div class="hot-deals-text">
+                    <h3>Gaming ASUS ROG Strix G15</h3>
+                    <p>Precio Anterior: $2000.00</p>
+                    <p>Precio Actual: <span class="price">$1800.00</span></p>
+                    <button id="add-to-cart-button-3" class="add-to-cart-button">Añadir al Carrito</button>        
+                </div>
+            </div>
+            <div class="product-info" category="laptops">
+                <img src="../Img/p4.png" alt="Laptop LENOVO ideaPad">
+                <div class="hot-deals-text">
+                    <h3>Laptop LENOVO IdeaPad</h3>
+                    <p>Precio Anterior: $1050.00</p>
+                    <p>Precio Actual: <span class="price">$990.00</span></p>
+                    <button id="add-to-cart-button-4" class="add-to-cart-button">Añadir al Carrito</button>             
+                </div>
+            </div>
+            <div class="product-info" category="tvs">
+                <img src="../Img/p1.png" alt="iPhone 14">
+                <div class="hot-deals-text">
+                    <h3>Samsung TV QLED Q90T</h3>
+                    <p>Precio Anterior: $1500.00</p>
+                    <p>Precio Actual: <span class="price">$550.00</span></p>
+                    <button id="add-to-cart-button-1" class="add-to-cart-button">Añadir al Carrito</button>
+                </div>
+            </div>
+            <div class="product-info" category="celulares">
+                <img src="../Img/p2.png" alt="Computadora gamer">
+                <div class="hot-deals-text">
+                    <h3>Samsung Galaxy Note 20 Ultra</h3>
+                    <p>Precio Anterior: $870.00</p>
+                    <p>Precio Actual: <span class="price">$650.00</span></p>
+                    <button id="add-to-cart-button-2" class="add-to-cart-button">Añadir al Carrito</button>
+                </div>
+            </div>
+            <div class="product-info" category="computadores">
+                <img src="../Img/p3.png" alt="TV Samsung">
+                <div class="hot-deals-text">
+                    <h3>Gaming ASUS ROG Strix G15</h3>
+                    <p>Precio Anterior: $2000.00</p>
+                    <p>Precio Actual: <span class="price">$1800.00</span></p>
+                    <button id="add-to-cart-button-3" class="add-to-cart-button">Añadir al Carrito</button>        
+                </div>
+            </div>
+            <div class="product-info" category="laptops">
+                <img src="../Img/p4.png" alt="Laptop LENOVO ideaPad">
+                <div class="hot-deals-text">
+                    <h3>Laptop LENOVO IdeaPad</h3>
+                    <p>Precio Anterior: $1050.00</p>
+                    <p>Precio Actual: <span class="price">$990.00</span></p>
+                    <button id="add-to-cart-button-4" class="add-to-cart-button">Añadir al Carrito</button>             
+                </div>
+            </div>  
+        </div>                      
+    </div>
 </section>
+
 <br>
+
+<section id="calendar">
+    <h2>¡Mira el día que llegará tu pedido si ordenas hoy!</h2>
+    <center><h4>Las entregas suelen tardar entre 3 días y una semana</h4></center>
+</section>
+
+
+    <SCRIPT language="JavaScript1.2" > 
+ 
+       var objWindowPadre
+        objWindowPadre = window.parent;
+       var intActivo=0;
+       var anchoTD=15;
+       var anchoTD1=18;
+       var colorHead="red";
+       var colorTabla="white";
+       var colorBorde="#112233";
+    
+       var time = new Date();
+       var anno=time.getFullYear();
+       var mes=time.getMonth()+1;
+       var dia=time.getDate()
+       var aDias=new Array(0,31,28,31,30,31,30,31,31,30,31,30,31);
+    
+       function padl(n, w, c) {
+        n = String(n);
+        while (n.length < w)
+            n = c + n;
+        return n;
+    }
+    
+    
+       //funcion que se ejecuta al cargar el formulario
+       function iniciar(){
+       
+           if (anoBisiesto(anno))
+        {
+            aDias[2]=29;
+        }
+        else
+        {
+            aDias[2]=28;
+        }
+        escribeTablaMes(dia,mes,anno);
+       }
+       //cuando pinchamos sobre el calendario
+       function pinchar(evento){
+        //primer dia de la semana
+        var oTR = null;
+        if (window.event)
+            oTR = window.event.srcElement;
+        else
+            oTR = evento.currentTarget;
+        var sFechaSel=oTR.id.substring(2);
+        //Recupero las variables de la URL
+        var urlEnd = document.URL.indexOf('?');
+        var values = new Array();
+        var names;  
+        if (urlEnd != -1){
+            var params = document.URL.substring(urlEnd+1, document.URL.length).split('&');
+            for(i=0; i<params.length; i++) {
+            names = params[i].split('=');
+            values[names[0]] = names[1];
+            }
+        }
+        var name = unescape(values["textBox"]);
+        window.opener.setFecha(sFechaSel);
+        if (window.opener.document.forms[0] != null) {
+            
+        }
+        top.window.close();
+       }
+    
+       //Retorna el nombre del mes
+       function getNombreMes(iMes){
+        var sMes=""
+        switch(iMes){
+         case 1:
+          sMes="Enero";
+          break;
+         case 2:
+          sMes="Febrero";
+          break;
+         case 3:
+          sMes="Marzo";
+          break;
+         case 4:
+          sMes="Abril";
+          break;
+         case 5:
+          sMes="Mayo";
+          break;
+         case 6:
+          sMes="Junio";
+          break;
+         case 7:
+          sMes="Julio";
+          break;
+         case 8:
+          sMes="Agosto";
+          break;
+         case 9:
+          sMes="Septiembre";
+          break;
+         case 10:
+          sMes="Octubre";
+          break;
+         case 11:
+          sMes="Noviembre";
+          break;
+         case 12:
+          sMes="Diciembre";
+          break;
+         default:
+          sMes="";
+        }
+        return sMes;
+       }
+    
+    
+       //Retorna true si el año es bisiesto y false en caso contrario
+       function anoBisiesto(sAno){
+         var iAno=parseInt(sAno);
+        if(iAno%4 != 0)
+            return false;
+        else{
+            if (iAno%400==0)
+                return true;
+            else
+                if (iAno%100==0)
+                    return false;
+                else
+                    return true;
+        }
+       }
+    
+       //Retorna 1: lunes; 2 Martes ...
+       function getDayNumber(dia,mes,anno){
+        var day1=new Date(anno,mes-1,dia)
+        var nDay = day1.getDay();
+        if (nDay==0) nDay=7;
+        return nDay;
+       }
+        
+        function cambiarFondo (evento)
+        {
+            if (window.event) {
+                var objTR =window.event.srcElement;
+                if (objTR.style.backgroundColor != '#cbdced')
+                {
+                
+                    objTR.style.backgroundColor = '#cbdced'
+                }
+                else
+                {
+                    objTR.style.backgroundColor = '#ffffff'
+                }
+                if (objTR.style.cursor != 'hand')
+                {
+                
+                    objTR.style.cursor = 'hand'
+                }
+                else
+                {
+                    objTR.style.cursor= 'default'
+                }
+            }
+        }   
+    
+       //Escribe los numeros de los dias:
+       //  -  - 1  2  3  4  5
+       //  6  7 8  9 10 11 12 ...
+       function escribeTablaMes(dia,mes,anno){
+       
+        var clasedia=""
+        var icDia=1;
+        var iIniSemana=1;
+        
+        //obtengo el dia de la semana del 1 del mes a dibujar
+        var iDay=getDayNumber(1,mes,anno);
+        
+        //Borramos la los dias del calendario
+        var j = 0
+        while(j<=intActivo)
+        {
+            document.getElementById("tablacalendario").deleteRow(0);		
+            j++;
+        }
+        intActivo = -1
+        while((icDia-iDay+1)<=aDias[mes])
+        {
+            // A <TR> le daremos el nombre del primer dia de la semana
+            // si es el primer dia del mes sera 1; en cualquier otro caso sera Lunes
+            var sNameTD=""
+            intActivo++
+            objTR = document.getElementById("tablacalendario").insertRow(intActivo);
+            objTR.id =intActivo; 
+            objTR.align= 'center';
+            for(;icDia<iIniSemana+7 ;icDia++)
+            {
+            sNameTD="TD"+padl((icDia-iDay+1),2,"0")+"/"+padl(mes,2,"0")+"/"+anno;
+            if( (icDia>=iDay) && ((icDia-iDay+1)<=aDias[mes]))
+            {
+                if (icDia < iIniSemana+5)//Si es dia de la semana
+                {
+                    clasedia="textocalendario"
+                }
+                else
+                {
+                    clasedia="textofestivo"
+                }
+                objTD = objTR.insertCell(objTR.cells.length);
+                objTD.id = sNameTD;	
+                objTD.style.backgroundColor='#ffffff';
+                objTD.style.width=anchoTD;
+                objTD.className=clasedia;
+                objTD.onclick=pinchar;
+                objTD.onmouseover=cambiarFondo;
+                objTD.onmouseout=cambiarFondo;	
+                objTD.innerHTML = (icDia-iDay+1);		
+            }
+            else
+            {
+                objTD = objTR.insertCell(objTR.cells.length);
+                objTD.id = sNameTD;	
+                objTD.style.width=anchoTD;		
+                objTD.innerHTML = ' ';			
+            }
+        
+         }
+        
+         iIniSemana=icDia;
+        }//fin de  while((icDia-iDay+1)<=aDias[mes])
+        document.forms[0].cbMes.focus()
+       }
+    
+    
+       //funcion que redibuja el calendario con el mes y año seleccionado
+       function cambiaCalendario(){
+        if (anoBisiesto(document.forms[0].cbAnno[document.forms[0].cbAnno.selectedIndex].value))
+        { aDias[2]=29;}
+        else
+        { aDias[2]=28;}
+        escribeTablaMes(1,document.forms[0].cbMes[document.forms[0].cbMes.selectedIndex].value,document.forms[0].cbAnno[document.forms[0].cbAnno.selectedIndex].value); 
+       }
+    
+      </SCRIPT>
+
+     
+    
+    <BODY bgColor='#cbdced' topmargin="0" leftmargin="0" onload="iniciar()" >
+    
+
+    <center> <TABLE border="0" cellspacing=0 width="172px"></center>
+    <TR><TD align="center">
+     <CENTER>
+       <FORM name="frmCalendario_sup">
+        
+        <SELECT name="cbMes" class=textocalendario onchange="cambiaCalendario()">
+        <SCRIPT>
+         for(var i=1;i<=12;i++){
+          var strSelected="";
+          if(i==mes) strSelected="SELECTED"
+          document.write("<OPTION value="+i+" "+strSelected+">"+getNombreMes(i));
+         }
+        </SCRIPT>
+        </SELECT>
+        <SELECT name="cbAnno" class=textocalendario onchange="cambiaCalendario()">    
+        <SCRIPT>
+         for(var i=anno-100;i<=anno+10;i++){
+          var strSelected="";
+          if(i==anno) strSelected="SELECTED"
+          document.write("<OPTION value="+i+" "+strSelected+">"+i);
+         }
+        </SCRIPT>
+    
+        </SELECT>
+    </FORM>
+    <TABLE border="2" borderColor=skyblue cellpading=0 cellspacing=0>
+    <TR><TD>
+        <TABLE bgColor="skyblue" cellpading=1 cellspacing=8 border=0>
+        <TR align='center'>
+        <TD class=diascalendario style='width:20'>LUN</TD>
+        <TD class=diascalendario style='width:20'>MAR</TD>
+        <TD class=diascalendario style='width:20'>MIER</TD>
+    
+        <TD class=diascalendario style='width:20'>JUE</TD>
+        <TD class=diascalendario style='width:20'>VIE</TD>
+        <TD class=diasfestivo style='width:15'><b>SÁB</b></TD>
+        <TD class=diasfestivo style='width:20'><b>DOM</b></TD>
+        </TR>
+        </TABLE>   
+     </TD></TR>
+    
+     <TR><TD>
+        <TABLE bgColor='white' id="tablacalendario" cellpading=1 cellspacing=20 border=0>
+        <tr><td>
+        </td></tr>
+        </TABLE>  
+     </TD></TR>
+     </TABLE>
+      </TD></TR>
+     </TABLE>    
+     
+     </BODY>
+
 <br>
-<hr>
+
+
+
+<!--Nueva seccion para los comentarios del blog-->
+<section id="blog-section">
+    <h2>Comentarios del Blog</h2>
+    <div class="blog-container">
+        <div class="blog-post">
+            <figure><img src="../Img/collage-creativo-experiencia-cliente.jpg" alt="Imagen 1"></figure>
+            <h3>Atención al Cliente Inigualable</h3>
+            <div class="content-container">
+                <div class="icon-container">                    
+                    <div class="icon1"></div>
+                    <div class="icon2"></div>
+                    <div class="icon3"></div>
+                </div>
+                <p>No solo encontré el producto perfecto aquí, sino que también recibí un servicio al cliente 
+                    excepcional. El equipo fue muy amable y servicial, respondiendo todas mis preguntas y 
+                    asegurándose de que tuviera una experiencia de compra perfecta. ¡Altamente recomendado!</p>
+            </div>
+        </div>
+        <div class="blog-post">
+            <figure><img src="../Img/hombre-usando-tableta-trabajar-conectarse-otros.jpg" alt="Imagen 2"></figure>
+            <h3>Increíble Tecnología Futurista</h3>
+            <div class="content-container">
+                <div class="icon-container">
+                    <div class="icon1"></div>
+                    <div class="icon2"></div>
+                    <div class="icon3"></div>
+                </div>
+                <p>Me encanta cómo esta tienda siempre tiene los últimos gadgets. Compré un dispositivo inteligente 
+                    aquí y ha cambiado por completo la forma en que interactúo con la tecnología. ¡Definitivamente 
+                    volveré por más!</p>
+            </div>
+        </div>
+        <div class="blog-post">
+            <figure><img src="../Img/representacion-experiencia-usuario-diseno-interfaz.jpg" alt="Imagen 3"></figure>
+            <h3>Productos de Calidad Superior</h3>
+            <div class="content-container">
+                <div class="icon-container">
+                    <div class="icon1"></div>
+                    <div class="icon2"></div>
+                    <div class="icon3"></div>
+                </div>
+                <p>No solo encontré el producto perfecto aquí, sino que también recibí un servicio al cliente excepcional.
+                    El equipo fue muy amable y servicial, respondiendo todas mis preguntas y asegurándose de que tuviera 
+                    una experiencia de compra perfecta. ¡Altamente recomendado!</p>
+            </div>
+        </div>
+    </div>    
+</section>
+
+
+<br>
+
+<section class="info">
+    <div class="info-container">
+        <div class="info1">
+            <h2>ENVIÓ Y DEVOLUCIÓN GRATIS</h2>
+            <p>Envío gratuito en todos los pedidos superiores a $100.00</p>
+        </div>
+        <div class="info2">
+            <h2>SOPORTE EN LÍNEA 24/7</h2>
+            <p>Chatea con expertos o pídenos que te llamemos de inmediato</p>
+        </div>
+        <div class="info3">
+            <h2>PAGO EFECTIVO 100% SEGURO</h2>
+            <p>Sus transacciones están seguras con el cifrado SSL</p>
+        </div>
+        <div class="info4">
+            <h2>GARANTÍA DE DEVOLUCIÓN DEL DINERO</h2>
+            <p>Obtén el artículo que pediste o te devolvemos tu dinero</p>
+        </div>
+    </div> 
+</section>
+
 <!-- Nueva sección para el formulario de suscripción -->
 <section id="subscription-section">
     <h2>Suscríbete a Nuestro Sitio</h2>
-    <form id="subscription-form">
-        <input type="email" id="email-input" placeholder="Ingresa tu correo electrónico">
+    <form id="subscription-form" action="../Recursos/formRegister.html">
+        <input type="email" id="email-input" placeholder="Ingresa tu correo electrónico" required>
         <button type="submit" id="subscribe-button">Suscribirse</button>
     </form>
 </section>
@@ -519,14 +783,18 @@
         <br>
         <br>
         <div>
-            <a href="#">Aviso legal</a> |
-            <a href="#">Política de privacidad</a> |
-            <a href="#">Términos de servicio</a>
+            <a href="#" style="color: white;">Aviso legal</a> |
+            <a href="# "style="color: white;">Política de privacidad</a> |
+            <a href="# "style="color: white;">Términos de servicio</a>
         </div>    
         <br>
         <br>
-        <p id="rights">© 2023 Todos los derechos reservados</p>
+        <p id="rights">© 2024 Global Store 
+        <p> Todos los derechos reservados </p>
     </div>
 </footer>
+<!-- Scripts JS aquí -->
+<script src="../js/index.js"></script>
+<script src="../js/itemActive.js"></script>
 </body>
 </html>

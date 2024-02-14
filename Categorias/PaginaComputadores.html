@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<header>
+<header id="myHeader">
 <nav>
     <ul>
         <li><a href="#hot-deals-section" id="special-offers">Ofertas Especiales del Día</a></li>
@@ -21,8 +21,39 @@
                 <button id="search-icon">&#128269;</button>
             </div>
         </li>
-        <li id="cart">
-            <a href="#"> &#128722;</a>
+        <li>
+            <div class="cart">
+                <div class="cart-icon">
+                    <a> &#128722;</a>
+                </div>
+                <div class="count-products">
+                    <span id="contador-productos">0</span>
+                </div>
+                <div class="container-cart-products hidden-cart">
+                    <div class="row-product hidden">
+                        <div class="cart-product">
+                            <div class="info-cart-product">
+                                <span class="cantidad-producto-carrito">1</span>
+                                <p class="titulo-producto-carrito">iPhone</p>
+                                <span class="precio-producto-carrito">$900</span>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" 
+                                fill="none" 
+                                viewBox="0 0 24 24" 
+                                stroke-width="1.5" 
+                                stroke="currentColor" 
+                                class="icon-close">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                              </svg>
+                        </div>
+                    </div>
+                    <div class="cart-total hidden">
+                        <h3>Total:</h3>
+                        <span class="total-pagar">$200</span>
+                    </div>
+                    <p class="cart-empty">El carrito esta vacio</p>
+                </div>
+            </div>
         </li>
         <li id="login-register">
             <a href="../Recursos/formLogin.html">Login</a>
@@ -31,34 +62,59 @@
     </ul>
 </nav>
 </header>
+<script>
+    document.getElementById("contact-button").onclick = function () {
+        location.href = "../Recursos/Contacto.html";
+    };
+</script>
 
 <!-- Nueva Sección -->
 <div id="secondary-nav">
     <img id="logo" src="../Img/l.png" alt="Logo" width="230px" height="174px">
     <ul>
-        <li><a href="#product-categories">Inicio</a></li>
-        <li><a href="#footer-container">Categorías ▼</a>
+        <li><a href="../index.html">Inicio</a></li>
+        <li></li>
+        <li><i>|</i></li>
+        <li></li>
+        <li><a id="categories-link" style="cursor: pointer;">Categorías ▼</a>
             <ul class="menu-vertical">
-                <li><a href="#product-categories">Celulares</a></li>
-                <li><a href="#product-categories">Tablets</a></li>
-                <li><a href="#product-categories">Monitores</a></li>
-                <li><a href="#product-categories">CPU</a></li>
-                <li><a href="#product-categories">Laptops</a></li>
-                <li><a href="#product-categories">Televisores</a></li>
-                <li><a href="#product-categories">Accesorios</a></li>
+                <li><a href="../Categorias/PaginaCelulares.html">Celulares</a></li>
+                <li><a href="../Categorias/PaginaAccesorios.html">Accesorios</a></li>
+                <li><a href="../Categorias/PaginaLaptops.html">Laptops</a></li>
+                <li><a href="../Categorias/PaginaTelevisores.html">Televisores</a></li>
+                <li><a href="../Categorias/PaginaTablets.html">Tablets</a></li>
+                <li><a href="../Categorias/PaginaComputadores.html">Computadores</a></li>
             </ul>
         </li>
-        <li><a href="#hot-deals-section">Soporte</a></li>
-        <li><a href="#image-section">Blog</a></li>
+        <li></li>
+        <li><i>|</i></li>
+        <li></li>
+        <li><a href="../Recursos/Soporte.html">Soporte</a></li>
+        <li></li>
+        <li><i>|</i></li>
+        <li></li>
+        <li><a href="../Recursos/Blog.html">Blog</a></li>
     </ul>
-    <div id="phone-icon">&#128222;<span>123-456-7890</span></div>
-    <!--<div id="email-icon">&#9993;<span>storeapp@gmail.com</span></div>-->
+    <div id="phone-icon">&#128222;<span>123-456-7890</span>
+        <p> &#9993;<span>globalstore@gmail.com</span><p>
+    </div>
 </div>
+<script>
+    let menuLink = document.querySelector('#categories-link');
+    // Agrega un evento de clic al elemento del menú "Categorías"
+    menuLink.addEventListener('click', function() {
+        // Obtén el submenú vertical
+        let submenu = document.querySelector('.menu-vertical');
+
+        // Cambia la clase CSS del submenú vertical para mostrarlo u ocultarlo
+        submenu.classList.toggle('show');
+    });
+</script>
 
 <section id="mapa">
     <div class="categoria-celulares1"> <a href="../index.html">&#x1F3DA; Home</a></div>
     <div class="categoria-celulares2"><p>|</p></div>
-    <div class="categoria-celulares3"><p>Celulares</p></div>
+    <div class="categoria-celulares3"><p>Computadores</p></div>
 </section>
 
 <!-- Aside y Section -->
@@ -68,22 +124,22 @@
             <div id="product-categories">
                 <aside>
                     <div>
-                        <a href="PaginaCelulares.html"><span><h2>Celulares</h2></span></a>
+                        <a href="./PaginaCelulares.html"><span><h2>Celulares</h2></span></a>
                     </div>
                     <div>
-                        <a href="../PaginaTablets.html"><span><h2>Tablets</h2></span></a>
+                        <a href="./PaginaTablets.html"><span><h2>Tablets</h2></span></a>
                     </div>
                     <div>
-                        <a href="../PaginaComputadores.html"><span><h2>Computadores</h2></span></a>
+                        <a href="./PaginaComputadores.html"><span><h2>Computadores</h2></span></a>
                     </div>
                     <div>
-                        <a href="../PaginaLaptops.html"><span><h2>Laptops</h2></a>
+                        <a href="./PaginaLaptops.html"><span><h2>Laptops</h2></a>
                     </div>
                     <div>
-                        <a href="../PaginaTelevisores.html"><span><h2>Televisores</h2></a>
+                        <a href="./PaginaTelevisores.html"><span><h2>Televisores</h2></a>
                     </div>
                     <div>
-                        <a href="../PaginaAccesorios.html"><span><h2>Accesorios</h2></a>
+                        <a href="./PaginaAccesorios.html"><span><h2>Accesorios</h2></a>
                     </div>
                 </aside>
             </div>
@@ -92,11 +148,9 @@
         <div id="best-sellers">
             <ul>
                 <li>
-                    <img src="../Img/celulares/1.jpg" alt="Tienda online">
+                    <img src="../Img/computadores/computadores.png" alt="Tienda online">
                     <div class="texto">
-                        <h2>Los</h2>
-                        <h2>Mejores</h2>
-                        <h2>Celulares</h2>
+                        <h2>Computadores de última tecnología</h2>
                     </div>
                 </li>
             </ul>
@@ -105,58 +159,57 @@
 </article>
 
 <!-- Nueva sección para Los Productos con una tabla -->
-<section id="hot-deals-section">
-    <center><h2>Celulares</h2></center>
-    <table id="hot-deals-table">
+<section class="hot-deals-section">
+    <center><h2>Computadores</h2></center>
+    <table class="hot-deals-table">
         <tr>
             <td>
                 <div class="card">
-                    <img src="../Img/celulares/c1.png" alt="iPhone 14" width="150px">
-                    <h3>iPhone 14</h3>
+                    <img src="../Img/computadores/computador1.png" alt="iPhone 14">
+                    <h3>Alienware Aurora R12</h3>
                     <p>
-                        Precio: $600.00 <br><br>
-                        El mejor iphone del mundo, con una pantalla de 6.5 pulgadas, 8
-                        GB de RAM y 128GB de almacenamiento.
-                        <a href="../Producto/DetalleProducto.html">Leer mas...</a>
+                        Precio: <span class="price">$2000.00</span> <br><br>
+                        Diseñada para juegos, procesador Intel Core i9, 
+                        tarjeta gráfica NVIDIA GeForce RTX 3080, 32 GB de RAM y SSD de 1TB.
+                        <a href="../Producto/DetalleProducto.html">Leer más...</a>
                     </p>                    
                     <button id="add-to-cart-button-1" class="add-to-cart-button">Añadir al Carrito</button>
                 </div>
             </td>
             <td>
                 <div class="card">
-                    <img src="../Img/celulares/c2.png" alt="Honor X9" width="150px" >
-                    <h3>Honor X9</h3>
+                    <img src="../Img/computadores/computador2.png" alt="Honor X9">
+                    <h3>MSI Trident X Plus</h3>
                     <p>
-                        Precio: $450.00 <br><br>
-                        Celular Gama Media Honor X9, con una pantalla de 6.5 pulgadas, 8
-                        GB de RAM y 128GB de almacenamiento.
-                        <a href="../Producto/DetalleProducto.html">Leer mas...</a>
+                        Precio: <span class="price">$1800.00</span> <br><br>
+                        Compacta pero potente, con procesador Intel Core i7, 
+                        tarjeta gráfica NVIDIA GeForce RTX 3070, 16 GB de RAM y SSD de 512GB.
+                        <a href="../Producto/DetalleProducto.html">Leer más...</a>
                     </p>                    
                     <button id="add-to-cart-button-2" class="add-to-cart-button">Añadir al Carrito</button>
                 </div>
             </td>
             <td>
                 <div class="card">
-                    <img src="../Img/celulares/c3.png" alt="Samsung A54" width="150px">
-                    <h3>Samsung A54</h3>
+                    <img src="../Img/computadores/computador3.png" alt="Samsung A54">
+                    <h3>ASUS ROG Strix GL10CS</h3>
                     <p>
-                        Precio: $400.00 <br><br>
-                        Excelente celular Samsung A54, con una pantalla de 6.5 pulgadas, 8
-                        GB de RAM y 128GB de almacenamiento.
-                        <a href="../Producto/DetalleProducto.html">Leer mas...</a>
+                        Precio: <span class="price">$1500.00</span> <br><br>
+                        Robusta, con procesador Intel Core i5, tarjeta gráfica NVIDIA GeForce GTX 1660 Ti, 16 GB de RAM y SSD de 1TB.
+                        <a href="../Producto/DetalleProducto.html">Leer más...</a>
                     </p>                    
                     <button id="add-to-cart-button-3" class="add-to-cart-button">Añadir al Carrito</button>
                 </div>
             </td>
             <td class="product-info">
                 <div class="card">
-                    <img src="../Img/celulares/c4.png" alt="Samsung ZFlip" width="150px">
-                    <h3>Samsung ZFlip</h3>
+                    <img src="../Img/computadores/computador4.png" alt="Samsung ZFlip">
+                    <h3>CyberPowerPC Gamer Xtreme VR</h3>
                     <p>
-                        Precio: $1050.00 <br><br>
-                        El mejor celular plegable del mundo, con una pantalla de 6.5 pulgadas, 8
-                        GB de RAM y 128GB de almacenamiento.
-                        <a href="../Producto/DetalleProducto.html">Leer mas...</a>
+                        Precio: <span class="price">$2500.00</span> <br><br>
+                        Diseñada para realidad virtual, con procesador Intel Core i7, 
+                        tarjeta gráfica NVIDIA GeForce GTX 1660 Super, 16 GB de RAM y HDD de 1TB.
+                        <a href="../Producto/DetalleProducto.html">Leer más...</a>
                     </p>                    
                     <button id="add-to-cart-button-4" class="add-to-cart-button">Añadir al Carrito</button>
                 </div>
@@ -184,8 +237,10 @@
         </div>    
         <br>
         <br>
-        <p id="rights">© 2023 Todos los derechos reservados</p>
+        <p id="rights">© 2024 Global Store 
+        <p> Todos los derechos reservados </p>
     </div>
 </footer>
+<script src="../js/index.js"></script>
 </body>
 </html>

@@ -6,12 +6,13 @@
     <title>Global Store</title>
     <!-- Estilos CSS aquí -->
     <link rel="stylesheet" href="../css/styleDetaills.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <!-- Fuentes de Google Fonts -->
     <link rel="stylesheet" href="fonts/fuentes.css">
 </head>
 
 <body>
-<header>
+<header id="myHeader">
 <nav>
     <ul>
         <li><a href="#hot-deals-section" id="special-offers">Ofertas Especiales del Día</a></li>
@@ -36,27 +37,45 @@
 <div id="secondary-nav">
     <img id="logo" src="../Img/l.png" alt="Logo" width="230px" height="174px">
     <ul>
-        <li><a href="#product-categories">Inicio</a></li>
+        <li><a href="../index.html">Inicio</a></li>
+        <li></li>
         <li><i>|</i></li>
-        <li><a href="#footer-container">Categorías ▼</a>
+        <li></li>
+        <li><a id="categories-link" style="cursor: pointer;">Categorías ▼</a>
             <ul class="menu-vertical">
-                <li><a href="#product-categories">Celulares</a></li>
-                <li><a href="#product-categories">Tablets</a></li>
-                <li><a href="#product-categories">Monitores</a></li>
-                <li><a href="#product-categories">CPU</a></li>
-                <li><a href="#product-categories">Laptops</a></li>
-                <li><a href="#product-categories">Televisores</a></li>
-                <li><a href="#product-categories">Accesorios</a></li>
+                <li><a href="../Categorias/PaginaCelulares.html">Celulares</a></li>
+                <li><a href="../Categorias/PaginaAccesorios.html">Accesorios</a></li>
+                <li><a href="../Categorias/PaginaLaptops.html">Laptops</a></li>
+                <li><a href="../Categorias/PaginaTelevisores.html">Televisores</a></li>
+                <li><a href="../Categorias/PaginaTablets.html">Tablets</a></li>
+                <li><a href="../Categorias/PaginaComputadores.html">Computadores</a></li>
             </ul>
         </li>
+        <li></li>
         <li><i>|</i></li>
-        <li><a href="#hot-deals-section">Soporte</a></li>
+        <li></li>
+        <li><a href="../Recursos/Soporte.html">Soporte</a></li>
+        <li></li>
         <li><i>|</i></li>
-        <li><a href="#image-section">Blog</a></li>
+        <li></li>
+        <li><a href="../Recursos/Blog.html">Blog</a></li>
     </ul>
-    <div id="phone-icon">&#128222;<span>123-456-7890</span></div>
-    <!--<div id="email-icon">&#9993;<span>storeapp@gmail.com</span></div>-->
+    <div id="phone-icon">&#128222;<span>123-456-7890</span>
+        <p> &#9993;<span>globalstore@gmail.com</span><p>
+    </div>
 </div>
+<script>
+    let menuLink = document.querySelector('#categories-link');
+    // Agrega un evento de clic al elemento del menú "Categorías"
+    menuLink.addEventListener('click', function() {
+        // Obtén el submenú vertical
+        let submenu = document.querySelector('.menu-vertical');
+
+        // Cambia la clase CSS del submenú vertical para mostrarlo u ocultarlo
+        submenu.classList.toggle('show');
+    });
+</script>
+
 <section id="mapa">
     <div class="categoria-celulares1"> <a href="../index.html">&#x1F3DA; Home</a></div>
     <div class="categoria-celulares2"><p>|</p></div>
@@ -71,7 +90,7 @@
             <button class="agregar-carrito"><strong>AGREGAR AL CARRITO</strong></button>
             <button class="comprar-whatsapp"><strong>COMPRAR POR WHATSAPP</strong></button>
             <p class="precio"><strong>$1,000</strong></p>
-            <p class="iva">(incluido IVA)</p>
+            <p class="iva">(Incluido IVA)</p>
             <hr>
             <h2 class="titulo"><strong>iPhone 14</strong></h2>
             <a href="#" class="comentario">Se el primero en comentar este producto</a>
@@ -79,7 +98,7 @@
     </div>
 
     <br><br><br><br><br>
-    <a href="#" id="toggleTable" class="caracteristicas"><strong>Caracteristicas</strong></a>
+    <a href="#" id="toggleTable" class="caracteristicas"><strong>Características</strong><i class="fas fa-angle-down"></i></a>
 
     <!--haz una tabla con las caracteristicas del producto-->
     <table id="myTable" class="table" style="display:none;">
@@ -141,7 +160,7 @@
 
     <!--DETALLES DEL PRODCUTO-->
     <br><br><br>
-    <a href="#" id="toggleDetails" class="caracteristicas"><strong>Detalles</strong></a>
+    <a href="#" id="toggleDetails" class="caracteristicas"><strong>Detalles</strong><i class="fas fa-angle-down"></i></a>
     <div id="Detalles" style="display: none;">
         <p class="caracteristicas-prin"><strong>Caracteristicas principales:</strong> </p>
         <p class="detalles">
@@ -172,9 +191,9 @@
 
     <!--RESEÑA DEL PRODCUTO-->
     <br><br><br>
-    <a href="#" id="toggleReview" class="caracteristicas"><strong>Reseña</strong></a>
+    <a href="#" id="toggleReview" class="caracteristicas"><strong>Reseña</strong><i class="fas fa-angle-down"></i></a>
     <div id="Resena" style="display: none;">
-        <form>
+        <form id="form">
             <h2 class="tituloResena">Escribe tu propia reseña</h2>
             <div class="rating">
                 <input type="radio" id="star5" name="rating" value="5">
@@ -201,6 +220,7 @@
                 <textarea id="review" name="review" required></textarea>
             </div>
             <button class="enviar-resena" type="submit">ENVIAR RESEÑA</button>
+            <p class="error" id="error"></p>
         </form>
     </div>
 
@@ -243,9 +263,11 @@
         </div>    
         <br>
         <br>
-        <p id="rights">© 2023 Todos los derechos reservados</p>
+        <p id="rights">© 2024 Global Store 
+        <p> Todos los derechos reservados </p>
     </div>
 </footer>
-
+<script src="../js/app.js"></script>
+<script src="../js/validarForm.js"></script>
 </body>
 </html> 

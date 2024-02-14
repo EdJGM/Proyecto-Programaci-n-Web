@@ -1,4 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+.sticky {/* Agregado para que el menú se mantenga fijo en la parte superior de la página */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
 body {
     margin: 0;
     padding: 0;
@@ -9,7 +16,6 @@ body {
 
 nav {
     background-color: #0B0B0B;
-    color: white;
     text-align: center;
     position: relative;
     box-sizing: border-box;
@@ -20,7 +26,7 @@ ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    
 }
 
 li {
@@ -91,11 +97,132 @@ a:hover {
     cursor: pointer;
     float: right;
 }
-
-#cart {
+/*carrito y su contador*/
+.cart {
+    display: inline-block;
+    position: relative;
     border: 2px solid #19829A; /* Verde */
     padding: 7px;
     margin-right: 20px;
+}
+
+.cart a:hover {
+    cursor: pointer;
+}
+
+.count-products{
+    background-color: #19829A;/*#f05252; /* Rojo */
+    padding: 5px 7px;
+    color: white;
+    border-radius: 50%;
+    position: absolute;
+    margin-top: 20px;
+    top: 0;
+    right: -6px;
+    font-size: 12px;
+    line-height: 10px;
+}
+
+#contador-productos{
+    position: relative;
+    cursor: pointer;
+}
+
+.container-cart-products{
+    background-color: #FBFBFB;
+    position: absolute;
+    width: 500px;
+    height: auto;
+    top: 50px;
+    right: 0;
+    border: 1px solid #adaaaa;/*#f05252; /* Rojo */
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 1000;
+    margin-top: 10px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.497);
+}
+
+.cart-product{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.info-cart-product{
+    display: flex;
+    justify-content: space-between;
+    flex: 0.8;
+}
+
+.titulo-producto-carrito{
+    position: relative;
+    font-size: 20px;
+    margin-top: 0px;
+    left: 17px;
+}
+
+.precio-producto-carrito{
+    position: relative;
+    font-weight: 700;
+    font-size: 20px;
+    margin-left: 10px;
+    left: 30px;
+}
+
+.cantidad-producto-carrito{
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.cart-total{
+    display: flex;
+    justify-content: center;
+    padding: 20px 0px;
+    gap:20px;
+    align-items: center;
+    border-top: 1px solid #adaaaa;/*#f05252; /* Rojo */
+
+}
+
+.cart-total h3{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.total-pagar{
+    font-size: 20px;
+    font-weight: 900;
+    color: #19829A;/*#f05252; /* Rojo */
+}
+
+.icon-close{
+    position:relative;
+    top: -15px;
+    right: 20px;
+    cursor: pointer;
+    width: 20px;
+    height: auto;
+}
+
+.icon-close:hover{
+    background-color: #19829A;/*#f05252; /* Rojo */
+    color: white;
+}
+
+.hidden-cart{
+    display: none;
+}
+
+.cart-empty{
+    padding: 20px;
+    text-align: center;
+}
+
+.hidden{
+    display: none;
 }
 
 #login-register {
@@ -116,13 +243,29 @@ a:hover {
     align-items: center;
     font-size: 14px;
     line-height: 20px;
+    width: 100%;
 }
 
 #logo {
     max-width: 100%;
     height: auto;
     margin-right: 30px;
+    transform: translateZ(0px);
+    transform-style: preserve-3d;
+    animation: zoom 5s infinite;
 }
+
+@keyframes zoom {
+    0% {
+      transform: translateZ(0px) scale(1);
+    }
+    50% {
+      transform: translateZ(100px) scale(1.2);
+    }
+    100% {
+      transform: translateZ(0px) scale(1);
+    }
+  }
 
 #secondary-nav ul {
     list-style-type: none;
@@ -151,23 +294,36 @@ a:hover {
     display: none;
     position: absolute;
     background-color: white;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 20px;
+    box-shadow: 0px 8px 16px 10px rgba(0,0,0,0.2);
+    border-radius: 10px;
     left: 360px;
-    overflow-y: auto;
-    transition: all 0.3s ease; /* Agregado para suavizar la aparición y desaparición del submenú */
-    color: #333; /* Agregado para mejorar el contraste de color */
-    z-index: 1000; /* Agregado para que el submenú aparezca por encima de los demás elementos */
+    margin-top: 10px;
+    transition: all 0.3s ease;
+    color: #000000;
+    z-index: 1000;
+    width: 270px;
+    height: 190px;
+    cursor: pointer;
 }
 
+.menu-vertical.show {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+  
+.menu-vertical li {
+    margin-left: 20px;
+    margin-top: 15px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #E9ECF0;
+}
+  
 .menu-vertical a {
-    margin-bottom: 10px; /* Agregado para agregar espacio entre los elementos del submenú */
-    display: block; /* Agregado para asegurar que el espacio se aplique correctamente */
-    border-bottom: 1px so;
-}
-
-#secondary-nav li:hover .menu-vertical {
-    display: block;
+    line-height: 18px;
+    font-size: 15px;
+    text-align: center;
 }
 
 #phone-icon {
@@ -206,12 +362,12 @@ a:hover {
 
 .categoria-celulares3 p{
     width: 100%;
-    height: 50px;
+    height: 25px;
     background-color: #19829A;
     color: black;
     text-align: center;
     font-size: 16px;
-    line-height: 20px;
+    line-height: 15px;
     margin-left: 30px;
 }
 
@@ -220,19 +376,22 @@ a:hover {
 #product-categories-container {
     display: flex;
     justify-content: space-between;
-    font-size: 10px;
-    line-height: 18.4px;
 }
 
 #product-categories {
-    width: 25%;
-    background-color: white;/*#f0f0f0; /* Color de fondo para las categorías */
-    height: 380px;
+    width: 30%;
+    height: 339px;
+    background-color: #F5F5F5;/*#f0f0f0; /* Color de fondo para las categorías */
     box-sizing: border-box; /* Evitar que el padding afecte el ancho */
 }
 
 #product-categories h2,a span {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
     margin-left:  35px;
+    margin-top: 0px;
+    margin-bottom: 14.5px;
 }
 
 #product-categories a {
@@ -244,44 +403,53 @@ a:hover {
 }
 
 #product-categories a:hover {
-    width: 100%;
-    padding: 1px 0px; /* Espacio entre el texto y la línea de puntos */
     background-color: #19829A;/*#84C539; /* Fondo verde en hover */
     color: white; /* Texto blanco en hover */
 }
 
+
 /* Seccion de foto de inicio celuales*/
 #best-sellers {
-    width: 100%;
-    height: 380px;
+    width: 1148px;
+    height: 339px;
     overflow: hidden;
     position: relative;
 }
 
 #best-sellers img {
     width: 100%;
-    height: 100%;
+    height: 360px;
     object-fit: cover;
+    transition: filter 0.3s ease; /* Agrega una transición suave al aplicar el filtro */
+}
+
+#best-sellers:hover img {
+    filter: grayscale(100%); /* Aplica un filtro de escala de grises cuando se pasa el mouse sobre el elemento */
 }
 
 .texto{
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-80%, -50%);
-    color: white;
-    font-size: 50px;
-    width: 100%;
+    top: 50px;
+    left: 17%;
+    transform: translate(0%, 0%);
+    color: #00c3ff;
+    font-size: 40px;
     text-align: center;
+    opacity: 0; /* Oculta inicialmente el texto */
+    transition: opacity 0.3s ease; /* Agrega una transición suave al cambiar la opacidad */
+}
+
+#best-sellers:hover .texto {
+    opacity: 1; /* Muestra el texto cuando se pasa el mouse sobre el elemento */
 }
 
 
 /* Nueva sección para "Productos" */
-#hot-deals-section {
+.hot-deals-section {
     margin-top: 0%;
 }
 
-#hot-deals-section h2 {
+.hot-deals-section h2 {
     font-size: 40px;
     text-align: center;
     padding: 80px 0px 10px 0px;
@@ -291,21 +459,54 @@ a:hover {
     margin-right: 250px;
 }
 
-#hot-deals-table {
+.hot-deals-table {
     margin-top: 50px;
-    margin-left: 270px; /* Ajusta este valor según sea necesario */
-    width: 79%;
+    margin-left: 274px; /* Ajusta este valor según sea necesario */
+    width: 75%;
     border-collapse: collapse;
-    padding: 0px 0px 30px 0px;
-    table-layout: fixed; /* Añade esta línea */
+    table-layout: fixed;
 }
 
-#hot-deals-table th,
-#hot-deals-table td {
+.hot-deals-table img {
+    width: auto;
+    height: 150px;
+    object-fit: cover;
+}
+
+.hot-deals-table th,
+.hot-deals-table td {
     border: 4px double #BEBEBE;
     text-align: center;
     height: 50px;
 }
+
+.hot-deals-table td {
+    position: relative;
+}
+
+.hot-deals-table td::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25px;
+    height: 370px;
+    background-color: rgba(255, 255, 255, 0.26);
+    box-shadow: 0px 0px 40px 30px rgba(255, 255, 255, 0.26);
+    opacity: 0;
+    transition: transform 0.5s linear;
+}
+
+.hot-deals-table td:hover::before {
+    transform: translateX(200px);
+    opacity: 1;
+    right: 0;
+}
+
+.hot-deals-table td:hover .add-to-cart-button {
+    background-color: red;
+}
+
 
 /* Estilo para el botón de "Añadir al Carrito" */
 .add-to-cart-button {
@@ -317,10 +518,6 @@ a:hover {
     transition: background-color 0.3s;
     margin-top: -100px;
     margin-bottom: 10px;
-}
-
-.add-to-cart-button:hover {
-    background-color: red;
 }
 
 /* Estilos para la información de los productos */
