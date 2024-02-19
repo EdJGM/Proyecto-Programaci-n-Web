@@ -1,24 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState }  from 'react';
+import  Header  from './Componentes/Header';
+import  SecondaryNav  from './Componentes/SecondaryNav';
+import  Article from './Componentes/Article';
+import  SeccionesImagenes from './Componentes/SeccionesImagenes';
+import  ProductList from './Componentes/ProductList';
+import Comentarios from './Componentes/Comentarios';
+import Info from './Info';
+import Subscription from './Componentes/Subscription';
+import Footer from './Componentes/Footer';
 
 function App() {
+
+  const [allProducts, setAllProducts] = useState([]); 
+  const [total, setTotal] = useState(0);
+  const [countProducts, setCountProducts] = useState(0);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Holas, soy un proyecto de React,
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header 
+        allProducts={allProducts}
+        setAllProducts={setAllProducts}
+        total={total}
+        setTotal={setTotal}
+        countProducts={countProducts}
+        setCountProducts={setCountProducts}
+      />
+      <SecondaryNav />
+      <Article /> 
+      <br/>
+      <SeccionesImagenes />
+      <br/>
+      <ProductList 
+        allProducts={allProducts}
+        setAllProducts={setAllProducts}
+        total={total}
+        setTotal={setTotal}
+        countProducts={countProducts}
+        setCountProducts={setCountProducts}
+      />
+      <br />
+      <br />
+      <Comentarios />
+      <br/>
+      <Info />
+      <Subscription />
+      <Footer />
+    </>
   );
 }
 
