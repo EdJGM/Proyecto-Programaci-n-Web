@@ -1,23 +1,23 @@
-import { useState }  from 'react';
-import  Header  from './Componentes/Header';
-import  SecondaryNav  from './Componentes/SecondaryNav';
-import  Article from './Componentes/Article';
-import  SeccionesImagenes from './Componentes/SeccionesImagenes';
-import  ProductList from './Componentes/ProductList';
+import { useState } from 'react';
+import Header from './Componentes/Header';
+import SecondaryNav from './Componentes/SecondaryNav';
+import Article from './Componentes/Article';
+import SeccionesImagenes from './Componentes/SeccionesImagenes';
+import ProductList from './Componentes/ProductList';
 import Comentarios from './Componentes/Comentarios';
-import Info from './Info';
+import Info from './Componentes/Info';
 import Subscription from './Componentes/Subscription';
 import Footer from './Componentes/Footer';
 
 function App() {
 
-  const [allProducts, setAllProducts] = useState([]); 
+  const [allProducts, setAllProducts] = useState([]);
   const [total, setTotal] = useState(0);
   const [countProducts, setCountProducts] = useState(0);
 
   return (
     <>
-      <Header 
+      <Header
         allProducts={allProducts}
         setAllProducts={setAllProducts}
         total={total}
@@ -26,11 +26,11 @@ function App() {
         setCountProducts={setCountProducts}
       />
       <SecondaryNav />
-      <Article /> 
-      <br/>
+      <Article />
+      <br />
       <SeccionesImagenes />
-      <br/>
-      <ProductList 
+      <br />
+      <ProductList
         allProducts={allProducts}
         setAllProducts={setAllProducts}
         total={total}
@@ -41,7 +41,7 @@ function App() {
       <br />
       <br />
       <Comentarios />
-      <br/>
+      <br />
       <Info />
       <Subscription />
       <Footer />
