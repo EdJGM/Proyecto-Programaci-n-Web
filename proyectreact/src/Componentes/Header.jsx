@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
-function Header({allProducts, setAllProducts, total, countProducts, setTotal, setCountProducts}){
+function Header({ allProducts, setAllProducts, total, countProducts, setTotal, setCountProducts }) {
 
     const [active, setActive] = useState(false);
     const [sticky, setSticky] = useState(false);
 
-    function onDeleteProduct(product){
+    function onDeleteProduct(product) {
         const results = allProducts.filter(
             item => item.id !== product.id
         );
@@ -47,10 +48,10 @@ function Header({allProducts, setAllProducts, total, countProducts, setTotal, se
         <header id="myHeader" className={sticky ? 'sticky' : ''}>
             <nav>
                 <ul>
-                    <li><a href="#hot-deals-section" id="special-offers" style={{color: 'white'}}>Ofertas Especiales del Día</a></li>
+                    <li><a href="#hot-deals-section" id="special-offers" style={{ color: 'white' }}>Ofertas Especiales del Día</a></li>
                     <li>
                         <div id="search-bar">
-                            <input type="text" placeholder="Buscar productos"/>
+                            <input type="text" placeholder="Buscar productos" />
                             <button id="search-icon">&#128269;</button>
                         </div>
                     </li>
@@ -68,51 +69,51 @@ function Header({allProducts, setAllProducts, total, countProducts, setTotal, se
                                         <>
                                             <div className="row-product">
                                                 {allProducts.map(product => (
-                                                <div className="cart-product" key={product.id}>
-                                                    <div className="info-cart-product">
-                                                        <span className="cantidad-producto-carrito">
-                                                            {product.quatify}
-                                                        </span>
-                                                        <p className="titulo-producto-carrito">
-                                                            {product.title}
-                                                        </p>
-                                                        <span className="precio-producto-carrito">
-                                                            ${product.price}
-                                                        </span>
+                                                    <div className="cart-product" key={product.id}>
+                                                        <div className="info-cart-product">
+                                                            <span className="cantidad-producto-carrito">
+                                                                {product.quatify}
+                                                            </span>
+                                                            <p className="titulo-producto-carrito">
+                                                                {product.title}
+                                                            </p>
+                                                            <span className="precio-producto-carrito">
+                                                                ${product.price}
+                                                            </span>
+                                                        </div>
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            fill="none"
+                                                            viewBox="0 0 24 24"
+                                                            strokeWidth="1.5"
+                                                            stroke="currentColor"
+                                                            className="icon-close" onClick={() => onDeleteProduct(product)}>
+                                                            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                                        </svg>
                                                     </div>
-                                                    <svg xmlns="http://www.w3.org/2000/svg" 
-                                                        fill="none" 
-                                                        viewBox="0 0 24 24" 
-                                                        strokeWidth="1.5" 
-                                                        stroke="currentColor" 
-                                                        className="icon-close" onClick={() => onDeleteProduct(product)}> 
-                                                        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                                                    </svg>
-                                                </div>
                                                 ))}
                                             </div>
                                             <div className="cart-total">
                                                 <h3>Total:</h3>
                                                 <span className="total-pagar">${total}</span>
-                                            </div>                    
+                                            </div>
                                             <button className='btn-clear-all' onClick={onClearAll}>
                                                 Vaciar Carrito
-                                            </button>                    
-                                        </> 
+                                            </button>
+                                        </>
                                     ) : (
                                         <p className="cart-empty">El carrito esta vacío</p>
                                     )
                                 }
                             </div>
-                        </div>                        
+                        </div>
                     </li>
                     <li id="login-register">
-                        <a href="./Recursos/formLogin.html" style={{color: 'white'}}>Login</a>
+                        <Link to="/login" style={{ color: 'white' }}>Login</Link>
                     </li>
                     <li><button id="contact-button" onClick={() => handleButtonClick('../Recursos/Contacto.html')}>Contacto</button></li>
                 </ul>
             </nav>
-        </header>        
+        </header>
     )
 };
 
