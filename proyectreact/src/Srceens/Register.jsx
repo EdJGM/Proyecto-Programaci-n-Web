@@ -5,13 +5,13 @@ import { Link } from 'react-router-dom';
 const Register = () => {
     return (
         <div>
-            <body>
+            <body className='bodyRegister'>
                 <div class="container">
                     <center>
                         <img id="logo" src="./Img/Logo.png" alt="Logo" width="130px" height="150px" />
                     </center>
                     <h1>Registro</h1>
-                    <form action="./datos.php" method="post">
+                    <form action="./datos.php" method="post" className='formRegister'>
                         <label htmlFor="user">Usuario</label>
                         <input type="text" id="user" name="user" placeholder="Ingresa tu usuario" required />
 
@@ -34,9 +34,8 @@ const Register = () => {
                     </form>
 
                     <div class="message">
-                        <p>¿Ya tienes cuenta? <Link to="/login">¡Regístrate!</Link></p>
+                        <p>¿Ya tienes cuenta? <Link to="/login">¡Inicia sesión!</Link></p>
                     </div>
-
                 </div>
             </body>
         </div>

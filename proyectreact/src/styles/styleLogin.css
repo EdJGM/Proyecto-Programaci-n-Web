@@ -1,4 +1,4 @@
-body {
+.bodylogin {
     font-family: Arial, sans-serif;
     background-image: url('./rm380-10.jpg');
     /* Asegúrate de reemplazar 'ruta/a/tu/imagen.jpg' con la ruta a tu imagen */
@@ -23,7 +23,7 @@ h1 {
     color: #333;
 }
 
-form {
+.formlogin {
     width: 300px;
     margin: 0 auto;
     padding: 20px;

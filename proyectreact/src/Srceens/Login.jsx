@@ -5,12 +5,12 @@ import '../styles/styleLogin.css';
 const Login = () => {
     return (
         <div >
-            <body>
+            <body className='bodylogin'>
                 <center>
                     <img id="logo" src="./Img/Logo.png" alt="Logo" width="130px" height="150px" />
                 </center>
                 <h1>Iniciar sesión</h1>
-                <form action="./datos.php" method="post">
+                <form action="./datos.php" method="post" className='formlogin'>
                     <label for="username">Nombre de usuario:</label>
                     <input type="text" id="username" name="username" placeholder="Ingrese su usuario" required /><br />
 
