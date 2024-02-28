@@ -62,6 +62,11 @@
     </ul>
 </nav>
 </header>
+<script>
+    document.getElementById("contact-button").onclick = function () {
+        location.href = "../Recursos/Contacto.html";
+    };
+</script>
 
 <!-- Nueva Sección -->
 <div id="secondary-nav">
@@ -71,15 +76,14 @@
         <li></li>
         <li><i>|</i></li>
         <li></li>
-        <li><a href="#footer-container">Categorías ▼</a>
+        <li><a id="categories-link" style="cursor: pointer;">Categorías ▼</a>
             <ul class="menu-vertical">
-                <li><a href="#product-categories">Celulares</a></li>
-                <li><a href="#product-categories">Accesorios</a></li>
-                <li><a href="#product-categories">Laptops</a></li>
-                <li><a href="#product-categories">Televisores</a></li>
-                <li><a href="#product-categories">Monitores</a></li>
-                <li><a href="#product-categories">Tablets</a></li>
-                <li><a href="#product-categories">CPU</a></li>
+                <li><a href="../Categorias/PaginaCelulares.html">Celulares</a></li>
+                <li><a href="../Categorias/PaginaAccesorios.html">Accesorios</a></li>
+                <li><a href="../Categorias/PaginaLaptops.html">Laptops</a></li>
+                <li><a href="../Categorias/PaginaTelevisores.html">Televisores</a></li>
+                <li><a href="../Categorias/PaginaTablets.html">Tablets</a></li>
+                <li><a href="../Categorias/PaginaComputadores.html">Computadores</a></li>
             </ul>
         </li>
         <li></li>
@@ -90,12 +94,22 @@
         <li><i>|</i></li>
         <li></li>
         <li><a href="../Recursos/Blog.html">Blog</a></li>
-        
     </ul>
     <div id="phone-icon">&#128222;<span>123-456-7890</span>
         <p> &#9993;<span>globalstore@gmail.com</span><p>
-        </div>
+    </div>
 </div>
+<script>
+    let menuLink = document.querySelector('#categories-link');
+    // Agrega un evento de clic al elemento del menú "Categorías"
+    menuLink.addEventListener('click', function() {
+        // Obtén el submenú vertical
+        let submenu = document.querySelector('.menu-vertical');
+
+        // Cambia la clase CSS del submenú vertical para mostrarlo u ocultarlo
+        submenu.classList.toggle('show');
+    });
+</script>
 
 <section id="mapa">
     <div class="categoria-celulares1"> <a href="../index.html">&#x1F3DA; Home</a></div>

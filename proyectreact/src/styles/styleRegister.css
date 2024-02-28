@@ -1,0 +1,74 @@
+body {
+  font-family: Arial, sans-serif;
+  background-image: url('./rm380-10.jpg');
+  background-size: cover;
+  /* Esto hará que la imagen cubra todo el cuerpo */
+  background-position: center;
+  /* Esto centrará la imagen */
+  background-repeat: no-repeat;
+  /* Esto evitará que la imagen se repita */
+  background-attachment: fixed;
+  /* Esto hará que la imagen de fondo se fije, de modo que no se desplace con el contenido de la página */
+  height: 100vh;
+  /* Esto hará que el cuerpo tenga la altura de la ventana de visualización */
+  margin: 0;
+  /* Esto eliminará cualquier margen alrededor del cuerpo */
+  padding: 0;
+  /* Esto eliminará cualquier relleno alrededor del cuerpo */
+}
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="lastname"],
+input[type="email"],
+input[type="date"],
+input[type="password"] {
+  width: 95%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  margin-left: 10px;
+  background-color: #19829A;
+  /*#4CAF50;*/
+  /* Verde */
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #19829A;
+  /*#45a049;*/
+}
+
+.message {
+  color: #19829A;
+  text-align: center;
+  margin-top: 10px;
+}

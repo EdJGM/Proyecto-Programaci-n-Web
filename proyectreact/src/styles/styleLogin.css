@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('./rm380-10.jpg');
+    /* Asegúrate de reemplazar 'ruta/a/tu/imagen.jpg' con la ruta a tu imagen */
+    background-size: cover;
+    /* Esto hará que la imagen cubra todo el cuerpo */
+    background-position: center;
+    /* Esto centrará la imagen */
+    background-repeat: no-repeat;
+    /* Esto evitará que la imagen se repita */
+    background-attachment: fixed;
+    /* Esto hará que la imagen de fondo se fije, de modo que no se desplace con el contenido de la página */
+    height: 100vh;
+    /* Esto hará que el cuerpo tenga la altura de la ventana de visualización */
+    margin: 0;
+    /* Esto eliminará cualquier margen alrededor del cuerpo */
+    padding: 0;
+    /* Esto eliminará cualquier relleno alrededor del cuerpo */
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #19829A;
+    /*#4CAF50; /* Verde */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.register-link a {
+    color: #19829A;
+    /*#4CAF50;*/
+    text-decoration: none;
+}
+
+.volver {
+    text-align: center;
+    margin-top: 10px;
+}

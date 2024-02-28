@@ -2,24 +2,19 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Global Store</title>
     <!-- Estilos CSS aquí -->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <!-- Fuentes de Google Fonts -->
     <link rel="stylesheet" href="fonts/fuentes.css">
-    <script src="./js/calendario.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            iniciar();
-        });
-    </script>
 </head>
 <body>
 <header id="myHeader">
 <nav>
     <ul>
-        <li><a href="#hot-deals-section" id="special-offers">Ofertas Especiales del Día</a></li>
+        <li><a href="#hot-deals-section" id="special-offers" style="color: white;">Ofertas Especiales del Día</a></li>
         <li>
             <div id="search-bar">
                 <input type="text" placeholder="Buscar productos">
@@ -62,12 +57,17 @@
 
         </li>
         <li id="login-register">
-            <a href="./Recursos/formLogin.html">Login</a>
+            <a href="./Recursos/formLogin.html" style="color: white;">Login</a>
         </li>
         <li><button id="contact-button">Contacto</button></li>
     </ul>
 </nav>
 </header>
+<script>
+    document.getElementById("contact-button").onclick = function () {
+        location.href = "./Recursos/Contacto.html";
+    };
+</script>
 
 <!-- Nueva Sección -->
 <div id="secondary-nav">
@@ -77,15 +77,14 @@
         <li></li>
         <li><i>|</i></li>
         <li></li>
-        <li><a href="#footer-container">Categorías ▼</a>
+        <li><a id="categories-link" style="cursor: pointer;">Categorías ▼</a>
             <ul class="menu-vertical">
-                <li><a href="#product-categories">Celulares</a></li>
-                <li><a href="#product-categories">Accesorios</a></li>
-                <li><a href="#product-categories">Laptops</a></li>
-                <li><a href="#product-categories">Televisores</a></li>
-                <li><a href="#product-categories">Monitores</a></li>
-                <li><a href="#product-categories">Tablets</a></li>
-                <li><a href="#product-categories">CPU</a></li>
+                <li><a href="./Categorias/PaginaCelulares.html">Celulares</a></li>
+                <li><a href="./Categorias/PaginaAccesorios.html">Accesorios</a></li>
+                <li><a href="./Categorias/PaginaLaptops.html">Laptops</a></li>
+                <li><a href="./Categorias/PaginaTelevisores.html">Televisores</a></li>
+                <li><a href="./Categorias/PaginaTablets.html">Tablets</a></li>
+                <li><a href="./Categorias/PaginaComputadores.html">Computadores</a></li>
             </ul>
         </li>
         <li></li>
@@ -101,6 +100,17 @@
         <p> &#9993;<span>globalstore@gmail.com</span><p>
     </div>
 </div>
+<script>
+    let menuLink = document.querySelector('#categories-link');
+    // Agrega un evento de clic al elemento del menú "Categorías"
+    menuLink.addEventListener('click', function() {
+        // Obtén el submenú vertical
+        let submenu = document.querySelector('.menu-vertical');
+
+        // Cambia la clase CSS del submenú vertical para mostrarlo u ocultarlo
+        submenu.classList.toggle('show');
+    });
+</script>
 
 <!-- Aside y Section -->
 <article>
@@ -161,67 +171,222 @@
         </div>
     </section>
 </article>
+
 <br>
-<br>
-<hr>
+
 <!-- Nueva sección con imágenes -->
-<section id="image-section">
-    <center><h2>¡Lo Mejor en Calidad!</h2></center>
-    <div id="image-container-1">
-        <img src="./Img/img-index1.jpg" alt="Imagen 1" width="140px">
+<section class="image-section-container">
+    <!--<center><h2>¡Lo Mejor en Calidad!</h2></center> -->
+    <div class="image-container">
+        <img src="./Img/retrato-joven-alegre-ordenador-portatil.jpg" alt="Imagen 1">
+        <div class="texto-container">
+            <p class="texto1-descuento">40% <br> VENTA</p>
+            <p class="texto2-nombre">Laptop</p>
+            <p class="texto3-categoria">Laptops</p>
+            <button id="irLaptops" class="add-to-cart-button">Ir Ya!</button>
+        </div>
     </div>
-    <div id="image-container-2">
-        <img src="./Img/img-index2.jpg" alt="Imagen 2" width="140px">
+    <div class="image-container">
+        <img src="./Img/exhibicion-auriculares-musica-levitando.jpg" alt="Imagen 1" >
+        <div class="texto-container">
+            <p class="texto1-descuento">60% <br> VENTA</p>
+            <p class="texto2-nombre">Audifonos</p>
+            <p class="texto3-categoria">Accesorios</p>
+            <button id="irAccesorios" class="add-to-cart-button">Ir Ya!</button>
+        </div>
     </div>
-    <div id="image-container-3">
-        <img src="./Img/img-index3.jpg" alt="Imagen 3" width="140px">
+    <div class="image-container">
+        <img src="./Img/retrato-atractiva-mujer-moda-complacida-gafas-blusa-mostrando-pantalla-telefono-apuntando-al-dispositivo-dedo-indice-sonriendo-ampliamente.jpg" alt="Imagen 1" >
+        <div class="texto-container">
+            <p class="texto1-descuento">10% <br> VENTA</p>
+            <p class="texto2-nombre">Celulares</p>
+            <p class="texto3-categoria">Telefonía</p>
+            <button id="irCelulalres" class="add-to-cart-button">Ir Ya!</button>
+        </div>
     </div>
 </section>
+<script>
+    document.getElementById('irLaptops').addEventListener('click', function() {
+    window.location.href = './Categorias/PaginaLaptops.html'; // Cambia esto a la ruta de tu otra página
+    });
+    document.getElementById('irAccesorios').addEventListener('click', function() {
+    window.location.href = './Categorias/PaginaAccesorios.html'; // Cambia esto a la ruta de tu otra página
+    });
+    document.getElementById('irCelulalres').addEventListener('click', function() {
+    window.location.href = './Categorias/PaginaCelulares.html'; // Cambia esto a la ruta de tu otra página
+    });
+</script>
+
 <br>
-<br>
-<hr>
+
 <!-- Nueva sección para "Ofertas Calientes" con una tabla -->
 <section class="hot-deals-section">
+<<<<<<< HEAD
     <center><h2>Lorena Te Amo </h2></center>
     <table class="hot-deals-table">
         <tr>
             <td id="product-info-1">
+=======
+    <center><h2>Ofertas Exclusivas</h2></center>
+    <div class="hot-deals">
+        <div class="hot-deals-list">
+            <a href="#hot-deala-section" class="category_item" category="all">Todo</a>
+            <a href="#hot-deala-section" class="category_item" category="celulares">Celulares</a>
+            <a href="#hot-deala-section" class="category_item" category="computadores">Computadores</a>
+            <a href="#hot-deala-section" class="category_item" category="laptops">Laptops</a>
+            <a href="#hot-deala-section" class="category_item" category="tvs">TVs</a>
+        </div>
+        <div class="hot-deals-products">
+            <div class="product-info" category="tvs">
+>>>>>>> 17d30ba922b3d538fe76b85a0cd329b8204c9ab4
                 <img src="./Img/p1.png" alt="iPhone 14">
-                <h3>Samsung QLED Q90T</h3>
-                <p>Precio Anterior: $1500.00</p>
-                <p>Precio Actual: <span class="price">$550.00</span></p>
-                <button id="add-to-cart-button-1" class="add-to-cart-button">Añadir al Carrito</button>
-            </td>
-            <td id="product-info-2">
+                <div class="hot-deals-text">
+                    <h3>Samsung TV QLED Q90T</h3>
+                    <p>Precio Anterior: $1500.00</p>
+                    <p>Precio Actual: <span class="price">$550.00</span></p>
+                    <button id="add-to-cart-button-1" class="add-to-cart-button">Añadir al Carrito</button>
+                </div>
+            </div>
+            <div class="product-info" category="celulares">
                 <img src="./Img/p2.png" alt="Computadora gamer">
-                <h3>Samsung Galaxy Note 20 Ultra</h3>
-                <p>Precio Anterior: $870.00</p>
-                <p>Precio Actual: <span class="price">$650.00</span></p>
-                <button id="add-to-cart-button-2" class="add-to-cart-button">Añadir al Carrito</button>
-            </td>
-            <td id="product-info-3">
+                <div class="hot-deals-text">
+                    <h3>Samsung Galaxy Note 20 Ultra</h3>
+                    <p>Precio Anterior: $870.00</p>
+                    <p>Precio Actual: <span class="price">$650.00</span></p>
+                    <button id="add-to-cart-button-2" class="add-to-cart-button">Añadir al Carrito</button>
+                </div>
+            </div>
+            <div class="product-info" category="computadores">
                 <img src="./Img/p3.png" alt="TV Samsung">
-                <h3>Gaming ASUS ROG Strix G15</h3>
-                <p>Precio Anterior: $2000.00</p>
-                <p>Precio Actual: <span class="price">$1800.00</span></p>
-                <button id="add-to-cart-button-3" class="add-to-cart-button">Añadir al Carrito</button>
-            </td>
-            <td id="product-info-4">
+                <div class="hot-deals-text">
+                    <h3>Gaming ASUS ROG Strix G15</h3>
+                    <p>Precio Anterior: $2000.00</p>
+                    <p>Precio Actual: <span class="price">$1800.00</span></p>
+                    <button id="add-to-cart-button-3" class="add-to-cart-button">Añadir al Carrito</button>        
+                </div>
+            </div>
+            <div class="product-info" category="laptops">
                 <img src="./Img/p4.png" alt="Laptop LENOVO ideaPad">
-                <h3>Laptop LENOVO IdeaPad</h3>
-                <p>Precio Anterior: $1050.00</p>
-                <p>Precio Actual: <span class="price">$990.00</span></p>
-                <button id="add-to-cart-button-4" class="add-to-cart-button">Añadir al Carrito</button>
-            </td>
-        </tr>
-    </table>
-
-
-    
+                <div class="hot-deals-text">
+                    <h3>Laptop LENOVO IdeaPad</h3>
+                    <p>Precio Anterior: $1050.00</p>
+                    <p>Precio Actual: <span class="price">$990.00</span></p>
+                    <button id="add-to-cart-button-4" class="add-to-cart-button">Añadir al Carrito</button>             
+                </div>
+            </div>
+            <div class="product-info" category="tvs">
+                <img src="./Img/p1.png" alt="iPhone 14">
+                <div class="hot-deals-text">
+                    <h3>Samsung TV QLED Q90T</h3>
+                    <p>Precio Anterior: $1500.00</p>
+                    <p>Precio Actual: <span class="price">$550.00</span></p>
+                    <button id="add-to-cart-button-1" class="add-to-cart-button">Añadir al Carrito</button>
+                </div>
+            </div>
+            <div class="product-info" category="celulares">
+                <img src="./Img/p2.png" alt="Computadora gamer">
+                <div class="hot-deals-text">
+                    <h3>Samsung Galaxy Note 20 Ultra</h3>
+                    <p>Precio Anterior: $870.00</p>
+                    <p>Precio Actual: <span class="price">$650.00</span></p>
+                    <button id="add-to-cart-button-2" class="add-to-cart-button">Añadir al Carrito</button>
+                </div>
+            </div>
+            <div class="product-info" category="computadores">
+                <img src="./Img/p3.png" alt="TV Samsung">
+                <div class="hot-deals-text">
+                    <h3>Gaming ASUS ROG Strix G15</h3>
+                    <p>Precio Anterior: $2000.00</p>
+                    <p>Precio Actual: <span class="price">$1800.00</span></p>
+                    <button id="add-to-cart-button-3" class="add-to-cart-button">Añadir al Carrito</button>        
+                </div>
+            </div>
+            <div class="product-info" category="laptops">
+                <img src="./Img/p4.png" alt="Laptop LENOVO ideaPad">
+                <div class="hot-deals-text">
+                    <h3>Laptop LENOVO IdeaPad</h3>
+                    <p>Precio Anterior: $1050.00</p>
+                    <p>Precio Actual: <span class="price">$990.00</span></p>
+                    <button id="add-to-cart-button-4" class="add-to-cart-button">Añadir al Carrito</button>             
+                </div>
+            </div>
+            <div class="product-info" category="tvs">
+                <img src="./Img/p1.png" alt="iPhone 14">
+                <div class="hot-deals-text">
+                    <h3>Samsung TV QLED Q90T</h3>
+                    <p>Precio Anterior: $1500.00</p>
+                    <p>Precio Actual: <span class="price">$550.00</span></p>
+                    <button id="add-to-cart-button-1" class="add-to-cart-button">Añadir al Carrito</button>
+                </div>
+            </div>
+            <div class="product-info" category="celulares">
+                <img src="./Img/p2.png" alt="Computadora gamer">
+                <div class="hot-deals-text">
+                    <h3>Samsung Galaxy Note 20 Ultra</h3>
+                    <p>Precio Anterior: $870.00</p>
+                    <p>Precio Actual: <span class="price">$650.00</span></p>
+                    <button id="add-to-cart-button-2" class="add-to-cart-button">Añadir al Carrito</button>
+                </div>
+            </div>
+            <div class="product-info" category="computadores">
+                <img src="./Img/p3.png" alt="TV Samsung">
+                <div class="hot-deals-text">
+                    <h3>Gaming ASUS ROG Strix G15</h3>
+                    <p>Precio Anterior: $2000.00</p>
+                    <p>Precio Actual: <span class="price">$1800.00</span></p>
+                    <button id="add-to-cart-button-3" class="add-to-cart-button">Añadir al Carrito</button>        
+                </div>
+            </div>
+            <div class="product-info" category="laptops">
+                <img src="./Img/p4.png" alt="Laptop LENOVO ideaPad">
+                <div class="hot-deals-text">
+                    <h3>Laptop LENOVO IdeaPad</h3>
+                    <p>Precio Anterior: $1050.00</p>
+                    <p>Precio Actual: <span class="price">$990.00</span></p>
+                    <button id="add-to-cart-button-4" class="add-to-cart-button">Añadir al Carrito</button>             
+                </div>
+            </div>
+            <div class="product-info" category="tvs">
+                <img src="./Img/p1.png" alt="iPhone 14">
+                <div class="hot-deals-text">
+                    <h3>Samsung TV QLED Q90T</h3>
+                    <p>Precio Anterior: $1500.00</p>
+                    <p>Precio Actual: <span class="price">$550.00</span></p>
+                    <button id="add-to-cart-button-1" class="add-to-cart-button">Añadir al Carrito</button>
+                </div>
+            </div>
+            <div class="product-info" category="celulares">
+                <img src="./Img/p2.png" alt="Computadora gamer">
+                <div class="hot-deals-text">
+                    <h3>Samsung Galaxy Note 20 Ultra</h3>
+                    <p>Precio Anterior: $870.00</p>
+                    <p>Precio Actual: <span class="price">$650.00</span></p>
+                    <button id="add-to-cart-button-2" class="add-to-cart-button">Añadir al Carrito</button>
+                </div>
+            </div>
+            <div class="product-info" category="computadores">
+                <img src="./Img/p3.png" alt="TV Samsung">
+                <div class="hot-deals-text">
+                    <h3>Gaming ASUS ROG Strix G15</h3>
+                    <p>Precio Anterior: $2000.00</p>
+                    <p>Precio Actual: <span class="price">$1800.00</span></p>
+                    <button id="add-to-cart-button-3" class="add-to-cart-button">Añadir al Carrito</button>        
+                </div>
+            </div>
+            <div class="product-info" category="laptops">
+                <img src="./Img/p4.png" alt="Laptop LENOVO ideaPad">
+                <div class="hot-deals-text">
+                    <h3>Laptop LENOVO IdeaPad</h3>
+                    <p>Precio Anterior: $1050.00</p>
+                    <p>Precio Actual: <span class="price">$990.00</span></p>
+                    <button id="add-to-cart-button-4" class="add-to-cart-button">Añadir al Carrito</button>             
+                </div>
+            </div>  
+        </div>                      
+    </div>
 </section>
+
 <br>
-<br>
-<hr>
 
 <section id="calendar">
     <h2>¡Mira el día que llegará tu pedido si ordenas hoy!</h2>
@@ -528,7 +693,82 @@
      
      </BODY>
 
-<hr>
+<br>
+
+
+
+<!--Nueva seccion para los comentarios del blog-->
+<section id="blog-section">
+    <h2>Comentarios del Blog</h2>
+    <div class="blog-container">
+        <div class="blog-post">
+            <figure><img src="./Img/collage-creativo-experiencia-cliente.jpg" alt="Imagen 1"></figure>
+            <h3>Atención al Cliente Inigualable</h3>
+            <div class="content-container">
+                <div class="icon-container">                    
+                    <div class="icon1"></div>
+                    <div class="icon2"></div>
+                    <div class="icon3"></div>
+                </div>
+                <p>No solo encontré el producto perfecto aquí, sino que también recibí un servicio al cliente 
+                    excepcional. El equipo fue muy amable y servicial, respondiendo todas mis preguntas y 
+                    asegurándose de que tuviera una experiencia de compra perfecta. ¡Altamente recomendado!</p>
+            </div>
+        </div>
+        <div class="blog-post">
+            <figure><img src="./Img/hombre-usando-tableta-trabajar-conectarse-otros.jpg" alt="Imagen 2"></figure>
+            <h3>Increíble Tecnología Futurista</h3>
+            <div class="content-container">
+                <div class="icon-container">
+                    <div class="icon1"></div>
+                    <div class="icon2"></div>
+                    <div class="icon3"></div>
+                </div>
+                <p>Me encanta cómo esta tienda siempre tiene los últimos gadgets. Compré un dispositivo inteligente 
+                    aquí y ha cambiado por completo la forma en que interactúo con la tecnología. ¡Definitivamente 
+                    volveré por más!</p>
+            </div>
+        </div>
+        <div class="blog-post">
+            <figure><img src="./Img/representacion-experiencia-usuario-diseno-interfaz.jpg" alt="Imagen 3"></figure>
+            <h3>Productos de Calidad Superior</h3>
+            <div class="content-container">
+                <div class="icon-container">
+                    <div class="icon1"></div>
+                    <div class="icon2"></div>
+                    <div class="icon3"></div>
+                </div>
+                <p>No solo encontré el producto perfecto aquí, sino que también recibí un servicio al cliente excepcional.
+                    El equipo fue muy amable y servicial, respondiendo todas mis preguntas y asegurándose de que tuviera 
+                    una experiencia de compra perfecta. ¡Altamente recomendado!</p>
+            </div>
+        </div>
+    </div>    
+</section>
+
+
+<br>
+
+<section class="info">
+    <div class="info-container">
+        <div class="info1">
+            <h2>ENVIÓ Y DEVOLUCIÓN GRATIS</h2>
+            <p>Envío gratuito en todos los pedidos superiores a $100.00</p>
+        </div>
+        <div class="info2">
+            <h2>SOPORTE EN LÍNEA 24/7</h2>
+            <p>Chatea con expertos o pídenos que te llamemos de inmediato</p>
+        </div>
+        <div class="info3">
+            <h2>PAGO EFECTIVO 100% SEGURO</h2>
+            <p>Sus transacciones están seguras con el cifrado SSL</p>
+        </div>
+        <div class="info4">
+            <h2>GARANTÍA DE DEVOLUCIÓN DEL DINERO</h2>
+            <p>Obtén el artículo que pediste o te devolvemos tu dinero</p>
+        </div>
+    </div> 
+</section>
 
 <!-- Nueva sección para el formulario de suscripción -->
 <section id="subscription-section">
@@ -550,9 +790,9 @@
         <br>
         <br>
         <div>
-            <a href="#">Aviso legal</a> |
-            <a href="#">Política de privacidad</a> |
-            <a href="#">Términos de servicio</a>
+            <a href="#" style="color: white;">Aviso legal</a> |
+            <a href="# "style="color: white;">Política de privacidad</a> |
+            <a href="# "style="color: white;">Términos de servicio</a>
         </div>    
         <br>
         <br>
@@ -562,5 +802,6 @@
 </footer>
 <!-- Scripts JS aquí -->
 <script src="./js/index.js"></script>
+<script src="./js/itemActive.js"></script>
 </body>
 </html>
