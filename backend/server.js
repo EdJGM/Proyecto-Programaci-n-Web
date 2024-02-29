@@ -3,6 +3,7 @@ const mysql = require('mysql');
 const cors = require('cors');
 
 const app = express();
+const PORT = 5000;
 
 app.use(cors());
 app.use(express.json());
@@ -14,24 +15,28 @@ const db = mysql.createConnection({
     database: "globalstoredb"
 })
 
-app.post('/login', (req, res) => {
-    let username = req.body.username
-    let password = req.body.password
-    let sql = "SELECT * FROM users WHERE username = ? AND contrasena = ?"
-    const values = [
-
-    ]
-    db.query(sql, [req.body.username, req.body.password], (err, data) => {
-        if (err) return res.json('Error');
-        if (data.length > 0) {
-            return res.jason('Login bien');
-        }
-        else {
-            return res.json('Login mal');
-        }
-    })
+db.connect((err) => {
+    if (err){
+        throw err;
+    }
+    console.log('Conectado a la base de datos MySQL');
 });
 
-app.listen(80, () => {
-    console.log('Server started');
+app.post('/api/login', (req, res) => {
+    const { user, pass } = req.body;
+    db.query('SELECT * FROM usuarios WHERE usuarios = ? AND constrasena = ?', [user, pass], (err, result) => {
+        if (err){
+            console.error('Error al realizar la consulta:', err);
+            res.status(500).send('Error interno del servidor');
+        }
+        if (result.length > 0){
+            res.status(200).send('Login exitoso');
+        } else {
+            res.status(401).send('Credenciales incorrectas');
+        }
+    });
+});
+
+app.listen(PORT, () => {
+    console.log('Servidor backend corriendo en http://localhost:${PORT}');
 })  

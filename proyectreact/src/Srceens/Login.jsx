@@ -1,16 +1,32 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/styleLogin.css';
-import axios from 'axios';
 
 const Login = () => {
     const [user, setuser] = useState('');
     const [pass, setpass] = useState('');
-    function handleSubmit(event) {
-        event.preventDefault();
-        axios.post('http://localhost:80/login', { user, pass })
-            .then(res => console.log(res))
-            .catch(err => console.log(err))
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            const response = await fetch('http://localhost:5000/api/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ user, pass })
+            });
+
+            if(response.ok){
+                window.location.href = '/';
+            } else{
+                const errorMessage = await response.text();
+                alert(errorMessage); // Mostrar mensaje de error        
+            }
+        } catch (error) {
+            console.error('Error al enviar solicitud:', error);
+        }
     }
 
     return (
