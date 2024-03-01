@@ -76,7 +76,7 @@ function Categoria() {
                                 <li>
                                     <img src={`/Img/imgCategoria/${categoriaId}/principal.png`} />
                                     <div className="texto">
-                                        <h2>Variedad en Accesorios</h2>
+                                        <h2>LOS MEJORES EN EL MERCADO</h2>
                                     </div>
                                 </li>
                             </ul>
