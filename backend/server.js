@@ -48,6 +48,16 @@ app.get('/api/products', (req, res) => {
     });
 });
 
+//obtener el username de usuarios
+app.get('/api/usuarios', (req, res) => {
+    db.query('SELECT username FROM usuarios', (err, result) => {
+        if (err) {
+            console.error('Error al realizar la consulta:', err);
+            res.status(500).send('Error interno del servidor');
+        }
+        res.status(200).send(result);
+    });
+});
 
 // join para obtener el nombre de la categoria de cada producto
 app.get('/api/products/join/:categoria', (req, res) => {

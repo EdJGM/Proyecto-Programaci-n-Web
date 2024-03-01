@@ -6,6 +6,27 @@ function Header({ allProducts, setAllProducts, total, countProducts, setTotal, s
     const [active, setActive] = useState(false);
     const [sticky, setSticky] = useState(false);
 
+    const [user, setUser] = useState(null);
+
+    useEffect(() => {
+        const fetchUserFromDB = async () => {
+            try {
+                const response = await fetch('http://localhost:5000/api/usuarios');
+
+                if (response.ok) {
+                    const userData = await response.json();
+                    setUser(userData[0]);
+                } else {
+                    const errorMessage = await response.text();
+                    console.error('Error al obtener usuarios:', errorMessage);
+                }
+            } catch (error) {
+                console.error('Error al obtener usuarios:', error);
+            }
+        };
+        fetchUserFromDB();//Llamando a la funcion
+    }, []);
+
     function onDeleteProduct(product) {
         const results = allProducts.filter(
             item => item.idProducto !== product.idProducto
@@ -108,12 +129,17 @@ function Header({ allProducts, setAllProducts, total, countProducts, setTotal, s
                         </div>
                     </li>
                     <li id="login-register">
-                        <Link to="/login" style={{ color: 'white' }}>Login</Link>
+                        {user ? (
+                            <Link to="/login" style={{ color: 'white' }}>{user.username}</Link>
+
+                        ) : (
+                            <Link to="/login" style={{ color: 'white' }}>Login</Link>
+                        )}
                     </li>
                     <li><button id="contact-button" onClick={() => handleButtonClick('../Recursos/Contacto.html')}>Contacto</button></li>
                 </ul>
             </nav>
-        </header>
+        </header >
     )
 };
 

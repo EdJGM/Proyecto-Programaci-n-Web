@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { data } from "../Data";
 
 function ProductList({ allProducts, setAllProducts, countProducts, setCountProducts, total, setTotal }) {
 
