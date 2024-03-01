@@ -16,7 +16,7 @@ const db = mysql.createConnection({
 })
 
 db.connect((err) => {
-    if (err){
+    if (err) {
         throw err;
     }
     console.log('Conectado a la base de datos MySQL');
@@ -24,16 +24,27 @@ db.connect((err) => {
 
 app.post('/api/login', (req, res) => {
     const { user, pass } = req.body;
-    db.query('SELECT * FROM usuarios WHERE usuarios = ? AND constrasena = ?', [user, pass], (err, result) => {
-        if (err){
+    db.query('SELECT * FROM usuarios WHERE username = ? AND contrasena = ?', [user, pass], (err, result) => {
+        if (err) {
             console.error('Error al realizar la consulta:', err);
             res.status(500).send('Error interno del servidor');
         }
-        if (result.length > 0){
+        if (result.length > 0) {
             res.status(200).send('Login exitoso');
         } else {
             res.status(401).send('Credenciales incorrectas');
         }
+    });
+});
+
+// Obtener todos los productos
+app.get('/api/products', (req, res) => {
+    db.query('SELECT * FROM productos', (err, result) => {
+        if (err) {
+            console.error('Error al realizar la consulta:', err);
+            res.status(500).send('Error interno del servidor');
+        }
+        res.status(200).send(result);
     });
 });
 

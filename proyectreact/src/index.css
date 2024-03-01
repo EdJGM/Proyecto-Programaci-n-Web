@@ -644,6 +644,11 @@ a span {
     margin-top: 30px;
 }
 
+.hot-deals-products h3 {
+    width: 100%;
+    height: 35px;
+}
+
 .hot-deals-products img {
     width: auto;
     height: 200px;
@@ -751,7 +756,7 @@ a span {
     box-shadow: 5px 5px 5px 5px rgba(156, 156, 156, 0.26);
 }
 
-.blog-post figure {
+.blog-post>figure {
     justify-content: space-between;
     margin: 20px 10px 20px 10px;
     width: 100%;
@@ -763,12 +768,11 @@ a span {
 .blog-post img {
     width: 100%;
     height: 100%;
-    overflow: hidden;
-    transition: all 300ms ease;
+    transition: all .5s;
 }
 
 .blog-post img:hover {
-    transform: scale(1.5) rotate(10deg);
+    transform: scale(1.4) rotate(12deg);
 }
 
 .blog-post h3 {

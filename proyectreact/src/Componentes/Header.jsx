@@ -8,10 +8,10 @@ function Header({ allProducts, setAllProducts, total, countProducts, setTotal, s
 
     function onDeleteProduct(product) {
         const results = allProducts.filter(
-            item => item.id !== product.id
+            item => item.idProducto !== product.idProducto
         );
 
-        setTotal(total - product.price * product.quatify)
+        setTotal(total - product.precioP * product.quatify)
         setCountProducts(countProducts - product.quatify);
         setAllProducts(results);
     };
@@ -75,10 +75,10 @@ function Header({ allProducts, setAllProducts, total, countProducts, setTotal, s
                                                                 {product.quatify}
                                                             </span>
                                                             <p className="titulo-producto-carrito">
-                                                                {product.title}
+                                                                {product.nombreP}
                                                             </p>
                                                             <span className="precio-producto-carrito">
-                                                                ${product.price}
+                                                                ${product.precioP}
                                                             </span>
                                                         </div>
                                                         <svg xmlns="http://www.w3.org/2000/svg"
