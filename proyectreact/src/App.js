@@ -11,6 +11,7 @@ import Footer from './Componentes/Footer';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './Srceens/Login';
 import Register from './Srceens/Register';
+import Categoria from './Srceens/Categoria';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/categoria/:categoriaId" element={<Categoria />} />
         <Route path="/*" element={
           <>
             <Header

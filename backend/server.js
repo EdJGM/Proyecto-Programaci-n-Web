@@ -48,6 +48,20 @@ app.get('/api/products', (req, res) => {
     });
 });
 
+
+// join para obtener el nombre de la categoria de cada producto
+app.get('/api/products/join/:categoria', (req, res) => {
+    const categoria = req.params.categoria;
+    db.query('SELECT productos.*, categorias.nombreC AS categoria FROM productos INNER JOIN categorias ON productos.idCategoria = categorias.idCategoria WHERE categorias.nombreC = ?', [categoria], (err, result) => {
+        if (err) {
+            console.error('Error al realizar la consulta:', err);
+            res.status(500).send('Error interno del servidor');
+        }
+        res.status(200).send(result);
+    });
+});
+
+
 app.listen(PORT, () => {
     console.log('Servidor backend corriendo en http://localhost:${PORT}');
 })  

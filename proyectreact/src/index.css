@@ -38,7 +38,7 @@ li {
     /*margin-right: 70px;  Ajusta este valor según sea necesario */
 }
 
-a {
+Link {
     color: rgb(0, 0, 0);
     text-decoration: none;
 }
@@ -362,7 +362,7 @@ a {
 }
 
 #product-categories h2,
-a span {
+Link span {
     font-size: 14px;
     line-height: 20px;
     font-weight: 400;
@@ -371,7 +371,7 @@ a span {
     margin-bottom: 14.5px;
 }
 
-#product-categories a {
+#product-categories Link {
     text-decoration: none;
     /* Eliminar subrayado predeterminado de los enlaces */
     color: black;
@@ -384,7 +384,7 @@ a span {
     /* Transición suave */
 }
 
-#product-categories a:hover {
+#product-categories Link:hover {
     background-color: #19829A;
     /*#84C539; /* Fondo verde en hover */
     color: white;
