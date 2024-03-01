@@ -18,9 +18,9 @@ const Login = () => {
                 body: JSON.stringify({ user, pass })
             });
 
-            if(response.ok){
+            if (response.ok) {
                 window.location.href = '/';
-            } else{
+            } else {
                 const errorMessage = await response.text();
                 alert(errorMessage); // Mostrar mensaje de error        
             }
@@ -49,7 +49,7 @@ const Login = () => {
                     <p>¿Aún no tienes cuenta? <Link to="/register">¡Regístrate!</Link></p>
                 </div>
                 <div className='volver'>
-                    <Link to="/">Volver</Link>
+                    <Link to="/" style={{ 'color': 'black' }}>Volver</Link>
                 </div>
 
             </body>

@@ -34,7 +34,7 @@ const Register = () => {
                     </form>
 
                     <div class="message">
-                        <p>¿Ya tienes cuenta? <Link to="/login">¡Inicia sesión!</Link></p>
+                        <p>¿Ya tienes cuenta? <Link to="/login" style={{ 'color': 'black' }}>¡Inicia sesión!</Link></p>
                     </div>
                 </div>
             </body>
