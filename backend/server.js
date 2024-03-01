@@ -71,6 +71,23 @@ app.get('/api/products/join/:categoria', (req, res) => {
     });
 });
 
+// registrar un nuevo usuario
+app.post('/api/register', (req, res) => {
+    const { user, name, lastname, date, email, password } = req.body;
+
+    const query = 'INSERT INTO usuarios (idUsuario, username, nombre, apellido, fNacimiento, email, contrasena) VALUES (NULL, ?, ?, ?, ?, ?, ?)';
+    const values = [user, name, lastname, date, email, password];
+
+    db.query(query, values, (err, result) => {
+        if (err) {
+            console.error('Error al realizar la consulta:', err);
+            res.status(500).send('Error interno del servidor');
+        } else {
+            res.status(200).send('Registro exitoso');
+        }
+    });
+});
+
 
 app.listen(PORT, () => {
     console.log('Servidor backend corriendo en http://localhost:${PORT}');

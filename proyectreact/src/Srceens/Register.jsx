@@ -11,7 +11,7 @@ const Register = () => {
                         <img id="logo" src="./Img/Logo.png" alt="Logo" width="130px" height="150px" />
                     </center>
                     <h1>Registro</h1>
-                    <form action="./datos.php" method="post" className='formRegister'>
+                    <form action="http://localhost:5000/api/register" method="post" className='formRegister'>
                         <label htmlFor="user">Usuario</label>
                         <input type="text" id="user" name="user" placeholder="Ingresa tu usuario" required />
 
