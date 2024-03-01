@@ -38,6 +38,26 @@ function Categoria() {
         fetchProducts();
     }, [categoriaId]);
 
+    function onAllProduct(product) {
+        if (allProducts.find(item => item.idProducto === product.idProducto)) {
+            const products = allProducts.map(item =>
+                item.idProducto == product.idProducto
+                    ? { ...item, quatify: item.quatify + 1 }
+                    : item
+            );
+
+            setTotal(total + product.precioP) // Update total by adding the price of one product
+            setCountProducts(countProducts + 1); // Increment countProducts by 1
+            return setAllProducts([...products]);
+        }
+
+        product.quatify = 1;
+        setTotal(total + product.precioP) // Update total by adding the price of one product
+        setCountProducts(countProducts + 1); // Increment countProducts by 1
+        setAllProducts([...allProducts, product]);
+    }
+
+
     return (
         <div>
             <body className='bodyCat'>
@@ -93,7 +113,7 @@ function Categoria() {
                                         <h3>{product.nombreP}</h3>
                                         <p>{product.descripcionP}</p>
                                         <p>Precio: <span className="price">${product.precioP}</span></p>
-                                        <button id="add-to-cart-button-1" className="add-to-cart-button" >Añadir al Carrito</button>
+                                        <button id="add-to-cart-button-1" className="add-to-cart-button" onClick={() => onAllProduct(product)}>Añadir al Carrito</button>
                                     </div>
                                 </div>
                             ))}
