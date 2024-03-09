@@ -25,12 +25,12 @@ const Register = () => {
                         <input type="date" name="date" id="date" required />
 
                         <label htmlFor="email">Email:</label>
-                        <input type="email" id="email" name="email" placeholder="Ingresa un email" required />
+                        <input type="email" id="email" name="email" className='email' placeholder="Ingresa un email" required />
 
                         <label htmlFor="password">Contraseña:</label>
                         <input type="password" id="password" name="password" placeholder="Ingresa una contraseña" required />
 
-                        <input type="submit" value="Registrarse" />
+                        <input type="submit" className='register' value="Registrarse" />
                     </form>
 
                     <div class="message">

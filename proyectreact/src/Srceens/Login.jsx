@@ -43,9 +43,9 @@ const Login = () => {
                     <label for="pass">Contraseña:</label>
                     <input type="password" id="pass" name="password" placeholder="Ingrese su contraseña" required className='contrasenaLogin' onChange={e => setpass(e.target.value)} /><br /><br />
 
-                    <input type="submit" value="Iniciar sesión" />
+                    <input type="submit" className='login' value="Iniciar sesión" />
                 </form>
-                <div class="register-link">
+                <div className="register-link">
                     <p>¿Aún no tienes cuenta? <Link to="/register">¡Regístrate!</Link></p>
                 </div>
                 <div className='volver'>

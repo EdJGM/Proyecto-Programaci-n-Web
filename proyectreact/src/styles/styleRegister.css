@@ -39,7 +39,7 @@ label {
 
 input[type="text"],
 input[type="lastname"],
-input[type="email"],
+.email,
 input[type="date"],
 input[type="password"] {
   width: 95%;
@@ -49,7 +49,7 @@ input[type="password"] {
   margin-bottom: 20px;
 }
 
-input[type="submit"] {
+.register {
   width: 100%;
   padding: 10px;
   margin-left: 10px;
@@ -62,7 +62,7 @@ input[type="submit"] {
   cursor: pointer;
 }
 
-input[type="submit"]:hover {
+.register:hover {
   background-color: #19829A;
   /*#45a049;*/
 }

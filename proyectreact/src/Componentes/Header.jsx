@@ -136,7 +136,7 @@ function Header({ allProducts, setAllProducts, total, countProducts, setTotal, s
                             <Link to="/login" style={{ color: 'white' }}>Login</Link>
                         )}
                     </li>
-                    <li><button id="contact-button" onClick={() => handleButtonClick('../Recursos/Contacto.html')}>Contacto</button></li>
+                    <li><button id="contact-button" onClick={() => handleButtonClick('/contacto')}>Contacto</button></li>
                 </ul>
             </nav>
         </header >

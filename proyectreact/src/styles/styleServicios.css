@@ -1,0 +1,201 @@
+.Servicios {
+    width: 90%;
+    margin: auto;
+    margin: 0 5% 0 5%;
+}
+
+
+.tituloS {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.tituloS::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -15%;
+    transform: translateX(-50%);
+    height: 3px;
+    width: 10%;
+    /* Cambia este valor para ajustar la longitud del borde */
+    background-color: #19829A;
+}
+
+.gridS {
+    display: grid;
+    grid-template-columns: 2fr 20% 20% 20%;
+    justify-content: start;
+    align-items: start;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 40px 0;
+}
+
+.textoS {
+    grid-column: 1;
+}
+
+.textoS h2 {
+    font-size: 24px;
+    line-height: 26px;
+    font-weight: 500;
+    color: rgb(33, 33, 33);
+    margin: 0%;
+}
+
+.textoS h2::after {
+    content: "";
+    display: block;
+    background-color: #19829A;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #19829A;
+    width: 20%;
+}
+
+
+.textoS p {
+    font-size: 14px;
+    line-height: 28px;
+    font-weight: 400;
+    color: rgb(153, 153, 153);
+    margin-top: 20px;
+}
+
+.gridS img {
+    width: 90%;
+    height: 70%;
+    object-fit: cover;
+
+}
+
+.flexS {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.textoSe {
+    width: 50%;
+    margin-left: 20px;
+}
+
+.textoSe h2 {
+    font-size: 24px;
+    line-height: 26px;
+    font-weight: 500;
+    color: rgb(33, 33, 33);
+    margin: 0%;
+}
+
+.textoSe h2::after {
+    content: "";
+    display: block;
+    background-color: #19829A;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #19829A;
+    width: 20%;
+}
+
+.textoSe p {
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: 400;
+    color: rgb(153, 153, 153);
+    margin-top: 20px;
+}
+
+.textoSe p::before {
+    content: "\f178";
+    color: #19829A;
+    font-family: FontAwesome;
+    margin-right: 5px;
+}
+
+.flexS img {
+    width: 50%;
+    height: 400px;
+    object-fit: fill;
+}
+
+.textoSe button {
+    margin: 70px 0px 0px 150px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.cuerpoContador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 320px;
+    background-image: url('./fondoS.jpg');
+    background-size: cover;
+    /* Asegura que la imagen de fondo cubra todo el elemento */
+    background-position: center;
+    /* Centra la imagen de fondo */
+    margin: 40px 0px 40px 0px;
+}
+
+.Contador {
+    height: 200px;
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.itemC {
+    height: 160px;
+    width: 170px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.cantidadC {
+    font-size: 40px;
+    line-height: 57px;
+    font-weight: 700;
+}
+
+.seg,
+.apo,
+.aho,
+.pop {
+    font-size: 21px;
+    line-height: 23px;
+    font-weight: 500;
+}
+
+.fa-users,
+.fa-money,
+.fa-handshake-o,
+.fa-star {
+    font-size: 40px;
+    padding: 20px;
+    /* Espacio alrededor del icono */
+    background-color: #f5f5f5;
+    /* Color de fondo del círculo */
+    border-radius: 50%;
+    /* Hace que el fondo sea un círculo */
+    color: #333;
+    /* Color del icono */
+    text-align: center;
+    /* Centra el icono en el círculo */
+}

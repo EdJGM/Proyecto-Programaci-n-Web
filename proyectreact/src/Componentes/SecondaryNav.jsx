@@ -29,11 +29,8 @@ function SecondaryNav() {
                 <li></li>
                 <li><i>|</i></li>
                 <li></li>
-                <li><a href="./Recursos/Soporte.html">Soporte</a></li>
+                <li><a href="/servicios">Servicios</a></li>
                 <li></li>
-                <li><i>|</i></li>
-                <li></li>
-                <li><a href="./Recursos/Blog.html">Blog</a></li>
             </ul>
             <div id="phone-icon">&#128222;<span>123-456-7890</span>
                 <p> &#9993;<span>globalstore@gmail.com</span></p>
