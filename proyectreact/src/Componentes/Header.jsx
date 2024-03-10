@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 
 function Header({ allProducts, setAllProducts, total, countProducts, setTotal, setCountProducts }) {
 
+    const [searchText, setSearchText] = useState('');
+    const [searchResults, setSearchResults] = useState([]);
+
     const [active, setActive] = useState(false);
     const [sticky, setSticky] = useState(false);
 
@@ -47,6 +50,28 @@ function Header({ allProducts, setAllProducts, total, countProducts, setTotal, s
         window.location.href = url;
     };
 
+    const handleSearchChange = async (event) => {
+        setSearchText(event.target.value);
+
+        if (event.target.value.trim() !== '') {
+            try {
+                const response = await fetch(`http://localhost:5000/api/productos/search/${event.target.value}`);
+
+                if (response.ok) {
+                    const data = await response.json();
+                    setSearchResults(data);
+                } else {
+                    const errorMessage = await response.text();
+                    console.error('Error al buscar productos:', errorMessage);
+                }
+            } catch (error) {
+                console.error('Error al buscar productos:', error);
+            }
+        } else {
+            setSearchResults([]);
+        }
+    };
+
     useEffect(() => {
         const header = document.getElementById('myHeader');
         const sticky = header.offsetTop;
@@ -72,7 +97,18 @@ function Header({ allProducts, setAllProducts, total, countProducts, setTotal, s
                     <li><Link to='/' id="special-offers" style={{ color: 'white' }}>Ofertas Especiales del Día</Link></li>
                     <li>
                         <div id="search-bar">
-                            <input type="text" placeholder="Buscar productos" />
+                            <input type="text" placeholder="Buscar productos" value={searchText} onChange={handleSearchChange} />
+                            {searchResults.length > 0 && (
+                                <div id="search-results" style={{ display: searchResults.length > 0 ? 'block' : 'none' }}>
+                                    {searchResults.map(product => (
+                                        <div key={product.idProducto}>
+                                            <img src={`./Img/productos/${product.idProducto}/principal.png`} alt={product.nombreP} />
+                                            <h3>{product.nombreP}</h3>
+                                            {/* Aquí puedes agregar más detalles del producto como desees */}
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
                             <button id="search-icon">&#128269;</button>
                         </div>
                     </li>

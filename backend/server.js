@@ -22,6 +22,7 @@ db.connect((err) => {
     console.log('Conectado a la base de datos MySQL');
 });
 
+// hacer login
 app.post('/api/login', (req, res) => {
     const { username, password } = req.body;
     db.query('SELECT * FROM usuarios WHERE username = ? AND contrasena = ?', [username, password], (err, result) => {
@@ -85,6 +86,18 @@ app.post('/api/register', (req, res) => {
         } else {
             res.status(200).send('Registro exitoso');
         }
+    });
+});
+
+// buscar productos por nombre
+app.get('/api/productos/search/:nombre', (req, res) => {
+    const nombre = req.params.nombre;
+    db.query('SELECT * FROM productos WHERE nombreP LIKE ?', ['%' + nombre + '%'], (err, result) => {
+        if (err) {
+            console.error('Error al realizar la consulta:', err);
+            res.status(500).send('Error interno del servidor');
+        }
+        res.status(200).send(result);
     });
 });
 

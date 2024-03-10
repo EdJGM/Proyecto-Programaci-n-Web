@@ -88,6 +88,28 @@ Link {
     transform: translateY(-50%);
 }
 
+#search-results {
+    position: absolute;
+    width: 100%;
+    background-color: #f8f8f8;
+    z-index: 1000;
+    display: none;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.497);
+    border-radius: 5px;
+}
+
+#search-results div {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+#search-results img {
+    width: 5%;
+    height: auto;
+    margin: 0px 50px 0px 70px;
+}
+
 #contact-button {
     background-color: #19829A;
     /*#f05252; /* Rojo */
