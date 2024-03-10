@@ -30,8 +30,10 @@ app.post('/api/login', (req, res) => {
             console.error('Error al realizar la consulta:', err);
             res.status(500).send('Error interno del servidor');
         }
+
         if (result.length > 0) {
-            res.status(200).send('Login exitoso');
+            const user = result[0];
+            res.status(200).json({ message: 'Login exitoso', isAdmin: user.isAdmin });
         } else {
             res.status(401).send('Usuario no existe');
         }

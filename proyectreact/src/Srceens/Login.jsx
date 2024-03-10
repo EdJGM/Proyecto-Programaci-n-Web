@@ -23,9 +23,15 @@ const Login = ({ allProducts, setAllProducts, countProducts, setCountProducts, t
             },
             body: JSON.stringify(data)
         });
+        const userData = await response.json();
         if (response.status === 200) {
             alert('Login exitoso');
-            navigate('/');
+            if (userData.isAdmin) {
+                console.log('Es admin');
+                window.location.href = 'http://localhost/proyecto-programacion-web/admin/admin_page.php';
+            } else {
+                navigate('/');
+            }
         } else {
             alert('Usuario No Existe');
         }
