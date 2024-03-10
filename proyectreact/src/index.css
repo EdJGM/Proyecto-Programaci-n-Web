@@ -98,18 +98,15 @@ Link {
     border-radius: 5px;
 }
 
-#search-results h3 {
-    cursor: pointer;
-}
-
 #search-results div {
+    cursor: pointer;
     display: flex;
     align-items: center;
     padding: 10px;
+    border-bottom: 1px solid #ddd8d8;
 }
 
 #search-results img {
-    cursor: pointer;
     width: 10%;
     height: auto;
     margin: 0px 50px 0px 70px;
