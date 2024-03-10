@@ -1080,9 +1080,18 @@ Link span {
 
 #subscription-form {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
 #email-input {
@@ -1092,6 +1101,13 @@ Link span {
     border: 1px solid white;
 }
 
+.errosS {
+    color: tomato;
+    font-size: x-small;
+    width: 100%;
+    text-align: center;
+}
+
 #subscribe-button {
     background-color: white;
     color: black;
@@ -1099,6 +1115,7 @@ Link span {
     border-radius: 1px;
     text-align: center;
     cursor: pointer;
+    height: 39px;
 }
 
 /* Estilos para el footer */

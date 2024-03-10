@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
 import '../styles/styleContact.css';
 import Header from '../Componentes/Header';
 import SecondaryNav from '../Componentes/SecondaryNav';
@@ -11,6 +12,12 @@ const Contacto = () => {
     const [allProducts, setAllProducts] = useState([]);
     const [total, setTotal] = useState(0);
     const [countProducts, setCountProducts] = useState(0);
+
+    const { register, handleSubmit, formState: { errors } } = useForm();
+
+    const onSubmit = handleSubmit(async (data) => {
+
+    });
 
     return (
         <div>
@@ -72,12 +79,113 @@ const Contacto = () => {
                                 <p>(+593) 123 456 7890</p>
                             </div>
                         </div>
-                        <form action="../Recursos/formContact.html" className="form">
-                            <input type="text" id="name-input" placeholder="Nombre*" required />
-                            <input type="email" id="email-input1" placeholder="Correo Electrónico*" required />
-                            <input type="tel" id="phone-input" placeholder="Teléfono*" required />
-                            <input type="text" id="subject-input" placeholder="Asunto*" required />
-                            <textarea id="message-input" placeholder="Mensaje..." required></textarea>
+                        <form className="form" onSubmit={onSubmit}>
+                            <input type="text" id="name-input" placeholder="Nombre*"
+                                {...register("name", {
+                                    required: {
+                                        value: true,
+                                        message: 'Campo requerido'
+                                    },
+                                    minLength: {
+                                        value: 3,
+                                        message: 'Mínimo 3 caracteres'
+                                    },
+                                    maxLength: {
+                                        value: 30,
+                                        message: 'Máximo 30 caracteres'
+                                    },
+                                    pattern: {
+                                        value: /^[A-Za-z]+$/i,
+                                        message: 'Solo letras'
+                                    }
+                                }
+                                )}
+                            />
+                            {errors.name && <span className='errosC'>{errors.name.message}</span>}
+
+                            <input type="email" id="email-input1" placeholder="Correo Electrónico*"
+                                {...register("email", {
+                                    required: {
+                                        value: true,
+                                        message: 'Campo requerido'
+                                    },
+                                    pattern: {
+                                        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                                        message: 'Correo inválido'
+                                    }
+                                }
+                                )}
+                            />
+                            {errors.email && <span className='errosC'>{errors.email.message}</span>}
+
+                            <input type="tel" id="phone-input" placeholder="Teléfono*"
+                                {...register("phone", {
+                                    required: {
+                                        value: true,
+                                        message: 'Campo requerido'
+                                    },
+                                    minLength: {
+                                        value: 10,
+                                        message: 'Mínimo 10 caracteres'
+                                    },
+                                    maxLength: {
+                                        value: 10,
+                                        message: 'Máximo 10 caracteres'
+                                    },
+                                    pattern: {
+                                        value: /^[0-9]+$/i,
+                                        message: 'Solo números'
+                                    },
+                                    validate: value => {
+                                        return value < 0 ? 'No se aceptan números negativos' : true
+                                    }
+                                }
+                                )}
+                            />
+                            {errors.phone && <span className='errosC'>{errors.phone.message}</span>}
+
+                            <input type="text" id="subject-input" placeholder="Asunto*"
+                                {...register("subject", {
+                                    required: {
+                                        value: true,
+                                        message: 'Campo requerido'
+                                    },
+                                    minLength: {
+                                        value: 3,
+                                        message: 'Mínimo 3 caracteres'
+                                    },
+                                    maxLength: {
+                                        value: 30,
+                                        message: 'Máximo 30 caracteres'
+                                    },
+                                    pattern: {
+                                        value: /^[A-Za-z]+$/i,
+                                        message: 'Solo letras'
+                                    }
+                                }
+                                )}
+                            />
+                            {errors.subject && <span className='errosC'>{errors.subject.message}</span>}
+
+                            <textarea id="message-input" placeholder="Mensaje..."
+                                {...register("message", {
+                                    required: {
+                                        value: true,
+                                        message: 'Campo requerido'
+                                    },
+                                    minLength: {
+                                        value: 10,
+                                        message: 'Mínimo 10 caracteres'
+                                    },
+                                    maxLength: {
+                                        value: 300,
+                                        message: 'Máximo 300 caracteres'
+                                    }
+                                }
+                                )}
+                            ></textarea>
+                            {errors.message && <span className='errosC'>{errors.message.message}</span>}
+
                             <button type="clear" id="delete-button" >Borrar Campos</button>
                             <button type="submit" id="send-button">Enviar</button>
                         </form>
@@ -91,7 +199,7 @@ const Contacto = () => {
                         width="100%"
                         height="400px"
                         style={{ border: 0 }}
-                        allowfullscreen=""
+                        allowFullScreen=""
                         loading="lazy">
                     </iframe>
                 </div>

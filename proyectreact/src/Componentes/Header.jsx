@@ -69,7 +69,7 @@ function Header({ allProducts, setAllProducts, total, countProducts, setTotal, s
         <header id="myHeader" className={sticky ? 'sticky' : ''}>
             <nav>
                 <ul>
-                    <li><a href="#hot-deals-section" id="special-offers" style={{ color: 'white' }}>Ofertas Especiales del Día</a></li>
+                    <li><Link to='/' id="special-offers" style={{ color: 'white' }}>Ofertas Especiales del Día</Link></li>
                     <li>
                         <div id="search-bar">
                             <input type="text" placeholder="Buscar productos" />

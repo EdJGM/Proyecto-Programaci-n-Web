@@ -41,9 +41,6 @@ a {
     text-decoration: none;
 }
 
-a:hover {
-    border-bottom: 2px solid white;
-}
 
 #special-offers {
     padding: 10px 60px;

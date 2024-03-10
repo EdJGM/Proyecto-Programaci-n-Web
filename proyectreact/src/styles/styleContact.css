@@ -220,7 +220,63 @@ Link span {
     display: grid;
     grid-template-columns: minmax(220px, 1fr) minmax(200px, 2fr);
     margin-right: 90px;
-    ;
+    grid-template-areas:
+        "name email"
+        "nameError emailError"
+        "subject phone"
+        "subjectError phoneError"
+        "message message"
+        "messageError messageError"
+        "delete-button send-button";
+    grid-gap: 10px;
+}
+
+#name-input {
+    grid-area: name;
+}
+
+#email-input1 {
+    grid-area: email;
+}
+
+#name-error {
+    grid-area: nameError;
+}
+
+#email-error {
+    grid-area: emailError;
+}
+
+#subject-input {
+    grid-area: subject;
+}
+
+#phone-input {
+    grid-area: phone;
+}
+
+#subject-error {
+    grid-area: subjectError;
+}
+
+#phone-error {
+    grid-area: phoneError;
+}
+
+.form textarea {
+    grid-area: message;
+}
+
+#message-error {
+    grid-area: messageError;
+}
+
+#delete-button {
+    grid-area: delete-button;
+}
+
+#send-button {
+    grid-area: send-button;
 }
 
 .form input {
@@ -230,20 +286,15 @@ Link span {
 }
 
 #name-input,
-#phone-input {
-    margin-top: 10px;
+#phone-input,
+#email-input1,
+#subject-input {
+    margin: 10px 0px 0px 0px;
     width: 80%;
     height: 15px;
     background-color: #F5F5F5;
 }
 
-#email-input1,
-#subject-input {
-    margin-top: 10px;
-    width: 90%;
-    height: 15px;
-    background-color: #F5F5F5;
-}
 
 .form textarea {
     padding: 10px;
@@ -348,4 +399,9 @@ footer {
     width: 30%;
     margin: auto;
     padding-top: 40px;
+}
+
+.errosC {
+    color: tomato;
+    font-size: x-small;
 }

@@ -9,7 +9,7 @@
   /* Esto evitará que la imagen se repita */
   background-attachment: fixed;
   /* Esto hará que la imagen de fondo se fije, de modo que no se desplace con el contenido de la página */
-  height: 100vh;
+  height: auto;
   /* Esto hará que el cuerpo tenga la altura de la ventana de visualización */
   margin: 0;
   /* Esto eliminará cualquier margen alrededor del cuerpo */
@@ -33,8 +33,8 @@ h1 {
 
 label {
   display: block;
-  margin-bottom: 10px;
   font-weight: bold;
+  margin: 0px 0px 5px 0px;
 }
 
 input[type="text"],
@@ -46,7 +46,7 @@ input[type="password"] {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 3px;
-  margin-bottom: 20px;
+  margin: 0px 0px 10px 0px;
 }
 
 .register {
@@ -71,4 +71,12 @@ input[type="password"] {
   color: #19829A;
   text-align: center;
   margin-top: 10px;
+}
+
+
+.erros {
+  display: block;
+  color: tomato;
+  font-size: x-small;
+  margin: 0px 0px 10px 0px;
 }

@@ -45,6 +45,7 @@ input[type="password"] {
     margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    position: relative;
 }
 
 .login {
@@ -72,4 +73,19 @@ input[type="password"] {
 .volver {
     text-align: center;
     margin-top: 10px;
+}
+
+
+.inputPassword {
+    padding-right: 40px;
+    /* Ajusta este valor según el tamaño de tu botón */
+}
+
+.botonOjo {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    border: none;
+    background: none;
+    cursor: pointer;
 }

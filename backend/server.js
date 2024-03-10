@@ -23,8 +23,8 @@ db.connect((err) => {
 });
 
 app.post('/api/login', (req, res) => {
-    const { user, pass } = req.body;
-    db.query('SELECT * FROM usuarios WHERE username = ? AND contrasena = ?', [user, pass], (err, result) => {
+    const { username, password } = req.body;
+    db.query('SELECT * FROM usuarios WHERE username = ? AND contrasena = ?', [username, password], (err, result) => {
         if (err) {
             console.error('Error al realizar la consulta:', err);
             res.status(500).send('Error interno del servidor');
@@ -32,7 +32,7 @@ app.post('/api/login', (req, res) => {
         if (result.length > 0) {
             res.status(200).send('Login exitoso');
         } else {
-            res.status(401).send('Credenciales incorrectas');
+            res.status(401).send('Usuario no existe');
         }
     });
 });
@@ -48,9 +48,9 @@ app.get('/api/products', (req, res) => {
     });
 });
 
-//obtener el username de usuarios
+//obtener el username y email de usuarios
 app.get('/api/usuarios', (req, res) => {
-    db.query('SELECT username FROM usuarios', (err, result) => {
+    db.query('SELECT username, email FROM usuarios', (err, result) => {
         if (err) {
             console.error('Error al realizar la consulta:', err);
             res.status(500).send('Error interno del servidor');
