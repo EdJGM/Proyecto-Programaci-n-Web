@@ -8,10 +8,7 @@ import Subscription from '../Componentes/Subscription';
 import Footer from '../Componentes/Footer';
 
 
-const Contacto = () => {
-    const [allProducts, setAllProducts] = useState([]);
-    const [total, setTotal] = useState(0);
-    const [countProducts, setCountProducts] = useState(0);
+const Contacto = ({ allProducts, setAllProducts, countProducts, setCountProducts, total, setTotal }) => {
 
     const { register, handleSubmit, formState: { errors } } = useForm();
 

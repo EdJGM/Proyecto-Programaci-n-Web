@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import '../styles/styleLogin.css';
 
-const Login = () => {
+const Login = ({ allProducts, setAllProducts, countProducts, setCountProducts, total, setTotal }) => {
 
     const navigate = useNavigate();
     const { register, handleSubmit, formState: { errors } } = useForm();

@@ -5,6 +5,32 @@ function ProductList({ allProducts, setAllProducts, countProducts, setCountProdu
     const [productos, setProductos] = useState([]);
 
     useEffect(() => {
+        const localProducts = localStorage.getItem('allProducts');
+        const localCount = localStorage.getItem('countProducts');
+        const localTotal = localStorage.getItem('total');
+
+        if (localProducts) {
+            setAllProducts(JSON.parse(localProducts));
+        }
+
+        if (localCount) {
+            setCountProducts(JSON.parse(localCount));
+        }
+
+        if (localTotal) {
+            setTotal(JSON.parse(localTotal));
+        }
+    }, []);
+
+    // Agrega un efecto para actualizar el Local Storage cuando cambien los productos, el conteo o el total
+    useEffect(() => {
+        localStorage.setItem('allProducts', JSON.stringify(allProducts));
+        localStorage.setItem('countProducts', JSON.stringify(countProducts));
+        localStorage.setItem('total', JSON.stringify(total));
+    }, [allProducts, countProducts, total]);
+
+
+    useEffect(() => {
         const fetchProducts = async () => {
             try {
                 const response = await fetch('http://localhost:5000/api/products');

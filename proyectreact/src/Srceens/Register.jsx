@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
-const Register = () => {
+const Register = ({ allProducts, setAllProducts, countProducts, setCountProducts, total, setTotal }) => {
 
     const navegate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);

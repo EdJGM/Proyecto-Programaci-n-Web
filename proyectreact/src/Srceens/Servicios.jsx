@@ -8,10 +8,7 @@ import Footer from '../Componentes/Footer';
 import Info from '../Componentes/Info';
 
 
-const Servicios = () => {
-    const [allProducts, setAllProducts] = useState([]);
-    const [total, setTotal] = useState(0);
-    const [countProducts, setCountProducts] = useState(0);
+const Servicios = ({ allProducts, setAllProducts, countProducts, setCountProducts, total, setTotal }) => {
 
 
     const contador1 = useRef();

@@ -7,15 +7,11 @@ import Subscription from '../Componentes/Subscription';
 import Footer from '../Componentes/Footer';
 import '../styles/stylesPhone.css';
 
-function Categoria() {
+function Categoria({ allProducts, setAllProducts, countProducts, setCountProducts, total, setTotal }) {
     const { categoriaId } = useParams();
     const [productos, setProductos] = useState([]);
 
     const categorias = ['celulares', 'accesorios', 'laptops', 'televisores', 'tablets', 'computadores'];
-
-    const [allProducts, setAllProducts] = useState([]);
-    const [total, setTotal] = useState(0);
-    const [countProducts, setCountProducts] = useState(0);
 
     // Traer los productos de la categoria seleccionada.
     useEffect(() => {
@@ -39,23 +35,55 @@ function Categoria() {
     }, [categoriaId]);
 
     function onAllProduct(product) {
+        let newProducts;
+        let newTotal = total + product.precioP;
+        let newCount = countProducts + 1;
+
         if (allProducts.find(item => item.idProducto === product.idProducto)) {
-            const products = allProducts.map(item =>
+            newProducts = allProducts.map(item =>
                 item.idProducto == product.idProducto
                     ? { ...item, quatify: item.quatify + 1 }
                     : item
             );
-
-            setTotal(total + product.precioP) // Update total by adding the price of one product
-            setCountProducts(countProducts + 1); // Increment countProducts by 1
-            return setAllProducts([...products]);
+        } else {
+            product.quatify = 1;
+            newProducts = [...allProducts, product];
         }
 
-        product.quatify = 1;
-        setTotal(total + product.precioP) // Update total by adding the price of one product
-        setCountProducts(countProducts + 1); // Increment countProducts by 1
-        setAllProducts([...allProducts, product]);
+        setTotal(newTotal);
+        setCountProducts(newCount);
+        setAllProducts(newProducts);
+
+        // Almacena el estado en el almacenamiento local
+        localStorage.setItem('allProducts', JSON.stringify(newProducts));
+        localStorage.setItem('total', JSON.stringify(newTotal));
+        localStorage.setItem('countProducts', JSON.stringify(newCount));
     }
+
+    useEffect(() => {
+        const savedTotal = localStorage.getItem('total');
+        const savedCount = localStorage.getItem('countProducts');
+        const savedProducts = localStorage.getItem('allProducts');
+
+        if (savedTotal) {
+            setTotal(JSON.parse(savedTotal));
+        }
+
+        if (savedCount) {
+            setCountProducts(JSON.parse(savedCount));
+        }
+
+        if (savedProducts) {
+            setAllProducts(JSON.parse(savedProducts));
+        }
+    }, []);
+
+
+    useEffect(() => {
+        localStorage.setItem('total', JSON.stringify(total));
+        localStorage.setItem('countProducts', JSON.stringify(countProducts));
+        localStorage.setItem('allProducts', JSON.stringify(allProducts));
+    }, [total, countProducts, allProducts]);
 
 
     return (
