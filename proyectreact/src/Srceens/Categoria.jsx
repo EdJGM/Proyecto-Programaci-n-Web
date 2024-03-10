@@ -87,70 +87,68 @@ function Categoria({ allProducts, setAllProducts, countProducts, setCountProduct
 
 
     return (
-        <div>
-            <body className='bodyCat'>
-                <Header
-                    allProducts={allProducts}
-                    setAllProducts={setAllProducts}
-                    total={total}
-                    setTotal={setTotal}
-                    countProducts={countProducts}
-                    setCountProducts={setCountProducts}
-                />
-                <SecondaryNav />
-                <section id="mapa">
+        <div className='bodyCat'>
+            <Header
+                allProducts={allProducts}
+                setAllProducts={setAllProducts}
+                total={total}
+                setTotal={setTotal}
+                countProducts={countProducts}
+                setCountProducts={setCountProducts}
+            />
+            <SecondaryNav />
+            <section id="mapa">
 
-                    <div className="categoria-celulares1"><Link to="/">&#x1F3DA; Home</Link></div>
-                    <div className="categoria-celulares2"><p>|</p></div>
-                    <div className="categoria-celulares3"><p>{categoriaId}</p></div>
-                </section>
-                <article>
-                    <section id="product-categories-container">
-                        <div id="product-categories">
-                            <aside>
-                                <div>
-                                    {categorias.map((categoria) => (
-                                        <div key={categoria}>
-                                            <Link to={`/categoria/${categoria}`}>
-                                                <span><h2>{categoria.charAt(0).toUpperCase() + categoria.slice(1)}</h2></span>
-                                            </Link>
-                                        </div>
-                                    ))}
-                                </div>
-                            </aside>
-                        </div>
-                        <div id="best-sellers">
-                            <ul>
-                                <li>
-                                    <img src={`/Img/imgCategoria/${categoriaId}/principal.png`} />
-                                    <div className="texto">
-                                        <h2>LOS MEJORES EN EL MERCADO</h2>
+                <div className="categoria-celulares1"><Link to="/">&#x1F3DA; Home</Link></div>
+                <div className="categoria-celulares2"><p>|</p></div>
+                <div className="categoria-celulares3"><p>{categoriaId}</p></div>
+            </section>
+            <article>
+                <section id="product-categories-container">
+                    <div id="product-categories">
+                        <aside>
+                            <div>
+                                {categorias.map((categoria) => (
+                                    <div key={categoria}>
+                                        <Link to={`/categoria/${categoria}`}>
+                                            <span><h2>{categoria.charAt(0).toUpperCase() + categoria.slice(1)}</h2></span>
+                                        </Link>
                                     </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </section>
-                </article>
-                <section className="hot-deals-section">
-                    <div className="hot-deals">
-                        <div className="hot-deals-products">
-                            {productos.map(product => (
-                                <div className="product-info" category={product.idCategoria} key={product.idProducto}>
-                                    <img src={`/Img/productos/${product.idProducto}/principal.png`} />
-                                    <div className="hot-deals-text">
-                                        <h3>{product.nombreP}</h3>
-                                        <p>{product.descripcionP}</p>
-                                        <p>Precio: <span className="price">${product.precioP}</span></p>
-                                        <button id="add-to-cart-button-1" className="add-to-cart-button" onClick={() => onAllProduct(product)}>Añadir al Carrito</button>
-                                    </div>
+                                ))}
+                            </div>
+                        </aside>
+                    </div>
+                    <div id="best-sellers">
+                        <ul>
+                            <li>
+                                <img src={`/Img/imgCategoria/${categoriaId}/principal.png`} />
+                                <div className="texto">
+                                    <h2>LOS MEJORES EN EL MERCADO</h2>
                                 </div>
-                            ))}
-                        </div>
+                            </li>
+                        </ul>
                     </div>
                 </section>
-                <Subscription />
-                <Footer />
-            </body>
+            </article>
+            <section className="hot-deals-section">
+                <div className="hot-deals">
+                    <div className="hot-deals-products">
+                        {productos.map(product => (
+                            <div className="product-info" category={product.idCategoria} key={product.idProducto}>
+                                <img src={`/Img/productos/${product.idProducto}/principal.png`} />
+                                <div className="hot-deals-text">
+                                    <h3>{product.nombreP}</h3>
+                                    <p>{product.descripcionP}</p>
+                                    <p>Precio: <span className="price">${product.precioP}</span></p>
+                                    <button id="add-to-cart-button-1" className="add-to-cart-button" onClick={() => onAllProduct(product)}>Añadir al Carrito</button>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+            <Subscription />
+            <Footer />
         </div>
     );
 };

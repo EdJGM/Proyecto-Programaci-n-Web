@@ -112,6 +112,35 @@ Link {
     margin: 0px 50px 0px 70px;
 }
 
+#category-search-results {
+    display: none;
+    position: absolute;
+    width: 100%;
+    background-color: #f8f8f8;
+    z-index: 1000;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.497);
+    display: grid;
+    /* Agrega esta línea */
+    grid-template-columns: 1fr 1fr;
+    /* Agrega esta línea */
+}
+
+.cat-select {
+    cursor: pointer;
+    display: flex;
+    /* Cambia esto a flex */
+    align-items: center;
+    /* Agrega esta línea */
+    padding: 10px;
+    border-bottom: 1px solid #ddd8d8;
+}
+
+#category-search-results img {
+    width: 10%;
+    height: auto;
+    margin: 0px 50px 0px 70px;
+}
+
 #contact-button {
     background-color: #19829A;
     /*#f05252; /* Rojo */

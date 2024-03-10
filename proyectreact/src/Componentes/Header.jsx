@@ -5,6 +5,7 @@ function Header({ allProducts, setAllProducts, total, countProducts, setTotal, s
 
     const [searchText, setSearchText] = useState('');
     const [searchResults, setSearchResults] = useState([]);
+    const [categorySearchResults, setCategorySearchResults] = useState([]);
 
     const [active, setActive] = useState(false);
     const [sticky, setSticky] = useState(false);
@@ -69,8 +70,34 @@ function Header({ allProducts, setAllProducts, total, countProducts, setTotal, s
             }
         } else {
             setSearchResults([]);
+            setCategorySearchResults([]); // Agrega esta línea
         }
     };
+
+    const handleSearchClick = async () => {
+        if (searchText.trim() !== '') {
+            try {
+                const categoryResponse = await fetch(`http://localhost:5000/api/categorias/${searchText}/productos`);
+
+                if (categoryResponse.ok) {
+                    const categoryData = await categoryResponse.json();
+
+                    setCategorySearchResults(categoryData);
+                    if (categoryData.length === 0) {
+                        alert('No se encontraron productos en la categoria');
+                    }
+                } else {
+                    const errorMessage = await categoryResponse.text();
+                    console.error('Error al buscar categoria:', errorMessage);
+                }
+            } catch (error) {
+                console.error('Error al buscar categoria:', error);
+            }
+        } else {
+            setCategorySearchResults([]);
+        }
+    };
+
 
     useEffect(() => {
         const header = document.getElementById('myHeader');
@@ -102,14 +129,26 @@ function Header({ allProducts, setAllProducts, total, countProducts, setTotal, s
                                 <div id="search-results" style={{ display: searchResults.length > 0 ? 'block' : 'none' }}>
                                     {searchResults.map(product => (
                                         <div key={product.idProducto}>
-                                            <img src={`./Img/productos/${product.idProducto}/principal.png`} alt={product.nombreP} />
+                                            <img src={`/Img/productos/${product.idProducto}/principal.png`} alt={product.nombreP} />
                                             <h3>{product.nombreP}</h3>
                                             {/* Aquí puedes agregar más detalles del producto como desees */}
                                         </div>
                                     ))}
                                 </div>
                             )}
-                            <button id="search-icon">&#128269;</button>
+                            <button id="search-icon" onClick={handleSearchClick}>&#128269;</button>
+                            {categorySearchResults.length > 0 && (
+                                <div id="category-search-results" style={{ display: categorySearchResults.length > 0 ? 'block' : 'none' }}>
+                                    {categorySearchResults.map(product => (
+                                        <div key={product.idProducto}>
+                                            <div className='cat-select'>
+                                                <img src={`/Img/productos/${product.idProducto}/principal.png`} alt={product.nombreP} />
+                                                <h3>{product.nombreP}</h3>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
                         </div>
                     </li>
                     <li>

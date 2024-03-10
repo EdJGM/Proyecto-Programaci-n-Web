@@ -101,6 +101,18 @@ app.get('/api/productos/search/:nombre', (req, res) => {
     });
 });
 
+// obtener los productos de una categoria
+app.get('/api/categorias/:nombrec/productos', (req, res) => {
+    const nombrec = req.params.nombrec;
+    db.query('SELECT * FROM productos WHERE idCategoria = (SELECT idCategoria FROM categorias WHERE nombreC = ?)', [nombrec], (err, result) => {
+        if (err) {
+            console.error('Error al realizar la consulta:', err);
+            res.status(500).send('Error interno del servidor');
+        }
+        res.status(200).send(result);
+    });
+});
+
 
 app.listen(PORT, () => {
     console.log('Servidor backend corriendo en http://localhost:${PORT}');
