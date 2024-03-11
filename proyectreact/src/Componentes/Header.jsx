@@ -215,7 +215,12 @@ function Header({ allProducts, setAllProducts, total, countProducts, setTotal, s
                     </li>
                     <li id="login-register">
                         {usuario ? (
-                            <Link to="/register" style={{ color: 'white' }}>{usuario.username}</Link>
+                            <div className="dropdown">
+                                <Link to="/" className="dropbtn" style={{ color: 'white' }}>{usuario.username}</Link>
+                                <div className="dropdown-content">
+                                    <Link to="/logout">Cerrar Sesión</Link>
+                                </div>
+                            </div>
                         ) : (
                             <Link to="/login" style={{ color: 'white' }}>Login</Link>
                         )}

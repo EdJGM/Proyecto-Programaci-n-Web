@@ -16,6 +16,7 @@ import Contacto from './Srceens/Contacto';
 import Servicios from './Srceens/Servicios';
 import ConfirmarCarro from './Srceens/ConfirmarCarro';
 import { AuthProvider } from './Srceens/AuthContext';
+import Logout from './Srceens/Logout';
 
 function App() {
 
@@ -40,6 +41,7 @@ function App() {
     <AuthProvider>
       <Router>
         <Routes>
+          <Route path="/logout" element={<Logout />} />
           <Route path="/confirmarcarro" element={
             <ConfirmarCarro
               allProducts={allProducts}
