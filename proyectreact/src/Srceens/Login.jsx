@@ -28,12 +28,14 @@ const Login = ({ allProducts, setAllProducts, countProducts, setCountProducts, t
         const response = await fetch('http://localhost:5000/api/login', {
             method: "POST",
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': 'Basic ' + btoa(data.username + ':' + data.password)
             },
             body: JSON.stringify(data)
         });
-        const userData = await response.json();
-        if (response.status === 200) {
+
+        if (response.ok) {
+            const userData = await response.json();
             alert('Login exitoso');
             if (userData.isAdmin) {
                 console.log('Es admin');
@@ -43,8 +45,10 @@ const Login = ({ allProducts, setAllProducts, countProducts, setCountProducts, t
                 navigate('/');
             }
         } else {
-            alert('Usuario No Existe');
+            alert('Error de autenticación');
         }
+
+
     });
 
     return (
