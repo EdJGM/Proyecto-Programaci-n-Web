@@ -1215,6 +1215,24 @@ footer {
     box-sizing: border-box;
 }
 
+.botonesContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+}
+
+.btn-shop-all {
+    background-color: #f05252;
+    /*#f05252; /* Rojo */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 .btn-clear-all {
     background-color: #19829A;
     /*#f05252; /* Rojo */
@@ -1223,5 +1241,4 @@ footer {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 20px;
 }

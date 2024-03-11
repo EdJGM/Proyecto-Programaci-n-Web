@@ -1,7 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect, useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../Srceens/AuthContext';
 
 function Header({ allProducts, setAllProducts, total, countProducts, setTotal, setCountProducts }) {
+
+    const { usuario } = useContext(AuthContext);
+
+    const navegate = useNavigate();
 
     const [searchText, setSearchText] = useState('');
     const [searchResults, setSearchResults] = useState([]);
@@ -192,9 +197,14 @@ function Header({ allProducts, setAllProducts, total, countProducts, setTotal, s
                                                 <h3>Total:</h3>
                                                 <span className="total-pagar">${total}</span>
                                             </div>
-                                            <button className='btn-clear-all' onClick={onClearAll}>
-                                                Vaciar Carrito
-                                            </button>
+                                            <div className='botonesContainer'>
+                                                <Link to='/confirmarcarro'><button className='btn-shop-all'>
+                                                    Pagar
+                                                </button></Link>
+                                                <button className='btn-clear-all' onClick={onClearAll}>
+                                                    Vaciar Carrito
+                                                </button>
+                                            </div>
                                         </>
                                     ) : (
                                         <p className="cart-empty">El carrito esta vacío</p>
@@ -204,9 +214,8 @@ function Header({ allProducts, setAllProducts, total, countProducts, setTotal, s
                         </div>
                     </li>
                     <li id="login-register">
-                        {user ? (
-                            <Link to="/login" style={{ color: 'white' }}>{user.username}</Link>
-
+                        {usuario ? (
+                            <Link to="/register" style={{ color: 'white' }}>{usuario.username}</Link>
                         ) : (
                             <Link to="/login" style={{ color: 'white' }}>Login</Link>
                         )}

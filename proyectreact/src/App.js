@@ -14,6 +14,8 @@ import Register from './Srceens/Register';
 import Categoria from './Srceens/Categoria';
 import Contacto from './Srceens/Contacto';
 import Servicios from './Srceens/Servicios';
+import ConfirmarCarro from './Srceens/ConfirmarCarro';
+import { AuthProvider } from './Srceens/AuthContext';
 
 function App() {
 
@@ -35,61 +37,11 @@ function App() {
   });
 
   return (
-    <Router>
-      <Routes>
-        <Route path="/login" element={
-          <Login
-            allProducts={allProducts}
-            setAllProducts={setAllProducts}
-            total={total}
-            setTotal={setTotal}
-            countProducts={countProducts}
-            setCountProducts={setCountProducts}
-          />
-        } />
-        <Route path="/register" element={
-          <Register
-            allProducts={allProducts}
-            setAllProducts={setAllProducts}
-            total={total}
-            setTotal={setTotal}
-            countProducts={countProducts}
-            setCountProducts={setCountProducts}
-          />
-        } />
-        <Route path="/servicios" element={
-          <Servicios
-            allProducts={allProducts}
-            setAllProducts={setAllProducts}
-            total={total}
-            setTotal={setTotal}
-            countProducts={countProducts}
-            setCountProducts={setCountProducts}
-          />
-        } />
-        <Route path="/contacto" element={
-          <Contacto
-            allProducts={allProducts}
-            setAllProducts={setAllProducts}
-            total={total}
-            setTotal={setTotal}
-            countProducts={countProducts}
-            setCountProducts={setCountProducts}
-          />
-        } />
-        <Route path="/categoria/:categoriaId" element={
-          <Categoria
-            allProducts={allProducts}
-            setAllProducts={setAllProducts}
-            total={total}
-            setTotal={setTotal}
-            countProducts={countProducts}
-            setCountProducts={setCountProducts}
-          />
-        } />
-        <Route path="/*" element={
-          <>
-            <Header
+    <AuthProvider>
+      <Router>
+        <Routes>
+          <Route path="/confirmarcarro" element={
+            <ConfirmarCarro
               allProducts={allProducts}
               setAllProducts={setAllProducts}
               total={total}
@@ -97,12 +49,9 @@ function App() {
               countProducts={countProducts}
               setCountProducts={setCountProducts}
             />
-            <SecondaryNav />
-            <Article />
-            <br />
-            <SeccionesImagenes />
-            <br />
-            <ProductList
+          } />
+          <Route path="/login" element={
+            <Login
               allProducts={allProducts}
               setAllProducts={setAllProducts}
               total={total}
@@ -110,17 +59,82 @@ function App() {
               countProducts={countProducts}
               setCountProducts={setCountProducts}
             />
-            <br />
-            <br />
-            <Comentarios />
-            <br />
-            <Info />
-            <Subscription />
-            <Footer />
-          </>
-        } />
-      </Routes>
-    </Router>
+          } />
+          <Route path="/register" element={
+            <Register
+              allProducts={allProducts}
+              setAllProducts={setAllProducts}
+              total={total}
+              setTotal={setTotal}
+              countProducts={countProducts}
+              setCountProducts={setCountProducts}
+            />
+          } />
+          <Route path="/servicios" element={
+            <Servicios
+              allProducts={allProducts}
+              setAllProducts={setAllProducts}
+              total={total}
+              setTotal={setTotal}
+              countProducts={countProducts}
+              setCountProducts={setCountProducts}
+            />
+          } />
+          <Route path="/contacto" element={
+            <Contacto
+              allProducts={allProducts}
+              setAllProducts={setAllProducts}
+              total={total}
+              setTotal={setTotal}
+              countProducts={countProducts}
+              setCountProducts={setCountProducts}
+            />
+          } />
+          <Route path="/categoria/:categoriaId" element={
+            <Categoria
+              allProducts={allProducts}
+              setAllProducts={setAllProducts}
+              total={total}
+              setTotal={setTotal}
+              countProducts={countProducts}
+              setCountProducts={setCountProducts}
+            />
+          } />
+          <Route path="/*" element={
+            <>
+              <Header
+                allProducts={allProducts}
+                setAllProducts={setAllProducts}
+                total={total}
+                setTotal={setTotal}
+                countProducts={countProducts}
+                setCountProducts={setCountProducts}
+              />
+              <SecondaryNav />
+              <Article />
+              <br />
+              <SeccionesImagenes />
+              <br />
+              <ProductList
+                allProducts={allProducts}
+                setAllProducts={setAllProducts}
+                total={total}
+                setTotal={setTotal}
+                countProducts={countProducts}
+                setCountProducts={setCountProducts}
+              />
+              <br />
+              <br />
+              <Comentarios />
+              <br />
+              <Info />
+              <Subscription />
+              <Footer />
+            </>
+          } />
+        </Routes>
+      </Router>
+    </AuthProvider>
   );
 }
 

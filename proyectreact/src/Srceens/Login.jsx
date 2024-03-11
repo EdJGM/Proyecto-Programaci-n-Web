@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import { AuthContext } from './AuthContext';
 import '../styles/styleLogin.css';
 
 const Login = ({ allProducts, setAllProducts, countProducts, setCountProducts, total, setTotal }) => {
+
+    const { setUsuario } = useContext(AuthContext);
 
     const navigate = useNavigate();
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -13,6 +16,12 @@ const Login = ({ allProducts, setAllProducts, countProducts, setCountProducts, t
 
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
+    };
+
+    const handleLogin = (username) => {
+        // Aquí es donde autenticarías al usuario.
+        // Una vez que el usuario esté autenticado, puedes establecer el estado del usuario:
+        setUsuario({ username: username });
     };
 
     const onSubmit = handleSubmit(async (data) => {
@@ -30,6 +39,7 @@ const Login = ({ allProducts, setAllProducts, countProducts, setCountProducts, t
                 console.log('Es admin');
                 window.location.href = 'http://localhost/proyecto-programacion-web/admin/admin_page.php';
             } else {
+                handleLogin(data.username);
                 navigate('/');
             }
         } else {

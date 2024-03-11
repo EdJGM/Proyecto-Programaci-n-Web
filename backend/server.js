@@ -51,6 +51,18 @@ app.get('/api/products', (req, res) => {
     });
 });
 
+//obtener producto por su id
+app.get('/api/products/:id', (req, res) => {
+    const id = req.params.id;
+    db.query('SELECT * FROM productos WHERE idProducto = ?', [id], (err, result) => {
+        if (err) {
+            console.error('Error al realizar la consulta:', err);
+            res.status(500).send('Error interno del servidor');
+        }
+        res.status(200).send(result);
+    });
+});
+
 //obtener el username y email de usuarios
 app.get('/api/usuarios', (req, res) => {
     db.query('SELECT username, email FROM usuarios', (err, result) => {
@@ -112,6 +124,21 @@ app.get('/api/categorias/:nombrec/productos', (req, res) => {
             res.status(500).send('Error interno del servidor');
         }
         res.status(200).send(result);
+    });
+});
+
+// guardar datos de venta, donde tengo: idVenta(primary key, auto), nrTarjeta, nombre, fechaExp, cvc
+app.post('/api/venta', (req, res) => {
+    const { nrTarjeta, nombre, fechaExp, cvc } = req.body;
+    const query = 'INSERT INTO ventas (idVenta, nrTarjeta, nombre, fechaExp, cvc) VALUES (NULL, ?, ?, ?, ?)';
+    const values = [nrTarjeta, nombre, fechaExp, cvc];
+    db.query(query, values, (err, result) => {
+        if (err) {
+            console.error('Error al realizar la consulta:', err);
+            res.status(500).send('Error interno del servidor');
+        } else {
+            res.status(200).send('Venta exitosa');
+        }
     });
 });
 

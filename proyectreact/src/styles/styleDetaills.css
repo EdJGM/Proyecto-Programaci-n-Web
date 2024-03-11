@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
-.sticky {/* Agregado para que el menú se mantenga fijo en la parte superior de la página */
+
+.sticky {
+    /* Agregado para que el menú se mantenga fijo en la parte superior de la página */
     position: fixed;
     top: 0;
     width: 100%;
@@ -45,9 +47,10 @@ a:hover {
 }
 
 #special-offers {
-    padding: 10px 60px; 
+    padding: 10px 60px;
     font-size: 23px;
-    background-color: #19829A;/*#f05252; /* Verde */
+    background-color: #19829A;
+    /*#f05252; /* Verde */
     text-align: center;
     float: left;
     font-size: 19px;
@@ -58,23 +61,19 @@ a:hover {
     width: 35%;
     padding: 5px 0px;
     text-align: center;
-    background-color: #fff; /* Blanco */
+    background-color: #fff;
+    /* Blanco */
     display: inline-block;
     position: relative;
     margin-right: 50px;
     margin-top: 1px;
 }
 
-#search-bar input[type=text] {
-    padding: 8px;
-    width: 100%;
-    box-sizing: border-box;
-    border: 2px solid white;
-    background-color: #f8f8f8;
-}
+
 
 #search-icon {
-    background-color: #19829A;/*#f05252; /* Rojo */
+    background-color: #19829A;
+    /*#f05252; /* Rojo */
     color: white;
     padding: 14px;
     border: none;
@@ -86,7 +85,8 @@ a:hover {
 }
 
 #contact-button {
-    background-color: #19829A;/*#f05252; /* Rojo */
+    background-color: #19829A;
+    /*#f05252; /* Rojo */
     padding: 13.8px 50px;
     border: none;
     color: white;
@@ -100,7 +100,8 @@ a:hover {
 }
 
 #cart {
-    border: 2px solid #19829A; /* Verde */
+    border: 2px solid #19829A;
+    /* Verde */
     padding: 7px;
     margin-right: 20px;
 }
@@ -136,15 +137,17 @@ a:hover {
 
 @keyframes zoom {
     0% {
-      transform: translateZ(0px) scale(1);
+        transform: translateZ(0px) scale(1);
     }
+
     50% {
-      transform: translateZ(100px) scale(1.2);
+        transform: translateZ(100px) scale(1.2);
     }
+
     100% {
-      transform: translateZ(0px) scale(1);
+        transform: translateZ(0px) scale(1);
     }
-  }
+}
 
 #secondary-nav ul {
     list-style-type: none;
@@ -166,14 +169,15 @@ a:hover {
 }
 
 #secondary-nav a:hover {
-    color: #19829A;/*#f05252; /* Rojo */
+    color: #19829A;
+    /*#f05252; /* Rojo */
 }
 
 .menu-vertical {
     display: none;
     position: absolute;
     background-color: white;
-    box-shadow: 0px 8px 16px 10px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 10px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     left: 360px;
     margin-top: 10px;
@@ -190,7 +194,7 @@ a:hover {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
 }
-  
+
 .menu-vertical li {
     margin-left: 20px;
     margin-top: 15px;
@@ -198,7 +202,7 @@ a:hover {
     margin-bottom: 20px;
     border-bottom: 1px solid #E9ECF0;
 }
-  
+
 .menu-vertical a {
     line-height: 18px;
     font-size: 15px;
@@ -207,17 +211,17 @@ a:hover {
 
 #phone-icon {
     margin-right: 20px;
-}        
+}
 
 /*muestra donde esta el usuario*/
-#mapa{
+#mapa {
     width: 100%;
     height: 54px;
     background-color: #19829A;
     display: flex;
 }
 
-.categoria-celulares1 a{
+.categoria-celulares1 a {
     width: 100%;
     height: 50px;
     background-color: #19829A;
@@ -228,7 +232,7 @@ a:hover {
     margin-left: 125px;
 }
 
-.categoria-celulares2 p{
+.categoria-celulares2 p {
     width: 100%;
     background-color: #19829A;
     color: black;
@@ -238,7 +242,7 @@ a:hover {
     margin-left: 30px;
 }
 
-.categoria-celulares3 p{
+.categoria-celulares3 p {
     width: 100%;
     background-color: #19829A;
     color: black;
@@ -249,7 +253,7 @@ a:hover {
 }
 
 /*aqui haz el estilo para el producto del iphone 14 del html*/
-.container{
+.container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 20px;
@@ -258,27 +262,27 @@ a:hover {
     margin-left: 260px;
 }
 
-.imagen{
+.imagen {
     grid-column: 1 / 2;
     transition: transform 0.5s ease-in-out;
 }
 
 .imagen:hover {
-  transform: scale(1.2);
+    transform: scale(1.2);
 }
 
-.principal{
+.principal {
     grid-column: 2 / 3;
     border-left: 1px solid #ccc;
     padding-left: 10px;
 }
 
-.agregar-carrito{
+.agregar-carrito {
     font-family: 'Ubuntu', sans-serif;
     background-color: #FFD566;
     color: #2f2f2f;
     border: none;
-    border-radius: 15px ;
+    border-radius: 15px;
     padding: 20px 15px;
     font-size: 20px;
     line-height: 20px;
@@ -286,12 +290,12 @@ a:hover {
     margin-top: 20px;
 }
 
-.comprar-whatsapp{
+.comprar-whatsapp {
     font-family: 'Ubuntu', sans-serif;
     background-color: #EDEDED;
     color: #2f2f2f;
     border: none;
-    border-radius: 15px ;
+    border-radius: 15px;
     padding: 20px 15px;
     font-size: 20px;
     line-height: 20px;
@@ -299,7 +303,7 @@ a:hover {
     margin-top: 20px;
 }
 
-.precio{
+.precio {
     font-family: 'Ubuntu', sans-serif;
     color: red;
     font-size: 28px;
@@ -308,7 +312,7 @@ a:hover {
     margin-bottom: 0;
 }
 
-.iva{
+.iva {
     font-family: 'Ubuntu', sans-serif;
     color: #666666;
     font-size: 12px;
@@ -316,23 +320,23 @@ a:hover {
     margin-top: 0;
 }
 
-.titulo{
+.titulo {
     font-family: 'Ubuntu', sans-serif;
     color: #666666;
     font-size: 24px;
     line-height: 25px;
     margin-top: 15px;
     margin-bottom: 10px;
-}   
+}
 
-.comentario{
+.comentario {
     font-family: 'Ubuntu', sans-serif;
     color: #333333;
     font-size: 12px;
     line-height: 14px;
 }
 
-.caracteristicas{
+.caracteristicas {
     font-family: 'Ubuntu', sans-serif;
     color: #333333;
     font-size: 26px;
@@ -341,29 +345,29 @@ a:hover {
     margin-left: 100px;
 }
 
-.caracteristicas i{
+.caracteristicas i {
     float: right;
     margin-right: 100px;
 }
 
 
 /*caracteristicas del iphone 14 -- tabla*/
-table{
+table {
     width: 50%;
     border-collapse: collapse;
     margin-top: 20px;
     margin-left: 300px;
 }
 
-table tr:nth-child(odd){
+table tr:nth-child(odd) {
     background-color: #f2f2f2;
 }
 
-table tr:nth-child(even){
+table tr:nth-child(even) {
     background-color: #fff;
 }
 
-table th{
+table th {
     font-family: 'Ubuntu', sans-serif;
     font-size: 16px;
     line-height: 20px;
@@ -371,7 +375,7 @@ table th{
     text-align: left;
 }
 
-table td{
+table td {
     font-family: 'Ubuntu', sans-serif;
     font-size: 16px;
     line-height: 20px;
@@ -379,7 +383,7 @@ table td{
     text-align: left;
 }
 
-.caracteristicas-prin{
+.caracteristicas-prin {
     font-family: 'Ubuntu', sans-serif;
     color: #333333;
     font-size: 14px;
@@ -388,7 +392,7 @@ table td{
     margin-left: 100px;
 }
 
-.detalles{
+.detalles {
     font-family: 'Ubuntu', sans-serif;
     color: #333333;
     font-size: 14px;
@@ -399,47 +403,51 @@ table td{
 }
 
 /*reseña*/
-form{
+form {
     width: 400px;
     margin-left: 400px;
 }
 
 .rating {
-    direction: rtl;/* Esto invertirá el orden visual de los elementos */
+    direction: rtl;
+    /* Esto invertirá el orden visual de los elementos */
     display: flex;
     justify-content: center;
 }
-  
+
 .rating label {
     font-size: 2em;
     color: #ccc;
     cursor: pointer;
     /* Asegúrate de que los labels se muestren correctamente en navegadores que soportan direction: rtl; */
     unicode-bidi: bidi-override;
-    direction: ltr;    
+    direction: ltr;
 }
-  
+
 .rating input[type="radio"] {
     display: none;
 }
-  
-.rating input[type="radio"]:checked ~ label {
+
+.rating input[type="radio"]:checked~label {
     color: #f90;
 }
 
 .form-group {
     margin-bottom: 1em;
 }
-  
-label, input, textarea, button {
+
+label,
+input,
+textarea,
+button {
     font-family: Arial, sans-serif;
 }
-  
+
 label {
     display: block;
     margin-bottom: 0.5em;
 }
-  
+
 input {
     width: 100%;
     padding: 0.5em;
@@ -454,7 +462,7 @@ textarea {
     border: 1px solid #ccc;
     border-radius: 0.25em;
 }
-  
+
 .enviar-resena {
     display: block;
     margin: 1em auto 0;
@@ -466,11 +474,11 @@ textarea {
     cursor: pointer;
 }
 
-.error{
+.error {
     display: block;
     justify-content: center;
     text-align: center;
-    color:red;
+    color: red;
     margin-top: 5px;
     margin-bottom: 10px;
 }
@@ -479,12 +487,13 @@ textarea {
 .subscription-section {
     margin-top: 4%;
     display: flex;
-    background-color: #19829A;/*#f05252; /* Rojo */
+    background-color: #19829A;
+    /*#f05252; /* Rojo */
     color: white;
     padding: 20px;
 }
 
-.titulo-subscription{
+.titulo-subscription {
     margin-left: 200px;
     margin-right: 0px;
     margin-bottom: 20px;
@@ -500,7 +509,8 @@ textarea {
 .email-input {
     margin-top: 15px;
     padding: 10px;
-    background-color: white;/*#f05252; /* Rojo */
+    background-color: white;
+    /*#f05252; /* Rojo */
     color: white;
     border-radius: 0;
     border: 1px solid white;
@@ -511,15 +521,17 @@ textarea {
     margin-top: 15px;
     padding: 10px;
     background-color: white;
-    color: black; /* Rojo */
+    color: black;
+    /* Rojo */
     border: 1px solid white;
     width: 100px;
     cursor: pointer;
-}      
+}
 
 /* Estilos para el footer */
 footer {
-    background-color: #212121; /* Fondo oscuro */
+    background-color: #212121;
+    /* Fondo oscuro */
     color: white;
     padding: 20px 20px 10px 20px;
     text-align: center;
@@ -535,12 +547,14 @@ footer {
 }
 
 #social-icons img {
-    width: 30px; /* Ajusta el tamaño según sea necesario */
+    width: 30px;
+    /* Ajusta el tamaño según sea necesario */
     height: 30px;
 }
 
 #rights {
-    border-top: 1px solid #645e5e; /* Línea superior */
+    border-top: 1px solid #645e5e;
+    /* Línea superior */
     width: 30%;
     margin: auto;
     padding-top: 40px;
