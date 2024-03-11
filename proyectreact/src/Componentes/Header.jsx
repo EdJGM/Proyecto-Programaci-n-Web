@@ -131,7 +131,7 @@ function Header({ allProducts, setAllProducts, total, countProducts, setTotal, s
                         <div id="search-bar">
                             <input type="text" placeholder="Buscar productos" value={searchText} onChange={handleSearchChange} />
                             {searchResults.length > 0 && (
-                                <div id="search-results" style={{ display: searchResults.length > 0 ? 'block' : 'none' }}>
+                                <div id="search-results" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', overflow: 'auto' }}>
                                     {searchResults.map(product => (
                                         <div key={product.idProducto}>
                                             <img src={`/Img/productos/${product.idProducto}/principal.png`} alt={product.nombreP} />
