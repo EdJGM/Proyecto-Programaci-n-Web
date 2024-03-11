@@ -93,7 +93,7 @@ const Servicios = ({ allProducts, setAllProducts, countProducts, setCountProduct
                             <p>Los mejores televisores</p>
                             <p>Las mejores tablets</p>
                             <p>Los mejores computadores</p>
-                            <button className='add-to-cart-button'>Ver mas...</button>
+                            <Link to='/'><button className='add-to-cart-button'>Ver mas...</button></Link>
                         </div>
                     </div>
                 </div>
